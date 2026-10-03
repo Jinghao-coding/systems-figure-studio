@@ -1,0 +1,210 @@
+{
+  "cluster": {
+    "path": "topics/hardware-cluster.md",
+    "anchor": "cluster"
+  },
+  "node": {
+    "path": "topics/hardware-cluster.md",
+    "anchor": "node"
+  },
+  "accelerator": {
+    "path": "topics/hardware-cluster.md",
+    "anchor": "accelerator"
+  },
+  "compute": {
+    "path": "topics/hardware-cluster.md",
+    "anchor": "compute"
+  },
+  "memory": {
+    "path": "topics/data-memory-storage.md",
+    "anchor": "memory"
+  },
+  "storage": {
+    "path": "topics/data-memory-storage.md",
+    "anchor": "storage"
+  },
+  "network": {
+    "path": "topics/hardware-cluster.md",
+    "anchor": "network"
+  },
+  "collective": {
+    "path": "topics/training-distributed.md",
+    "anchor": "collective"
+  },
+  "deployment": {
+    "path": "topics/systems-runtime.md",
+    "anchor": "deployment"
+  },
+  "tensor": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "tensor"
+  },
+  "operator": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "operator"
+  },
+  "network-model": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "network-model"
+  },
+  "attention": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "attention"
+  },
+  "vision": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "vision"
+  },
+  "gnn": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "gnn"
+  },
+  "moe": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "moe"
+  },
+  "model-instance": {
+    "path": "topics/inference-serving.md",
+    "anchor": "model-instance"
+  },
+  "model-roles": {
+    "path": "topics/rl-alignment.md",
+    "anchor": "model-roles"
+  },
+  "data-pipeline": {
+    "path": "topics/data-memory-storage.md",
+    "anchor": "data-pipeline"
+  },
+  "training": {
+    "path": "topics/training-distributed.md",
+    "anchor": "training"
+  },
+  "parallelism": {
+    "path": "topics/training-distributed.md",
+    "anchor": "parallelism"
+  },
+  "training-state": {
+    "path": "topics/training-distributed.md",
+    "anchor": "training-state"
+  },
+  "peft": {
+    "path": "topics/training-distributed.md",
+    "anchor": "peft"
+  },
+  "rl": {
+    "path": "topics/rl-alignment.md",
+    "anchor": "rl"
+  },
+  "checkpoint": {
+    "path": "topics/training-distributed.md",
+    "anchor": "checkpoint"
+  },
+  "request": {
+    "path": "topics/inference-serving.md",
+    "anchor": "request"
+  },
+  "batch": {
+    "path": "topics/inference-serving.md",
+    "anchor": "batch"
+  },
+  "token": {
+    "path": "topics/inference-serving.md",
+    "anchor": "token"
+  },
+  "prefill-decode": {
+    "path": "topics/inference-serving.md",
+    "anchor": "prefill-decode"
+  },
+  "kv-cache": {
+    "path": "topics/inference-serving.md",
+    "anchor": "kv-cache"
+  },
+  "lifecycle": {
+    "path": "topics/observability-reliability.md",
+    "anchor": "lifecycle"
+  },
+  "model-loading": {
+    "path": "topics/inference-serving.md",
+    "anchor": "model-loading"
+  },
+  "slo": {
+    "path": "topics/observability-reliability.md",
+    "anchor": "slo"
+  },
+  "scheduler": {
+    "path": "topics/scheduling-resources.md",
+    "anchor": "scheduler"
+  },
+  "quota": {
+    "path": "topics/scheduling-resources.md",
+    "anchor": "quota"
+  },
+  "placement": {
+    "path": "topics/scheduling-resources.md",
+    "anchor": "placement"
+  },
+  "sharing": {
+    "path": "topics/scheduling-resources.md",
+    "anchor": "sharing"
+  },
+  "predictor": {
+    "path": "topics/performance-prediction.md",
+    "anchor": "predictor"
+  },
+  "workflow": {
+    "path": "topics/agents-workflows.md",
+    "anchor": "workflow"
+  },
+  "agent": {
+    "path": "topics/agents-workflows.md",
+    "anchor": "agent"
+  },
+  "tool": {
+    "path": "topics/agents-workflows.md",
+    "anchor": "tool"
+  },
+  "context-memory": {
+    "path": "topics/agents-workflows.md",
+    "anchor": "context-memory"
+  },
+  "routing": {
+    "path": "topics/agents-workflows.md",
+    "anchor": "routing"
+  },
+  "trace": {
+    "path": "topics/observability-reliability.md",
+    "anchor": "trace"
+  },
+  "metrics": {
+    "path": "topics/observability-reliability.md",
+    "anchor": "metrics"
+  },
+  "compiler": {
+    "path": "topics/systems-runtime.md",
+    "anchor": "compiler"
+  },
+  "fault": {
+    "path": "topics/observability-reliability.md",
+    "anchor": "fault"
+  },
+  "validation": {
+    "path": "topics/observability-reliability.md",
+    "anchor": "validation"
+  },
+  "multimodal": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "multimodal"
+  },
+  "diffusion": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "diffusion"
+  },
+  "recommendation": {
+    "path": "topics/models-deep-learning.md",
+    "anchor": "recommendation"
+  },
+  "api-framework": {
+    "path": "topics/systems-runtime.md",
+    "anchor": "api-framework"
+  }
+}

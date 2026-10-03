@@ -1,0 +1,2787 @@
+[
+  {
+    "id": "cloud-environment",
+    "title": "Cloud、云平台与云原生集群",
+    "topic": "cloud",
+    "aliases": [
+      "Cloud",
+      "cloud native",
+      "云",
+      "云原生",
+      "云平台",
+      "云集群",
+      "私有云",
+      "混合云",
+      "region",
+      "availability zone",
+      "VPC",
+      "subnet"
+    ],
+    "path": "topics/cloud-native-kubernetes.md",
+    "anchor": "cloud-environment",
+    "refs": [
+      "C01"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "added_v0.4.1",
+    "variant_count": 3
+  },
+  {
+    "id": "kubernetes-platform-logo",
+    "title": "Kubernetes Logo 与资源图标组合",
+    "topic": "cloud",
+    "aliases": [
+      "Kubernetes",
+      "K8s",
+      "logo",
+      "Logo",
+      "项目标识",
+      "平台标识",
+      "Pod 图标",
+      "Node 图标",
+      "Service 图标"
+    ],
+    "path": "topics/cloud-native-kubernetes.md",
+    "anchor": "kubernetes-platform-logo",
+    "refs": [
+      "C02",
+      "C04"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "added_v0.4.1",
+    "variant_count": 4
+  },
+  {
+    "id": "architecture-connections",
+    "title": "架构连接线、流向与关系",
+    "topic": "cloud",
+    "aliases": [
+      "连接线",
+      "连线",
+      "箭头",
+      "connector",
+      "edge",
+      "data flow",
+      "control flow",
+      "mapping",
+      "dependency",
+      "bus",
+      "switch",
+      "数据流",
+      "控制流",
+      "归属",
+      "局部展开"
+    ],
+    "path": "topics/cloud-native-kubernetes.md",
+    "anchor": "architecture-connections",
+    "refs": [
+      "C01",
+      "C03",
+      "C05"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "added_v0.4.1",
+    "variant_count": 3
+  },
+  {
+    "id": "cluster",
+    "title": "集群",
+    "topic": "hardware",
+    "aliases": [
+      "cluster",
+      "集群",
+      "异构集群",
+      "多租户",
+      "资源池",
+      "virtual cluster"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "cluster",
+    "refs": [
+      "R26",
+      "S03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "node",
+    "title": "计算节点与服务器",
+    "topic": "hardware",
+    "aliases": [
+      "node",
+      "worker",
+      "server",
+      "rack",
+      "NUMA",
+      "机架"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "node",
+    "refs": [
+      "R17"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "accelerator",
+    "title": "GPU 与加速卡",
+    "topic": "hardware",
+    "aliases": [
+      "GPU",
+      "NPU",
+      "TPU",
+      "FPGA",
+      "ASIC",
+      "加速卡",
+      "NVIDIA",
+      "AMD",
+      "昇腾",
+      "寒武纪",
+      "SM",
+      "Tensor Core"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "accelerator",
+    "refs": [
+      "R17",
+      "R18"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 5
+  },
+  {
+    "id": "compute",
+    "title": "线程、算子与计算单元",
+    "topic": "hardware",
+    "aliases": [
+      "warp",
+      "thread block",
+      "thread",
+      "kernel",
+      "SIMT",
+      "计算单元",
+      "stream"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "compute",
+    "refs": [
+      "R17",
+      "R18"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "network",
+    "title": "网络与互连",
+    "topic": "hardware",
+    "aliases": [
+      "PCIe",
+      "NVLink",
+      "NVSwitch",
+      "InfiniBand",
+      "RDMA",
+      "网络拓扑",
+      "带宽",
+      "link"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "network",
+    "refs": [
+      "R18"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "device-profile",
+    "title": "异构设备画像",
+    "topic": "hardware",
+    "aliases": [
+      "heterogeneous device",
+      "设备画像",
+      "算力",
+      "显存",
+      "带宽",
+      "CPU",
+      "GPU",
+      "NPU",
+      "TPU",
+      "FPGA",
+      "ASIC"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "device-profile",
+    "refs": [
+      "S01",
+      "S03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "numa-locality",
+    "title": "NUMA 与互连局部性",
+    "topic": "hardware",
+    "aliases": [
+      "NUMA",
+      "PCIe",
+      "NVLink",
+      "NVSwitch",
+      "RDMA",
+      "InfiniBand",
+      "locality"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "numa-locality",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "device-sharing-modes",
+    "title": "空间分区、时间共享与并发",
+    "topic": "hardware",
+    "aliases": [
+      "MIG",
+      "MPS",
+      "time slicing",
+      "GPU sharing",
+      "隔离",
+      "并发"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "device-sharing-modes",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "cpu-processor",
+    "title": "CPU、核心与主机处理",
+    "topic": "hardware",
+    "aliases": [
+      "CPU",
+      "processor",
+      "socket",
+      "core",
+      "vCPU",
+      "主机处理器",
+      "处理器封装"
+    ],
+    "path": "topics/hardware-cluster.md",
+    "anchor": "cpu-processor",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "added_v0.4.1",
+    "variant_count": 3
+  },
+  {
+    "id": "memory",
+    "title": "内存、显存与缓冲区",
+    "topic": "data",
+    "aliases": [
+      "显存",
+      "memory",
+      "HBM",
+      "DRAM",
+      "SRAM",
+      "register",
+      "共享内存",
+      "寄存器",
+      "buffer",
+      "memory pool"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "memory",
+    "refs": [
+      "R19",
+      "R22",
+      "S09"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "storage",
+    "title": "数据集与存储",
+    "topic": "data",
+    "aliases": [
+      "SSD",
+      "对象存储",
+      "dataset",
+      "数据集",
+      "文件",
+      "分区",
+      "shard",
+      "dataloader"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "storage",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "data-pipeline",
+    "title": "样本与数据加载",
+    "topic": "data",
+    "aliases": [
+      "sample",
+      "dataset",
+      "batch",
+      "microbatch",
+      "epoch",
+      "iteration",
+      "dataloader",
+      "预处理",
+      "数据加载"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "data-pipeline",
+    "refs": [
+      "R14",
+      "R16"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "host-device-buffer",
+    "title": "主机—设备传输与缓冲",
+    "topic": "data",
+    "aliases": [
+      "H2D",
+      "D2H",
+      "pinned memory",
+      "DMA",
+      "异步拷贝",
+      "buffer"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "host-device-buffer",
+    "refs": [
+      "S02"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "prefetch-double-buffer",
+    "title": "预取与双缓冲",
+    "topic": "data",
+    "aliases": [
+      "prefetch",
+      "double buffering",
+      "ping pong buffer",
+      "数据供给"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "prefetch-double-buffer",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "dataset-locality",
+    "title": "数据分片与缓存局部性",
+    "topic": "data",
+    "aliases": [
+      "dataset shard",
+      "data locality",
+      "数据缓存",
+      "数据集",
+      "object storage"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "dataset-locality",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "embedding-cache",
+    "title": "Embedding 查找与缓存",
+    "topic": "data",
+    "aliases": [
+      "embedding lookup",
+      "embedding table",
+      "cache miss",
+      "cache hit",
+      "稀疏特征"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "embedding-cache",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "virtual-physical-memory",
+    "title": "虚拟映射与分配器状态",
+    "topic": "data",
+    "aliases": [
+      "virtual memory",
+      "physical memory",
+      "allocator",
+      "page table",
+      "fragmentation",
+      "VMM"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "virtual-physical-memory",
+    "refs": [
+      "S09"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "storage-services",
+    "title": "本地、共享与云存储",
+    "topic": "data",
+    "aliases": [
+      "本地存储",
+      "SSD",
+      "NVMe",
+      "块存储",
+      "block storage",
+      "共享文件系统",
+      "file storage",
+      "对象存储",
+      "object storage",
+      "bucket",
+      "PV",
+      "PVC",
+      "挂载",
+      "存储服务"
+    ],
+    "path": "topics/data-memory-storage.md",
+    "anchor": "storage-services",
+    "refs": [
+      "C03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "added_v0.4.1",
+    "variant_count": 3
+  },
+  {
+    "id": "tensor",
+    "title": "张量、向量与矩阵",
+    "topic": "models",
+    "aliases": [
+      "tensor",
+      "matrix",
+      "vector",
+      "activation",
+      "feature",
+      "权重",
+      "梯度",
+      "SP",
+      "CP"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "tensor",
+    "refs": [
+      "R02",
+      "R06",
+      "R19"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 4
+  },
+  {
+    "id": "operator",
+    "title": "算子与算子融合",
+    "topic": "models",
+    "aliases": [
+      "operator",
+      "MatMul",
+      "ReLU",
+      "MLP",
+      "FFN",
+      "残差",
+      "normalization",
+      "算子融合"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "operator",
+    "refs": [
+      "R05",
+      "S07"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "network-model",
+    "title": "神经网络",
+    "topic": "models",
+    "aliases": [
+      "深度学习",
+      "神经网络",
+      "CNN",
+      "RNN",
+      "Transformer",
+      "encoder",
+      "decoder",
+      "大模型"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "network-model",
+    "refs": [
+      "R04",
+      "R07",
+      "R11"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "attention",
+    "title": "注意力机制",
+    "topic": "models",
+    "aliases": [
+      "attention",
+      "self-attention",
+      "cross-attention",
+      "QKV",
+      "causal mask",
+      "PagedAttention"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "attention",
+    "refs": [
+      "R08",
+      "R19"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "vision",
+    "title": "视觉网络与特征图",
+    "topic": "models",
+    "aliases": [
+      "CV",
+      "ViT",
+      "image patch",
+      "feature map",
+      "特征金字塔",
+      "DETR",
+      "Swin",
+      "图像"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "vision",
+    "refs": [
+      "R02",
+      "R14"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "gnn",
+    "title": "GNN 与图表示",
+    "topic": "models",
+    "aliases": [
+      "GNN",
+      "GCN",
+      "GAT",
+      "GraphSAGE",
+      "图神经网络",
+      "message passing",
+      "graph embedding"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "gnn",
+    "refs": [
+      "R03",
+      "R12",
+      "R20"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "moe",
+    "title": "MoE 与专家",
+    "topic": "models",
+    "aliases": [
+      "MoE",
+      "expert",
+      "router",
+      "gating",
+      "Top-k",
+      "dispatch",
+      "combine",
+      "EP",
+      "共享专家"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "moe",
+    "refs": [
+      "R09",
+      "R10"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "multimodal",
+    "title": "多模态模型",
+    "topic": "models",
+    "aliases": [
+      "VLM",
+      "multimodal",
+      "视觉语言模型",
+      "audio",
+      "video",
+      "跨模态",
+      "Gemini",
+      "Claude"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "multimodal",
+    "refs": [
+      "R13",
+      "R14",
+      "R11"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "diffusion",
+    "title": "扩散与生成模型",
+    "topic": "models",
+    "aliases": [
+      "diffusion",
+      "denoising",
+      "扩散模型",
+      "DiT",
+      "U-Net",
+      "生成模型",
+      "noise schedule"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "diffusion",
+    "refs": [
+      "R11",
+      "R02"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "recommendation",
+    "title": "推荐模型与稀疏特征",
+    "topic": "models",
+    "aliases": [
+      "推荐系统",
+      "DLRM",
+      "DeepFM",
+      "DCN",
+      "embedding table",
+      "稀疏特征",
+      "dense feature",
+      "cache locality"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "recommendation",
+    "refs": [
+      "R15",
+      "R16",
+      "R06"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "quantization",
+    "title": "量化与反量化",
+    "topic": "models",
+    "aliases": [
+      "quantization",
+      "dequantization",
+      "INT8",
+      "INT4",
+      "FP8",
+      "scale",
+      "zero point",
+      "PTQ",
+      "QAT"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "quantization",
+    "refs": [
+      "S08"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 3
+  },
+  {
+    "id": "sparsity",
+    "title": "剪枝与稀疏表示",
+    "topic": "models",
+    "aliases": [
+      "pruning",
+      "sparsity",
+      "structured",
+      "unstructured",
+      "N:M",
+      "mask"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "sparsity",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "distillation",
+    "title": "教师—学生蒸馏",
+    "topic": "models",
+    "aliases": [
+      "knowledge distillation",
+      "teacher",
+      "student",
+      "soft targets",
+      "temperature"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "distillation",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "attention-head-sharing",
+    "title": "MHA、GQA 与 MQA",
+    "topic": "models",
+    "aliases": [
+      "MHA",
+      "GQA",
+      "MQA",
+      "query head",
+      "KV head",
+      "head sharing"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "attention-head-sharing",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "feature-interaction",
+    "title": "推荐模型与特征交互",
+    "topic": "models",
+    "aliases": [
+      "DLRM",
+      "DeepFM",
+      "DCN",
+      "cross network",
+      "feature interaction",
+      "稠密特征",
+      "稀疏特征"
+    ],
+    "path": "topics/models-deep-learning.md",
+    "anchor": "feature-interaction",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "predictor",
+    "title": "预测器与代价模型",
+    "topic": "prediction",
+    "aliases": [
+      "性能预测",
+      "资源预测",
+      "GNN predictor",
+      "profiling",
+      "feature extraction",
+      "估计",
+      "regression",
+      "score"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "predictor",
+    "refs": [
+      "R03",
+      "R20",
+      "S01"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "graph-hardware-prediction",
+    "title": "计算图与硬件条件预测",
+    "topic": "prediction",
+    "aliases": [
+      "GNN predictor",
+      "任务性能预测",
+      "算子预测",
+      "hardware conditioned",
+      "计算图"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "graph-hardware-prediction",
+    "refs": [
+      "R03",
+      "S01"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "static-dynamic-features",
+    "title": "静态特征与动态观测",
+    "topic": "prediction",
+    "aliases": [
+      "static features",
+      "dynamic features",
+      "profiling",
+      "runtime state",
+      "工作负载特征"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "static-dynamic-features",
+    "refs": [
+      "S01"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "predictor-train-serve",
+    "title": "预测器离线训练与在线使用",
+    "topic": "prediction",
+    "aliases": [
+      "offline training",
+      "online prediction",
+      "model update",
+      "calibration",
+      "模型部署"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "predictor-train-serve",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "multi-target-prediction",
+    "title": "多目标性能与资源输出",
+    "topic": "prediction",
+    "aliases": [
+      "duration",
+      "CPU demand",
+      "host memory",
+      "GPU memory",
+      "multi task prediction"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "multi-target-prediction",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "interference-prediction",
+    "title": "共置干扰与性能预测",
+    "topic": "prediction",
+    "aliases": [
+      "interference",
+      "slowdown",
+      "co-location",
+      "contention",
+      "共置"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "interference-prediction",
+    "refs": [
+      "S03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "prediction-uncertainty",
+    "title": "预测范围、校准与泛化",
+    "topic": "prediction",
+    "aliases": [
+      "prediction interval",
+      "quantile",
+      "uncertainty",
+      "calibration",
+      "OOD",
+      "跨设备泛化"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "prediction-uncertainty",
+    "refs": [
+      "S01"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "trace-critical-path",
+    "title": "执行依赖与关键路径预测",
+    "topic": "prediction",
+    "aliases": [
+      "critical path",
+      "trace graph",
+      "dependency graph",
+      "end to end",
+      "makespan"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "trace-critical-path",
+    "refs": [
+      "S02"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "cost-model-search",
+    "title": "候选配置与代价模型搜索",
+    "topic": "prediction",
+    "aliases": [
+      "cost model",
+      "what if",
+      "configuration search",
+      "autotuning",
+      "代价模型"
+    ],
+    "path": "topics/performance-prediction.md",
+    "anchor": "cost-model-search",
+    "refs": [
+      "S07"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "scheduler",
+    "title": "调度器",
+    "topic": "scheduling",
+    "aliases": [
+      "scheduler",
+      "调度",
+      "admission",
+      "priority",
+      "FCFS",
+      "backfilling",
+      "EASY",
+      "Gang",
+      "Slurm",
+      "Volcano",
+      "Kueue"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "scheduler",
+    "refs": [
+      "R20",
+      "S03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "quota",
+    "title": "配额、借用与回收",
+    "topic": "scheduling",
+    "aliases": [
+      "quota",
+      "reservation",
+      "配额",
+      "预留",
+      "资源借用",
+      "超售",
+      "回收",
+      "弹性伸缩",
+      "公平性"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "quota",
+    "refs": [
+      "S03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "placement",
+    "title": "放置与候选比较",
+    "topic": "scheduling",
+    "aliases": [
+      "placement",
+      "affinity",
+      "locality",
+      "fragmentation",
+      "可行性",
+      "cost model",
+      "候选方案"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "placement",
+    "refs": [
+      "R26",
+      "S03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "sharing",
+    "title": "共享、隔离与干扰",
+    "topic": "scheduling",
+    "aliases": [
+      "MIG",
+      "MPS",
+      "timeslice",
+      "GPU sharing",
+      "资源隔离",
+      "超售",
+      "干扰",
+      "争用"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "sharing",
+    "refs": [
+      "S03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "admission-ranking",
+    "title": "准入、排序与放置",
+    "topic": "scheduling",
+    "aliases": [
+      "admission",
+      "ranking",
+      "dispatch",
+      "placement",
+      "调度阶段"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "admission-ranking",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "multi-resource-demand",
+    "title": "多资源需求与可行性",
+    "topic": "scheduling",
+    "aliases": [
+      "multi resource",
+      "CPU",
+      "memory",
+      "GPU",
+      "resource vector",
+      "需求向量"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "multi-resource-demand",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "gang-reservation",
+    "title": "Gang 与整组资源预留",
+    "topic": "scheduling",
+    "aliases": [
+      "gang scheduling",
+      "reservation",
+      "barrier",
+      "all or nothing"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "gang-reservation",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "backfill-window",
+    "title": "回填时间窗",
+    "topic": "scheduling",
+    "aliases": [
+      "backfilling",
+      "EASY",
+      "reservation time",
+      "回填"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "backfill-window",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "preempt-resume",
+    "title": "抢占、迁移与恢复",
+    "topic": "scheduling",
+    "aliases": [
+      "preemption",
+      "resume",
+      "checkpoint",
+      "migration",
+      "recovery cost"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "preempt-resume",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "elastic-allocation",
+    "title": "弹性分配与重配置",
+    "topic": "scheduling",
+    "aliases": [
+      "elastic training",
+      "scale up",
+      "scale down",
+      "resource reconfiguration"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "elastic-allocation",
+    "refs": [
+      "S03",
+      "S04"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "training-inference-reclaim",
+    "title": "在线推理与离线训练借还",
+    "topic": "scheduling",
+    "aliases": [
+      "训练推理混部",
+      "online offline",
+      "borrow reclaim",
+      "headroom",
+      "SLO"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "training-inference-reclaim",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "topology-placement",
+    "title": "碎片、局部性与拓扑放置",
+    "topic": "scheduling",
+    "aliases": [
+      "fragmentation",
+      "topology placement",
+      "affinity",
+      "packing"
+    ],
+    "path": "topics/scheduling-resources.md",
+    "anchor": "topology-placement",
+    "refs": [
+      "S03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "collective",
+    "title": "集合通信",
+    "topic": "training",
+    "aliases": [
+      "AllReduce",
+      "AllGather",
+      "ReduceScatter",
+      "All-to-All",
+      "NCCL",
+      "集合通信"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "collective",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "training",
+    "title": "训练迭代",
+    "topic": "training",
+    "aliases": [
+      "forward",
+      "backward",
+      "optimizer",
+      "前向传播",
+      "反向传播",
+      "梯度累积",
+      "参数更新",
+      "预训练"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "training",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "parallelism",
+    "title": "分布式并行",
+    "topic": "training",
+    "aliases": [
+      "DP",
+      "TP",
+      "PP",
+      "数据并行",
+      "张量并行",
+      "流水线并行",
+      "多机多卡",
+      "Megatron"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "parallelism",
+    "refs": [
+      "S04",
+      "R24"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "training-state",
+    "title": "训练状态内存",
+    "topic": "training",
+    "aliases": [
+      "parameters",
+      "gradients",
+      "optimizer states",
+      "ZeRO",
+      "FSDP",
+      "Adam",
+      "模型状态"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "training-state",
+    "refs": [
+      "R24"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "peft",
+    "title": "微调、LoRA 与 Adapter",
+    "topic": "training",
+    "aliases": [
+      "SFT",
+      "LoRA",
+      "Adapter",
+      "PEFT",
+      "微调"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "peft",
+    "refs": [
+      "R01"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "checkpoint",
+    "title": "检查点、恢复与重计算",
+    "topic": "training",
+    "aliases": [
+      "checkpoint",
+      "恢复",
+      "容错",
+      "重计算",
+      "rematerialization",
+      "activation checkpoint",
+      "弹性训练"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "checkpoint",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "data-parallel",
+    "title": "数据并行与梯度同步",
+    "topic": "training",
+    "aliases": [
+      "DP",
+      "DDP",
+      "data parallel",
+      "AllReduce"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "data-parallel",
+    "refs": [
+      "S04",
+      "S06"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "tensor-parallel",
+    "title": "张量并行",
+    "topic": "training",
+    "aliases": [
+      "TP",
+      "tensor parallel",
+      "row parallel",
+      "column parallel",
+      "matrix shard"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "tensor-parallel",
+    "refs": [
+      "S04"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "pipeline-microbatch",
+    "title": "流水线、microbatch 与气泡",
+    "topic": "training",
+    "aliases": [
+      "PP",
+      "1F1B",
+      "pipeline parallel",
+      "microbatch",
+      "bubble"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "pipeline-microbatch",
+    "refs": [
+      "S04"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "expert-parallel",
+    "title": "专家并行与 token 分派",
+    "topic": "training",
+    "aliases": [
+      "EP",
+      "expert parallel",
+      "All-to-All",
+      "token dispatch",
+      "combine"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "expert-parallel",
+    "refs": [
+      "S04"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "sequence-context-parallel",
+    "title": "序列并行与上下文并行",
+    "topic": "training",
+    "aliases": [
+      "SP",
+      "CP",
+      "sequence parallel",
+      "context parallel",
+      "long context"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "sequence-context-parallel",
+    "refs": [
+      "S04"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "fsdp-reshard",
+    "title": "FSDP 与状态聚合再分片",
+    "topic": "training",
+    "aliases": [
+      "FSDP",
+      "ZeRO",
+      "all gather",
+      "reduce scatter",
+      "reshard"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "fsdp-reshard",
+    "refs": [
+      "S06"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "gradient-overlap",
+    "title": "梯度分桶与通信重叠",
+    "topic": "training",
+    "aliases": [
+      "gradient bucket",
+      "backward",
+      "communication overlap",
+      "梯度同步"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "gradient-overlap",
+    "refs": [
+      "S02",
+      "S06"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "optimizer-offload",
+    "title": "优化器状态与卸载",
+    "topic": "training",
+    "aliases": [
+      "optimizer offload",
+      "CPU offload",
+      "NVMe offload",
+      "weights gradients states"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "optimizer-offload",
+    "refs": [
+      "S06"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "mixed-precision",
+    "title": "混合精度与损失缩放",
+    "topic": "training",
+    "aliases": [
+      "mixed precision",
+      "BF16",
+      "FP16",
+      "FP32",
+      "loss scaling",
+      "master weights"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "mixed-precision",
+    "refs": [
+      "S06"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "activation-recompute",
+    "title": "激活检查点与重计算",
+    "topic": "training",
+    "aliases": [
+      "activation checkpoint",
+      "recompute",
+      "rematerialization"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "activation-recompute",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "async-checkpoint",
+    "title": "异步检查点与可靠恢复",
+    "topic": "training",
+    "aliases": [
+      "asynchronous checkpoint",
+      "snapshot",
+      "durable",
+      "checkpoint manifest"
+    ],
+    "path": "topics/training-distributed.md",
+    "anchor": "async-checkpoint",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "model-roles",
+    "title": "模型角色",
+    "topic": "rl",
+    "aliases": [
+      "target",
+      "draft",
+      "teacher",
+      "student",
+      "Actor",
+      "Critic",
+      "Reward Model",
+      "Reference Model"
+    ],
+    "path": "topics/rl-alignment.md",
+    "anchor": "model-roles",
+    "refs": [
+      "AG05",
+      "S05"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "rl",
+    "title": "强化学习与对齐",
+    "topic": "rl",
+    "aliases": [
+      "RLHF",
+      "RLAIF",
+      "PPO",
+      "GRPO",
+      "DPO",
+      "rollout",
+      "trajectory",
+      "policy",
+      "reward",
+      "advantage",
+      "经验缓冲区"
+    ],
+    "path": "topics/rl-alignment.md",
+    "anchor": "rl",
+    "refs": [
+      "S05",
+      "AG05"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "rl-rollout-train",
+    "title": "Rollout、评分与策略更新",
+    "topic": "rl",
+    "aliases": [
+      "rollout",
+      "PPO",
+      "GRPO",
+      "actor",
+      "critic",
+      "reference",
+      "reward model",
+      "RLHF"
+    ],
+    "path": "topics/rl-alignment.md",
+    "anchor": "rl-rollout-train",
+    "refs": [
+      "S05"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "policy-version",
+    "title": "异步采样与策略版本",
+    "topic": "rl",
+    "aliases": [
+      "policy version",
+      "staleness",
+      "async rollout",
+      "weight synchronization"
+    ],
+    "path": "topics/rl-alignment.md",
+    "anchor": "policy-version",
+    "refs": [
+      "S05"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "reward-advantage-mask",
+    "title": "奖励、优势与样本掩码",
+    "topic": "rl",
+    "aliases": [
+      "reward",
+      "advantage",
+      "mask",
+      "log probability",
+      "credit assignment"
+    ],
+    "path": "topics/rl-alignment.md",
+    "anchor": "reward-advantage-mask",
+    "refs": [
+      "S05"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "sft-dpo",
+    "title": "SFT 与偏好优化",
+    "topic": "rl",
+    "aliases": [
+      "SFT",
+      "DPO",
+      "preference pair",
+      "chosen rejected",
+      "监督微调"
+    ],
+    "path": "topics/rl-alignment.md",
+    "anchor": "sft-dpo",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "model-instance",
+    "title": "模型身份与实例",
+    "topic": "inference",
+    "aliases": [
+      "LLM",
+      "VLM",
+      "model instance",
+      "replica",
+      "shard",
+      "Qwen",
+      "千问",
+      "DeepSeek",
+      "Llama",
+      "Gemma",
+      "Mistral",
+      "GPT"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "model-instance",
+    "refs": [
+      "R07",
+      "R24"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "request",
+    "title": "请求",
+    "topic": "inference",
+    "aliases": [
+      "request",
+      "请求",
+      "prompt",
+      "endpoint",
+      "query",
+      "tokenization"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "request",
+    "refs": [
+      "R21",
+      "R06",
+      "R10"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "batch",
+    "title": "批处理与运行集合",
+    "topic": "inference",
+    "aliases": [
+      "batching",
+      "continuous batching",
+      "dynamic batching",
+      "请求池",
+      "waiting",
+      "running",
+      "并发请求"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "batch",
+    "refs": [
+      "R21",
+      "R10",
+      "R25"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "token",
+    "title": "Token 与生成候选",
+    "topic": "inference",
+    "aliases": [
+      "token",
+      "prompt",
+      "decode",
+      "sampling",
+      "EOS",
+      "speculative",
+      "token tree",
+      "accepted",
+      "rejected"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "token",
+    "refs": [
+      "R06",
+      "R14",
+      "R23"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "prefill-decode",
+    "title": "Prefill / Decode",
+    "topic": "inference",
+    "aliases": [
+      "prefill",
+      "decode",
+      "chunked prefill",
+      "PD分离",
+      "vLLM",
+      "SGLang",
+      "TensorRT-LLM"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "prefill-decode",
+    "refs": [
+      "R25",
+      "R21"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "kv-cache",
+    "title": "KV Cache 与前缀共享",
+    "topic": "inference",
+    "aliases": [
+      "KV Cache",
+      "block table",
+      "逻辑块",
+      "物理块",
+      "prefix cache",
+      "radix tree",
+      "引用计数",
+      "eviction"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "kv-cache",
+    "refs": [
+      "R22",
+      "R23",
+      "R19"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "model-loading",
+    "title": "模型加载与驻留",
+    "topic": "inference",
+    "aliases": [
+      "cold start",
+      "warmup",
+      "resident",
+      "offloading",
+      "preload",
+      "模型加载",
+      "卸载",
+      "实例复用"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "model-loading",
+    "refs": [
+      "R07",
+      "R22",
+      "R28"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "pd-handoff",
+    "title": "Prefill／Decode 分离与 KV 交接",
+    "topic": "inference",
+    "aliases": [
+      "PD disaggregation",
+      "prefill",
+      "decode",
+      "KV transfer",
+      "DistServe"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "pd-handoff",
+    "refs": [
+      "S10"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "chunked-prefill",
+    "title": "分块 Prefill 与连续批次",
+    "topic": "inference",
+    "aliases": [
+      "chunked prefill",
+      "continuous batching",
+      "decode priority",
+      "token budget"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "chunked-prefill",
+    "refs": [
+      "R21",
+      "R25"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "speculative-verification",
+    "title": "投机生成、验证与回退",
+    "topic": "inference",
+    "aliases": [
+      "speculative decoding",
+      "target",
+      "draft",
+      "accept reject",
+      "token tree"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "speculative-verification",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "prefix-cache-lifecycle",
+    "title": "前缀共享、引用与驱逐",
+    "topic": "inference",
+    "aliases": [
+      "prefix cache",
+      "radix tree",
+      "refcount",
+      "cache eviction",
+      "SGLang",
+      "KV reuse"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "prefix-cache-lifecycle",
+    "refs": [
+      "R23",
+      "S09"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "multi-model-lora-serving",
+    "title": "多模型与多 LoRA 服务",
+    "topic": "inference",
+    "aliases": [
+      "multi model",
+      "multi LoRA",
+      "adapter serving",
+      "model switch",
+      "base weights"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "multi-model-lora-serving",
+    "refs": [
+      "R01"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "expert-residency",
+    "title": "专家驻留、缓存与搬移",
+    "topic": "inference",
+    "aliases": [
+      "MoE inference",
+      "expert offload",
+      "expert residency",
+      "expert cache"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "expert-residency",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "inference-budget",
+    "title": "推理资源预算与准入",
+    "topic": "inference",
+    "aliases": [
+      "KV budget",
+      "token budget",
+      "batch budget",
+      "memory admission",
+      "OOM"
+    ],
+    "path": "topics/inference-serving.md",
+    "anchor": "inference-budget",
+    "refs": [
+      "S09",
+      "S10"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "deployment",
+    "title": "容器与运行环境",
+    "topic": "systems",
+    "aliases": [
+      "Kubernetes",
+      "K8s",
+      "Pod",
+      "Docker",
+      "VM",
+      "微服务",
+      "Serverless",
+      "runtime",
+      "device plugin",
+      "控制面",
+      "数据面"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "deployment",
+    "refs": [
+      "S11"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "compiler",
+    "title": "编译器与执行优化",
+    "topic": "systems",
+    "aliases": [
+      "PyTorch",
+      "JAX",
+      "TensorFlow",
+      "CUDA",
+      "ROCm",
+      "Triton",
+      "TVM",
+      "XLA",
+      "MLIR",
+      "TensorRT",
+      "CUDA Graph",
+      "kernel fusion"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "compiler",
+    "refs": [
+      "S07"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "api-framework",
+    "title": "框架、机构与服务边界",
+    "topic": "systems",
+    "aliases": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind",
+      "Hugging Face",
+      "OpenAI API",
+      "Ray",
+      "Ray Serve",
+      "ONNX Runtime",
+      "TGI",
+      "llama.cpp",
+      "Triton Inference Server"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "api-framework",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "controller-reconcile",
+    "title": "控制器与协调循环",
+    "topic": "systems",
+    "aliases": [
+      "controller",
+      "reconcile",
+      "desired state",
+      "observed state",
+      "Kubernetes"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "controller-reconcile",
+    "refs": [
+      "S11"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "watch-workqueue",
+    "title": "Watch、缓存与工作队列",
+    "topic": "systems",
+    "aliases": [
+      "watch",
+      "informer",
+      "workqueue",
+      "CRD",
+      "event stream",
+      "object key"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "watch-workqueue",
+    "refs": [
+      "S11"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "pod-execution-chain",
+    "title": "调度绑定与节点执行",
+    "topic": "systems",
+    "aliases": [
+      "Pod",
+      "scheduler",
+      "kubelet",
+      "CRI",
+      "CNI",
+      "containerd",
+      "device plugin"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "pod-execution-chain",
+    "refs": [
+      "S11"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "device-runtime-driver",
+    "title": "设备插件、运行时与驱动",
+    "topic": "systems",
+    "aliases": [
+      "device plugin",
+      "driver",
+      "runtime",
+      "CUDA",
+      "ROCm",
+      "device allocation"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "device-runtime-driver",
+    "refs": [
+      "S11",
+      "S12"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "process-isolation",
+    "title": "进程、线程与隔离边界",
+    "topic": "systems",
+    "aliases": [
+      "process",
+      "thread",
+      "namespace",
+      "cgroup",
+      "sandbox",
+      "container",
+      "VM"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "process-isolation",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "rpc-event-runtime",
+    "title": "RPC、IPC 与事件循环",
+    "topic": "systems",
+    "aliases": [
+      "RPC",
+      "IPC",
+      "event loop",
+      "callback",
+      "async future",
+      "消息"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "rpc-event-runtime",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "backpressure",
+    "title": "背压与流量控制",
+    "topic": "systems",
+    "aliases": [
+      "backpressure",
+      "bounded queue",
+      "rate limit",
+      "credit",
+      "flow control"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "backpressure",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "compiler-lowering",
+    "title": "IR、图重写与代码生成",
+    "topic": "systems",
+    "aliases": [
+      "IR",
+      "lowering",
+      "codegen",
+      "compiler",
+      "TVM",
+      "MLIR",
+      "Triton",
+      "XLA"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "compiler-lowering",
+    "refs": [
+      "S07"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "cuda-graph",
+    "title": "CUDA Graph 捕获与重放",
+    "topic": "systems",
+    "aliases": [
+      "CUDA Graph",
+      "capture",
+      "instantiate",
+      "replay",
+      "launch overhead"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "cuda-graph",
+    "refs": [
+      "S12"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "microservice-dependency",
+    "title": "微服务调用图与执行资源",
+    "topic": "systems",
+    "aliases": [
+      "microservice",
+      "call graph",
+      "queueing",
+      "critical path",
+      "service mesh"
+    ],
+    "path": "topics/systems-runtime.md",
+    "anchor": "microservice-dependency",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "lifecycle",
+    "title": "对象生命周期",
+    "topic": "observability",
+    "aliases": [
+      "load",
+      "ready",
+      "running",
+      "done",
+      "release",
+      "free",
+      "evict",
+      "unload",
+      "生命周期"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "lifecycle",
+    "refs": [
+      "R23",
+      "S09"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "slo",
+    "title": "SLO 与性能记录",
+    "topic": "observability",
+    "aliases": [
+      "TTFT",
+      "TPOT",
+      "TBT",
+      "latency",
+      "tail latency",
+      "throughput",
+      "QPS",
+      "tokens/s",
+      "deadline",
+      "SLO"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "slo",
+    "refs": [
+      "S10"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "trace",
+    "title": "执行轨迹与链路追踪",
+    "topic": "observability",
+    "aliases": [
+      "trace",
+      "span",
+      "event",
+      "日志",
+      "执行轨迹",
+      "parent span",
+      "调用链"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "trace",
+    "refs": [
+      "S02"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "metrics",
+    "title": "指标与性能观测",
+    "topic": "observability",
+    "aliases": [
+      "metrics",
+      "Prometheus",
+      "Grafana",
+      "DCGM",
+      "NVML",
+      "Nsight",
+      "SMActive",
+      "SMOcc",
+      "GPUUtil",
+      "DRAMActive",
+      "profiling",
+      "Roofline",
+      "MFU"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "metrics",
+    "refs": [
+      "S01",
+      "S02"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "fault",
+    "title": "故障、版本与恢复",
+    "topic": "observability",
+    "aliases": [
+      "failed",
+      "cancelled",
+      "timeout",
+      "resume",
+      "failover",
+      "健康状态",
+      "checkpoint",
+      "故障域"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "fault",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "validation",
+    "title": "验证、记录与选择结果",
+    "topic": "observability",
+    "aliases": [
+      "record",
+      "score",
+      "prediction",
+      "validation",
+      "test",
+      "可行性",
+      "验证结果",
+      "human-in-the-loop"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "validation",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "profiling-window",
+    "title": "采样窗口与硬件计数器",
+    "topic": "observability",
+    "aliases": [
+      "profiling",
+      "NVML",
+      "DCGM",
+      "SM Active",
+      "SMOcc",
+      "DRAM Active",
+      "GPUUtil"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "profiling-window",
+    "refs": [
+      "S01",
+      "S02"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "trace-correlation",
+    "title": "任务、算子与内核关联",
+    "topic": "observability",
+    "aliases": [
+      "trace correlation",
+      "span",
+      "kernel",
+      "operator",
+      "correlation ID",
+      "调用链"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "trace-correlation",
+    "refs": [
+      "S02"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "bottleneck-roofline",
+    "title": "计算、访存与通信瓶颈",
+    "topic": "observability",
+    "aliases": [
+      "roofline",
+      "MFU",
+      "arithmetic intensity",
+      "compute bound",
+      "memory bound",
+      "bottleneck"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "bottleneck-roofline",
+    "refs": [
+      "S01"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "reliability-retry",
+    "title": "故障、重试与有效恢复",
+    "topic": "observability",
+    "aliases": [
+      "failure",
+      "retry",
+      "timeout",
+      "failover",
+      "health check",
+      "checkpoint recovery"
+    ],
+    "path": "topics/observability-reliability.md",
+    "anchor": "reliability-retry",
+    "refs": [],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "original_or_adapted_candidate",
+    "variant_count": 2
+  },
+  {
+    "id": "workflow",
+    "title": "工作流与 DAG",
+    "topic": "agent",
+    "aliases": [
+      "workflow",
+      "DAG",
+      "fork",
+      "join",
+      "dependency",
+      "前驱",
+      "后继",
+      "critical path",
+      "任务图"
+    ],
+    "path": "topics/agents-workflows.md",
+    "anchor": "workflow",
+    "refs": [
+      "R27",
+      "AG04"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 3
+  },
+  {
+    "id": "agent",
+    "title": "Agent 与多 Agent",
+    "topic": "agent",
+    "aliases": [
+      "Agent",
+      "planner",
+      "executor",
+      "coordinator",
+      "environment",
+      "action",
+      "observation",
+      "LangGraph",
+      "AutoGen"
+    ],
+    "path": "topics/agents-workflows.md",
+    "anchor": "agent",
+    "refs": [
+      "AG01",
+      "AG02",
+      "AG05"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "tool",
+    "title": "工具调用与产物",
+    "topic": "agent",
+    "aliases": [
+      "tool call",
+      "function call",
+      "MCP",
+      "工具",
+      "API",
+      "artifact",
+      "代码",
+      "测试",
+      "文件传递"
+    ],
+    "path": "topics/agents-workflows.md",
+    "anchor": "tool",
+    "refs": [
+      "AG03"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "context-memory",
+    "title": "上下文、记忆与 RAG",
+    "topic": "agent",
+    "aliases": [
+      "context window",
+      "memory",
+      "RAG",
+      "retrieval",
+      "vector database",
+      "检索",
+      "对话历史",
+      "共享状态"
+    ],
+    "path": "topics/agents-workflows.md",
+    "anchor": "context-memory",
+    "refs": [
+      "R23",
+      "R29"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  },
+  {
+    "id": "routing",
+    "title": "分支、路由与循环",
+    "topic": "agent",
+    "aliases": [
+      "conditional routing",
+      "branch",
+      "loop",
+      "router",
+      "状态机",
+      "FSM",
+      "条件分支"
+    ],
+    "path": "topics/agents-workflows.md",
+    "anchor": "routing",
+    "refs": [
+      "AG04"
+    ],
+    "recipe_status": "description_ready",
+    "image_status": "not_generated",
+    "origin": "migrated_normalized",
+    "variant_count": 2
+  }
+]

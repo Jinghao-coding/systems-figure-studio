@@ -1,0 +1,96 @@
+[
+  {
+    "id": "cloud",
+    "title": "Cloud 与云原生组合",
+    "path": "topics/cloud-native-kubernetes.md",
+    "scope": "云平台、Kubernetes Logo、连接线及相关节点、CPU/GPU、存储、控制与执行组件；下列关联条目复用主库，不重复计数。",
+    "related_ids": [
+      "cluster",
+      "node",
+      "cpu-processor",
+      "accelerator",
+      "device-profile",
+      "numa-locality",
+      "device-sharing-modes",
+      "network",
+      "memory",
+      "storage",
+      "storage-services",
+      "dataset-locality",
+      "host-device-buffer",
+      "deployment",
+      "controller-reconcile",
+      "watch-workqueue",
+      "pod-execution-chain",
+      "device-runtime-driver",
+      "microservice-dependency",
+      "rpc-event-runtime"
+    ]
+  },
+  {
+    "id": "hardware",
+    "title": "硬件与异构集群",
+    "path": "topics/hardware-cluster.md",
+    "scope": "集群、节点、GPU／加速卡、内部执行单元、互连与共享方式"
+  },
+  {
+    "id": "data",
+    "title": "数据、内存与存储",
+    "path": "topics/data-memory-storage.md",
+    "scope": "数据集、样本、存储、搬移、缓冲、局部性与内存映射"
+  },
+  {
+    "id": "models",
+    "title": "深度学习与模型结构",
+    "path": "topics/models-deep-learning.md",
+    "scope": "神经网络、张量、Attention、GNN、MoE、视觉、多模态、推荐与压缩"
+  },
+  {
+    "id": "prediction",
+    "title": "任务性能预测",
+    "path": "topics/performance-prediction.md",
+    "scope": "任务结构、硬件条件、静动态特征、预测器训练使用、多目标、干扰与不确定性"
+  },
+  {
+    "id": "scheduling",
+    "title": "集群调度与资源管理",
+    "path": "topics/scheduling-resources.md",
+    "scope": "准入、排序、放置、配额、Gang、回填、抢占、弹性与训推借还"
+  },
+  {
+    "id": "training",
+    "title": "训练、微调与分布式执行",
+    "path": "topics/training-distributed.md",
+    "scope": "前反向、并行、通信、状态分片、微调、混合精度与检查点"
+  },
+  {
+    "id": "rl",
+    "title": "强化学习与对齐",
+    "path": "topics/rl-alignment.md",
+    "scope": "采样、评分、策略更新、异步版本、样本信号、SFT 与偏好优化"
+  },
+  {
+    "id": "inference",
+    "title": "LLM 推理与服务",
+    "path": "topics/inference-serving.md",
+    "scope": "请求、批次、实例、阶段分离、KV、投机、驻留与资源预算"
+  },
+  {
+    "id": "systems",
+    "title": "系统软件与运行时",
+    "path": "topics/systems-runtime.md",
+    "scope": "控制器、工作队列、容器、驱动、进程、异步执行、编译与图重放"
+  },
+  {
+    "id": "observability",
+    "title": "可观测性与可靠性",
+    "path": "topics/observability-reliability.md",
+    "scope": "指标、执行轨迹、瓶颈、SLO、对象状态、故障与恢复"
+  },
+  {
+    "id": "agent",
+    "title": "Agent 与工作流",
+    "path": "topics/agents-workflows.md",
+    "scope": "保留已认可的 Agent 身份、协作、消息、工具、产物与执行映射画法"
+  }
+]

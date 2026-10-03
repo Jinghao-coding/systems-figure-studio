@@ -1,0 +1,118 @@
+{
+  "source": "source-sheet.png",
+  "provenance": "User supplied approved sprite sheet on 2026-10-02; isolated using lossless SVG viewports, no regeneration.",
+  "items": [
+    {
+      "id": "sample-pages",
+      "title": "训练样本页束",
+      "crop": [
+        280,
+        72,
+        295,
+        288
+      ],
+      "file": "sample-pages.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object"
+    },
+    {
+      "id": "neural-network",
+      "title": "神经网络",
+      "crop": [
+        645,
+        65,
+        560,
+        285
+      ],
+      "file": "neural-network.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object"
+    },
+    {
+      "id": "token-strip",
+      "title": "空白 Token 条",
+      "crop": [
+        298,
+        514,
+        456,
+        85
+      ],
+      "file": "token-strip.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object"
+    },
+    {
+      "id": "layered-model",
+      "title": "层叠模型",
+      "crop": [
+        806,
+        406,
+        333,
+        342
+      ],
+      "file": "layered-model.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object"
+    },
+    {
+      "id": "agent-role",
+      "title": "智能体角色",
+      "crop": [
+        287,
+        777,
+        197,
+        237
+      ],
+      "file": "agent-role.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object"
+    },
+    {
+      "id": "agent-model",
+      "title": "智能体模型（原图底部截断）",
+      "crop": [
+        493,
+        763,
+        268,
+        261
+      ],
+      "file": "agent-model.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "source-truncated-reference-only"
+    },
+    {
+      "id": "terminal-web-tool",
+      "title": "终端与网络工具",
+      "crop": [
+        795,
+        794,
+        252,
+        197
+      ],
+      "file": "terminal-web-tool.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object"
+    },
+    {
+      "id": "result-document",
+      "title": "结果文档",
+      "crop": [
+        1078,
+        796,
+        158,
+        191
+      ],
+      "file": "result-document.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object"
+    }
+  ]
+}

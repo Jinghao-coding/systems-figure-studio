@@ -1,0 +1,4 @@
+* text=auto
+*.md text eol=lf whitespace=-blank-at-eol
+*.py text eol=lf
+*.png binary

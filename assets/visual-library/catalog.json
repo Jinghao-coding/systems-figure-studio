@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "mixed-task-scenes",
+      "file": "mixed-task-scenes-reference.png",
+      "status": "historical-visual-reference-with-known-semantic-error",
+      "provenance": "GPT Image concept recorded during project development on 2026-10-02",
+      "scope": [
+        "sample-pages",
+        "neural-network",
+        "layered-model",
+        "agent-role",
+        "terminal-web-tool",
+        "result-document",
+        "tensor-planes",
+        "kv-pairs"
+      ],
+      "reuse": "Inspect original pixels. Extract or regenerate isolated elements without labels/arrow remnants; do not treat entire scientific diagram as verified.",
+      "scientific_correction": "Original Agent KV gaps incorrectly conflate waiting time with missing cache; retained KV should be continuous.",
+      "publication_rights": "No third-party license asserted; not official product imagery."
+    },
+    {
+      "id": "mixed-task-scenes-unified",
+      "file": "mixed-task-scenes-unified.png",
+      "status": "inspected-whole-figure-reference",
+      "provenance": "GPT Image edit of the historical concept, 2026-10-02",
+      "scope": [
+        "coherent-model-weight-identity",
+        "paired-kv",
+        "continuous-retained-kv",
+        "training-inference-agent-scenes"
+      ],
+      "reuse": "Whole-figure reference. Labels are embedded; extract/regenerate clean isolated objects before mixing with new labels. No claim of separate vector editability."
+    },
+    {
+      "id": "mixed-task-element-sample-pages",
+      "title": "训练样本页束",
+      "crop": [
+        280,
+        72,
+        295,
+        288
+      ],
+      "file": "mixed-task-elements/sample-pages.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object",
+      "source": "mixed-task-elements/source-sheet.png",
+      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+    },
+    {
+      "id": "mixed-task-element-neural-network",
+      "title": "神经网络",
+      "crop": [
+        645,
+        65,
+        560,
+        285
+      ],
+      "file": "mixed-task-elements/neural-network.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object",
+      "source": "mixed-task-elements/source-sheet.png",
+      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+    },
+    {
+      "id": "mixed-task-element-token-strip",
+      "title": "空白 Token 条",
+      "crop": [
+        298,
+        514,
+        456,
+        85
+      ],
+      "file": "mixed-task-elements/token-strip.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object",
+      "source": "mixed-task-elements/source-sheet.png",
+      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+    },
+    {
+      "id": "mixed-task-element-layered-model",
+      "title": "层叠模型",
+      "crop": [
+        806,
+        406,
+        333,
+        342
+      ],
+      "file": "mixed-task-elements/layered-model.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object",
+      "source": "mixed-task-elements/source-sheet.png",
+      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+    },
+    {
+      "id": "mixed-task-element-agent-role",
+      "title": "智能体角色",
+      "crop": [
+        287,
+        777,
+        197,
+        237
+      ],
+      "file": "mixed-task-elements/agent-role.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object",
+      "source": "mixed-task-elements/source-sheet.png",
+      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+    },
+    {
+      "id": "mixed-task-element-agent-model",
+      "title": "智能体模型（原图底部截断）",
+      "crop": [
+        493,
+        763,
+        268,
+        261
+      ],
+      "file": "mixed-task-elements/agent-model.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "source-truncated-reference-only",
+      "source": "mixed-task-elements/source-sheet.png",
+      "reuse": "Do not use cropped-bottom variant in final figure; use layered-model.svg instead."
+    },
+    {
+      "id": "mixed-task-element-terminal-web-tool",
+      "title": "终端与网络工具",
+      "crop": [
+        795,
+        794,
+        252,
+        197
+      ],
+      "file": "mixed-task-elements/terminal-web-tool.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object",
+      "source": "mixed-task-elements/source-sheet.png",
+      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+    },
+    {
+      "id": "mixed-task-element-result-document",
+      "title": "结果文档",
+      "crop": [
+        1078,
+        796,
+        158,
+        191
+      ],
+      "file": "mixed-task-elements/result-document.svg",
+      "format": "SVG viewport containing original PNG pixels",
+      "native_vector": false,
+      "status": "isolated-label-free-object",
+      "source": "mixed-task-elements/source-sheet.png",
+      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+    },
+    {
+      "id": "gpu-flat-native",
+      "file": "gpu-flat-native.drawio",
+      "status": "native-editable-vector",
+      "provenance": "Scientific Illustrator live draw.io graph API, 2026-10-02",
+      "scope": [
+        "gpu-card",
+        "device-identity"
+      ],
+      "reuse": "Editable PCB, bracket, package, memory chips and contacts. Device identifier only; does not encode resource partitions."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "agents-approved-samples.md": {
+    "body_hash": "84e5e002429af9eb6bea9bfdfde6f398630d925a73e826810926cc4599c8f231",
+    "source_name": "agents-workflows.md",
+    "written_body_hash": "87612dca500dca8b4dde5cafaf7d8ad7edd743d3a5edd94974b039be3244a1a0",
+    "semantic_recipe_changes": false,
+    "import_written_body_hash": "5285111e670e86b99df6d88a2afd2de923f2066a2b4561d98d6e4f28da67e395",
+    "public_release_edit": "Clarify historical status wording; drawing recipes unchanged."
+  },
+  "agents-arxiv-patterns.md": {
+    "body_hash": "b386853b394a96b2b44986a3b702d9615c3a3188a3c107859904956dce7b9cec",
+    "source_name": "agents-arxiv-patterns.md",
+    "written_body_hash": "b386853b394a96b2b44986a3b702d9615c3a3188a3c107859904956dce7b9cec",
+    "semantic_recipe_changes": false,
+    "import_written_body_hash": "b386853b394a96b2b44986a3b702d9615c3a3188a3c107859904956dce7b9cec",
+    "public_release_edit": "Clarify historical status wording; drawing recipes unchanged."
+  }
+}
