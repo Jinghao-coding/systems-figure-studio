@@ -5,128 +5,128 @@ description: Create and redraw figures for computer-systems conference papers, j
 
 # Systems Figure Studio
 
-根据论文对象与关系画图。统一维护模型、硬件、软件、调度与工作流的绘图方法：12 个主题、122 个词条、273 种构造，以及 Agent 样板和九种参考改编。全部主题、画法、工具和绘制规范属于这一个技能，适用于生图、原生可编辑绘制和已有图修订。画法来源与版本保留在 catalog/import.json。
+Draw the objects and relationships described in the manuscript. This skill maintains drawing methods for models, hardware, software, scheduling and workflows: 12 topics, 122 terms and 273 constructions, plus Agent samples and nine reference adaptations. All topics, recipes, tools and production rules belong to this one skill and support image generation, native editable drawing and revision of existing figures. Recipe provenance and versions are recorded in `catalog/import.json`.
 
-**默认工作流：理解文稿 → 确定图的解释作用 → 选择具体对象画法 → 组织关系与视觉风格 → 向用户展示设计与完整 Prompt → 绘制 → 对照设计检查实际图面。** 新图预览默认使用可用生图工具；明确要求原生图源或已有原生工程时沿用相应编辑方式。单纯改文字或颜色时保留已认可结构，不为走流程重新设计。
+**Default workflow: understand the manuscript → define the figure's explanatory role → select concrete object constructions → compose relationships and visual style → show the user the design and complete prompt → draw → inspect the actual image against the design.** Use an available image generation tool by default for new previews. When native sources are requested or a native project already exists, use the corresponding editing workflow. For text-only or color-only changes, preserve the accepted structure without redesigning it merely to follow the workflow.
 
-## 自动识别文稿类型与图中文字语言
+## Infer manuscript type and figure language
 
-同一技能覆盖学术会议论文、期刊论文和博士学位论文，包括各自的中文与英文文稿。先读目标文稿的标题、章节、相邻正文、图题和模板，判断图的用途、语言及版面；不把“会议／期刊”固定等同于英文，也不把“博士论文”固定等同于中文。
+Support conference papers, journal articles and doctoral dissertations in either Chinese or English. Read the destination manuscript's title, section, surrounding prose, caption and template to determine purpose, language and layout. Do not equate conferences or journals with English, or dissertations with Chinese.
 
-图中文字选择优先级：用户对本图的明确要求 → 目标章节与项目术语约定 → 目标正文和图题的主要语言。聊天语言、参考图语言和生图 Prompt 的书写语言不决定成图语言。英文小论文配图改编进中文大论文时，以目标中文章节为准；系统名、缩写、数学符号和代码标识保留既有写法。不因混有 GPU、KV Cache 等术语就生成双语标签。
+Choose figure labels in this order: explicit user requirements for this figure → destination chapter and project terminology → dominant language of the destination prose and caption. The conversation language, reference image language and generation prompt language do not determine the output language. When adapting an English paper figure for a Chinese dissertation, follow the destination Chinese chapter. Preserve established system names, acronyms, mathematical symbols and code identifiers. Terms such as GPU and KV Cache in Chinese prose do not imply a request for bilingual labels.
 
-材料足够时自动判断，在绘制前的说明中简短告知“用于哪类文稿、采用何种图中文字”。只有目标文稿缺失或同一任务中存在无法消解的语言冲突时才追问。按真实模板适配单栏、双栏或学位论文页宽；博士论文注意章节关系和术语一致性，会议／期刊论文按论证需要控制图内范围。详见 [文稿语境](references/document-contexts.md)。
+Infer these choices automatically when the materials suffice, and briefly state the target manuscript type and label language before drawing. Ask only when the destination is missing or the task contains unresolved language conflicts. Fit the actual single-column, double-column or dissertation page width. For dissertations, maintain chapter relationships and terminology; for conference and journal papers, scope each figure to its argument. See [document contexts](references/document-contexts.md).
 
-## 先选对象画法，再组织整图
+## Select object constructions before composing the figure
 
-新绘或实质重绘时，从下表直接打开相关主题，阅读实际词条及其具体构造，不能只读索引、记住词条名就开始画图。按图中的对象选择，通常跨几个主题组合；无需每次加载全库。整体维护知识库时再检查全部主题。
+For a new figure or substantial redraw, open the relevant topics below and read the actual entries and concrete constructions. Reading only an index or remembering entry names is insufficient. Select topics by the objects in the figure, usually combining several topics; do not load the entire library for every figure. Inspect all topics when maintaining the whole knowledge base.
 
-| 图中对象／需要解释的内容 | 直接阅读 | 可选构造示例 |
+| Objects or relationships to explain | Read directly | Example constructions |
 | --- | --- | --- |
-| 神经网络、Transformer、Attention、GNN、MoE、视觉与多模态 | [模型结构](topics/models-deep-learning.md) | 重复模型层并展开一层；圆节点网络；Q/K/V 平面；专家阵列与路由；不同模态形体 |
-| 模型实例、请求、token、KV、推测生成、Prefill/Decode | [推理服务](topics/inference-serving.md) | 层叠模型体；带内容的 token 带；缓存页映射；双模型候选树；KV 交接 |
-| CPU、GPU、加速卡、节点、集群与互连 | [硬件与集群](topics/hardware-cluster.md) | 板卡中央计算体与存储件；节点剖面；节点阵列与局部展开；异构属性带 |
-| Cloud、Kubernetes、平台 Logo、资源图标与连接 | [云平台与标识](topics/cloud-native-kubernetes.md) | 云轮廓与实际边界；Logo＋平台标题；资源图标与节点结构；有端口的连接 |
-| 数据集、张量、显存、缓冲、传输与存储 | [数据与存储](topics/data-memory-storage.md) | 样本页束；切片与向量带；占用／空闲条；逻辑物理映射；双缓冲 |
-| 性能预测、GNN 预测、静动态特征、代价与候选 | [性能预测](topics/performance-prediction.md) | 任务图＋设备条件；特征向量与输出记录；配对矩阵；配置扇面与唯一出口 |
-| 调度、配额、借还、共享、放置、抢占与弹性 | [调度与资源](topics/scheduling-resources.md) | 租户资源带；候选覆盖层；准入门与队列；时间窗；保存与恢复快照 |
-| 训练、并行、通信、LoRA、优化器与检查点 | [训练与分布式执行](topics/training-distributed.md) | 前反向双路径；rank 状态片；通信树／环；流水泳道；临时聚合与回收 |
-| RL、Actor/Critic、采样、版本、奖励、SFT/DPO | [强化学习与对齐](topics/rl-alignment.md) | 角色模型与不同输出；轨迹带；版本轨道；偏好双路 |
-| Agent、角色、工具、消息、上下文与工作流 | [Agent 与工作流](topics/agents-workflows.md)；[角色样板](topics/agents-approved-samples.md)；[九种组合](topics/agents-arxiv-patterns.md) | 同风格角色头像；工具与产物；局部状态回路；fork/join；角色—请求—设备映射 |
-| 框架、运行时、容器、控制器、编译器与服务 | [系统软件](topics/systems-runtime.md) | 规格／观测页与控制路径；容器归属；模型—运行时—服务映射；局部图重写 |
-| SLO、性能观测、执行轨迹、故障与恢复 | [观测与可靠性](topics/observability-reliability.md) | 时间括号；状态快照；指标抽条；任务与内核对齐；故障域与接管路径 |
+| Neural networks, Transformer, Attention, GNN, MoE, vision and multimodal models | [Model structures](topics/models-deep-learning.md) | Repeated model layers with one expanded; round-node networks; Q/K/V planes; expert arrays and routers; distinct modality shapes |
+| Model instances, requests, tokens, KV, speculative generation, prefill/decode | [Inference serving](topics/inference-serving.md) | Layered model bodies; token strips with content; cache-page mappings; dual-model candidate trees; KV handoffs |
+| CPUs, GPUs, accelerator cards, nodes, clusters and interconnects | [Hardware and clusters](topics/hardware-cluster.md) | Central compute package and memory on a board; node cross-sections; node arrays with local expansions; heterogeneous property strips |
+| Cloud, Kubernetes, platform logos, resource icons and connections | [Cloud platforms and symbols](topics/cloud-native-kubernetes.md) | Cloud contours and actual scope boundaries; logo plus platform title; resource icons and node structures; connections with ports |
+| Datasets, tensors, device memory, buffers, transfers and storage | [Data and storage](topics/data-memory-storage.md) | Bundled sample sheets; slices and vector strips; occupied/free strips; logical-to-physical mappings; double buffers |
+| Performance prediction, GNN prediction, static/dynamic features, costs and candidates | [Performance prediction](topics/performance-prediction.md) | Task graphs with device conditions; feature vectors and output records; paired matrices; configuration fans with a single exit |
+| Scheduling, quotas, lending/reclaiming, sharing, placement, preemption and elasticity | [Scheduling and resources](topics/scheduling-resources.md) | Tenant resource strips; candidate overlays; admission gates and queues; time windows; save/restore snapshots |
+| Training, parallelism, communication, LoRA, optimizers and checkpoints | [Training and distributed execution](topics/training-distributed.md) | Forward/backward paths; rank state tiles; communication trees/rings; pipeline lanes; temporary gathering and reclamation |
+| RL, Actor/Critic, rollouts, versions, rewards, SFT/DPO | [Reinforcement learning and alignment](topics/rl-alignment.md) | Role-specific models with distinct outputs; trajectory strips; version tracks; paired preference branches |
+| Agents, roles, tools, messages, context and workflows | [Agents and workflows](topics/agents-workflows.md); [role samples](topics/agents-approved-samples.md); [nine compositions](topics/agents-arxiv-patterns.md) | Consistent role avatars; tools and artifacts; local state loops; fork/join; role–request–device mappings |
+| Frameworks, runtimes, containers, controllers, compilers and services | [Systems software](topics/systems-runtime.md) | Desired/observed state records and control paths; container ownership; model–runtime–service mappings; local graph rewrites |
+| SLOs, performance observation, execution traces, faults and recovery | [Observability and reliability](topics/observability-reliability.md) | Time brackets; state snapshots; metric strips; task/kernel alignment; fault domains and takeover paths |
 
-词条名不明确时查 [完整索引](references/topic-index.md) 或 `catalog/index.json`；组合成图参考 [跨主题配方](examples/combined-recipes.md)。[离线指南](guide.html) 可浏览、搜索和复制全部文字画法。[维护说明](references/knowledge-base.md) 记录来源、扩充方法及校验入口。主题正文是唯一的画法维护源，保留全部变体，不将它们重复粘贴成另一套正文。
+When an entry name is unclear, consult the [full index](references/topic-index.md) or `catalog/index.json`. Use [cross-topic recipes](examples/combined-recipes.md) for compositions. The [offline guide](guide.html) supports browsing, searching and copying all textual constructions. [Knowledge-base maintenance](references/knowledge-base.md) records sources, extension methods and validation commands. Topic bodies are the single source of truth for recipes; retain all variants without copying them into a second body of instructions.
 
-### 把选中的配方落实到图面
+### Make selected recipes visible
 
-为需要具体表达的对象确定：**对象与角色 → 词条及变体 → 轮廓、部件和空间组织 → 标签与连接端点**。绘制前向用户简述关键对象的选择及实际形态；代码旁的注释或内部记录不能代替展示。关键是实际图中看得到这些部件与关系，不能只在交付说明中声称“使用了知识库”。
+For each object needing concrete representation, determine: **object and role → entry and variant → silhouette, parts and spatial organization → labels and connection endpoints**. Before drawing, briefly show the user the key choices and resulting visible forms. Code comments or private notes do not replace this disclosure. The actual figure must show the selected parts and relationships; a delivery statement claiming that the library was used is insufficient.
 
-例如训练总览可组合 `network-model` 的网络骨架与 `training` 的前反向路径；推理模型可用 `model-instance` 的层体，配 `token` 序列和 `kv-cache` 状态条；GPU 按当前作用从 `accelerator` 选择板卡身份、封装分解或计算结构，不固定为同一种板卡构造；平台用 `kubernetes-platform-logo` 的标题归属。具体结构仍由当前文稿决定，不因为库中有画法就自动增加某个模型、平台或部署。
+For example, a training overview can combine the network skeleton in `network-model` with the forward/backward paths in `training`. An inference model can use the layered body in `model-instance`, a `token` sequence and `kv-cache` state strips. For a GPU, choose board identity, an exploded package or compute structure from `accelerator` according to its role, rather than always using the same board construction. Use `kubernetes-platform-logo` for platform-title ownership. The manuscript determines the actual structure; the existence of a recipe does not justify adding a model, platform or deployment.
 
-只需身份时，图标＋短标签可以构成完整组件；需要解释机制时，展开局部网络、状态、数据或资源。允许结构式、图标式及二者组合，也允许协调的角色头像、适量装饰、轻微深度和少量亲和性细节；按对象身份、结构解释和整图效果取舍。不要把全部对象都变成写着名称的方框，也不要求每个小图标展开复杂内部结构。
+When identity alone matters, an icon and short label can form a complete component. When explaining a mechanism, expose the relevant local network, state, data or resources. Allow structural drawings, icons and combinations, including coordinated avatars, modest decoration, subtle depth and approachable details where useful. Balance identity, structural explanation and the whole composition. Avoid reducing every object to a named box or requiring complex internals in every small icon.
 
-**结构问题要改结构。** 用户指出对象抽象、形体单一或知识库未利用时，重新选择和展开相关组件。单纯换色、换标题或给同形框添加图标，不算完成这类重绘。
+**Fix structural problems through structural changes.** If the user finds objects abstract, shapes repetitive or the library unused, reselect and develop the relevant components. Recoloring, retitling or adding icons to otherwise identical boxes does not complete that redraw.
 
-实际图像与可复用造型见 [视觉素材库](references/visual-asset-library.md)。按需积累各类对象，区分已认可参考与已清理素材；接入前检查残留文字、断边和箭头。论文图可按用途采用 GPT Image 整图、混合素材或原生图元，不默认要求每张图可编辑。
+See the [visual asset library](references/visual-asset-library.md) for actual images and reusable forms. Accumulate useful objects as needed, distinguishing accepted references from cleaned assets; inspect leftover text, cropped edges and arrows before reuse. Figures may use GPT Image for the whole image, mixed assets or native primitives as appropriate. Editability is not required for every figure by default.
 
-## 按需生成新的局部元素
+## Generate new local elements when needed
 
-知识库是可改编的起点，不是封闭图库。没有合适构造，或已有构造在当前图中显得单调、不协调时，可使用 GPT Image／当前可用的图像生成工具设计局部元素，再用于整图。适用于 GPU、CPU、模型、存储、节点、Agent、工具、数据对象及其他需要定制造型的对象；不必等待用户逐个提出，也不要求先耗尽全部词条。按工具实际暴露的能力调用，不以 Prompt 中写模型名冒充已选择该模型。
+The knowledge base is an adaptable starting point, not a closed catalog. When no construction fits, or existing constructions look monotonous or inconsistent in the current composition, use GPT Image or the available image generator to design local elements for the figure. This applies to GPUs, CPUs, models, storage, nodes, Agents, tools, data objects and any other object requiring a custom form. Do not wait for the user to request every element or exhaust all entries first. Use capabilities actually exposed by the tool; writing a model name in a prompt does not select that model.
 
-选择整图生成、元素生成后组合，或先做代表组件再推广，取决于当前图的需要。局部生成时先展示元素用途、设计和完整 Prompt，生成后内联展示并检查，再把选定元素作为实际图像输入或素材参与整图；仅在提示词中提到文件名不算复用素材。颜色、视角、轮廓、光照与细节密度应在整图尺度上协调；可复用同一元素维持对象身份。
+Choose whole-image generation, separately generated elements followed by composition, or a representative component extended to the figure set according to the task. Before generating an element, show its purpose, design and complete prompt. Then display and inspect the result inline, and supply selected elements as actual image inputs or assets when composing the figure. Mentioning a filename in a prompt does not reuse its image. Coordinate color, perspective, silhouette, lighting and detail density at the final figure scale; reuse an element to preserve object identity.
 
-用于组合的独立元素通常生成透明背景，保留完整轮廓和接口留白；工具支持时实际设置透明背景参数。可变标签、数量、状态、连接箭头优先留到整图层表达，避免固化在元素像素中。生成构造不代表真实产品照片、官方 Logo、精确微架构或实验结果。具体 Prompt 与检查见 [元素生成](references/generation-prompts.md)。
+Standalone elements for composition usually need transparent backgrounds, complete contours and clear space for connections. Set the actual transparency parameter when supported. Keep variable labels, counts, states and arrows in the composition layer where possible instead of baking them into pixels. Generated constructions do not constitute real product photographs, official logos, precise microarchitectures or experimental results. See [element generation](references/generation-prompts.md) for prompts and checks.
 
-生成元素可以直接作为独立图片对象导入 draw.io 或 PPT，与原生文字、形状、连接线和分组共同组成可编辑文档。这是正常制作路径，无需额外要求用户确认“允许混合素材”。每个元素可独立移动、缩放、替换和组合；文字、箭头、状态标记及布局保持独立可编辑。只有用户明确要求全矢量或元素内部逐部件可编辑时，才以生成元素为参考重建内部形状。说明图片内部仍是像素即可，不把“可编辑 draw.io/PPT”自动解释为“所有元素必须矢量重建”，也不把整张图压成一张图片。保留有用的项目内素材和实际 Prompt，无需把每次候选都扩充成全局词条或重复备份。
+Generated elements may be imported directly into draw.io or PowerPoint as separate image objects alongside native text, shapes, connectors and groups. This is a normal production path and requires no additional permission to mix assets. Each element can be moved, resized, replaced and grouped independently; text, arrows, state markers and layout remain separately editable. Rebuild internal geometry from the generated reference only when the user explicitly requires full vector output or editing of individual internal parts. Explain that image interiors remain pixels without treating every editable draw.io/PPT request as a requirement to reconstruct all elements as vectors. Do not flatten the entire figure into one image. Retain useful project assets and actual prompts without turning every candidate into a global entry or creating duplicate backups.
 
-## 从画法到视觉设计
+## Develop recipes into visual designs
 
-知识库给出可选构造，不是固定图标模板。新绘、实质重绘或用户反馈“呆板、不好看”时，先读 [视觉选择与取舍](references/visual-quality.md)，再确定关键对象的**轮廓、比例、部件关系和细节尺度**。可借用已查看的用户图或知识库图例；缺少合适图例时自行设计，不把未见的来源当作视觉依据。
+Recipes provide alternative constructions, not fixed icon templates. For new figures, substantial redraws or feedback that a figure looks stiff or unattractive, first read [visual choices and trade-offs](references/visual-quality.md), then choose key objects' **silhouettes, proportions, part relationships and detail scale**. Draw on user references or library examples that have actually been inspected. Design missing forms yourself without claiming unseen sources as visual evidence.
 
-用户要求汲取论文绘图元素时，按当前对象检索并查看 AI 或系统顶会的实际图面，优先论文正式版或作者原稿。提炼轮廓、部件、分组、连线和颜色角色，按“来源与图号 → 保留元素 → 舍弃内容 → 适用对象”更新已有词条及来源记录；不要只添加论文链接，也不因顶会身份默认整图值得照搬。
+When the user requests inspiration from research figures, search for and inspect actual figures from leading AI or systems conferences relevant to the current objects, preferring official publications or author manuscripts. Extract silhouettes, parts, grouping, connections and color roles. Update existing entries and source records using “source and figure number → retained elements → omitted content → applicable objects.” Do not merely add paper links or assume that a conference's reputation makes an entire figure worth copying.
 
-先完成关键对象与一处代表性关系的实际图面，再据缩小效果推广到整组图。代表性预览也要向用户展示，并说明最终采用的造型；已授权绘制可继续，不把展示变成额外审批。GPU、模型和存储等对象应有适合当前尺寸的辨识特征；“已添加图标”或“包含了词条中的零件”不等于视觉达标。小尺寸可以简洁，大尺寸要避免空壳占位符；精度来自对象关系，不能靠堆叠引脚、螺丝或阴影制造。
+Produce an actual preview of a key object and one representative relationship, inspect it at reduced size, then extend the design to the figure set. Show the representative preview to the user and state the adopted form. Continue authorized drawing without turning this disclosure into another approval gate. GPUs, models and storage should have recognizable features at their intended size. Adding an icon or including recipe parts does not by itself establish visual quality. Small objects may be simple; large objects should avoid empty placeholders. Precision comes from object relationships, not accumulated pins, screws or shadows.
 
-构图按阅读关系选择路径、泳道、局部展开或状态对照。重复形状可用于同类对象，框线用于真实归属；不要为版面对称把所有对象装进同形卡片。对“呆板”的修订同时检查组件形态与整图主次、疏密和间距，不能只换色、加圆角或加厚度。技术正确性与视觉质量分别检查；不把更多细节视为必然更好看。
+Choose paths, lanes, local expansions or state comparisons according to the reading relationships. Reuse shapes for objects of the same kind and frames for real ownership. Do not force every object into an identical card for symmetry. Revisions addressing stiffness must examine both component forms and the whole figure's emphasis, density and spacing, beyond colors, rounded corners or thickness. Assess technical correctness and visual quality separately; more detail is not automatically more attractive.
 
-## 理解内容与确定范围
+## Understand the content and scope
 
-- **审阅／规划／查画法**：读材料后给具体建议或配方；不因有绘图工具就自动生成。
-- **新图／构图预览**：读文稿、选组件并生成图；按 [提示词规范](references/generation-prompts.md) 保存实际提示词与参考关系。
-- **修订／重绘**：检查原图与相邻正文，区分忠实复刻、翻译、局部修复和构图重做；保留已经认可的选择。
-- **原生编辑／正式接入**：用户要求 draw.io、PPT 等图源或已有原生工程时，读 [可编辑制作](references/editable-production.md)，使用对应方式。认可栅格草稿不自动意味着要求矢量化或接入正文。
-- **成组绘图**：每张图有明确解释作用，共用对象身份和视觉语言；不机械规定图数量、布局或章节覆盖。
+- **Review, planning or recipe lookup:** read the materials and provide concrete recommendations or recipes; tool availability alone does not authorize image generation.
+- **New figures or composition previews:** read the manuscript, select components and generate the figure; save actual prompts and reference roles following the [prompt guidance](references/generation-prompts.md).
+- **Revision or redrawing:** inspect the original figure and surrounding prose; distinguish faithful reconstruction, translation, local repair and redesign. Preserve accepted choices.
+- **Native editing or manuscript integration:** when draw.io, PPT or another native source is requested, or a native project exists, read [editable production](references/editable-production.md) and use the corresponding workflow. Acceptance of a raster draft does not automatically request vectorization or manuscript integration.
+- **Figure sets:** give each figure a distinct explanatory role while sharing object identities and visual language. Do not impose a fixed count, layout or chapter coverage.
 
-在构图前区分论文真实对象与连线、以及画面上的分组与局部展开。主视觉围绕当前图要解释的机制组织；变量或结果标签不自动变成模块，连线不因布局方便经过无关组件。复杂新图用 [简要构图记录](references/contracts.md) 核对对象、操作、真实接收方和可见文字，再绘制；无需建立固定阶段或审批流程。
+Before composing, distinguish real manuscript objects and connections from visual grouping and local expansions. Organize the main visual around the mechanism being explained. Variables and result labels do not automatically become modules; do not route connections through unrelated components for layout convenience. For complex new figures, use a [compact composition record](references/contracts.md) to check objects, operations, actual recipients and visible labels before drawing, without imposing fixed stages or approval procedures.
 
-从给定 TeX 的入口、引用图源、图题和相邻段落，或指定 PDF 的正文与实际页面，确认对象、输入输出、依赖、状态、资源归属和数量。只读了部分材料就按实际范围报告。图形关键事实追溯到正文、公式或证据；不添加未实现机制或虚构结果。风格参考只提供明确借用的构图、形体或颜色，不提供目标论文的事实。
+Read the supplied TeX entrypoint, referenced figure sources, captions and nearby paragraphs, or the specified PDF's prose and actual pages, to establish objects, inputs/outputs, dependencies, states, resource ownership and counts. Report the actual scope when only part of the material was read. Trace key visual facts to prose, equations or evidence; do not add unimplemented mechanisms or fabricated results. Style references supply only the explicitly borrowed composition, forms or colors, not facts about the target manuscript.
 
-先明确图回答什么问题，再选 [总体关系、机制对照或生命周期构图](references/figure-grammars.md)。研究之间的并列、依赖或层次从事实判断，不从视觉模板推导。按下节展示设计和完整 Prompt 后推进已授权绘制；用户明确要求先审 Prompt 时，等待其反馈再调用绘图工具。
+First identify the question the figure answers, then choose an [overview, mechanism comparison or lifecycle composition](references/figure-grammars.md). Determine parallelism, dependencies and hierarchy among research contributions from facts, not visual templates. Show the design and complete prompt as specified below, then continue authorized drawing. If the user explicitly requests prompt review first, wait for feedback before invoking drawing tools.
 
-按目标文稿自动选用自然、简洁的中文标签或准确的英文术语。系统名、缩写、符号与对象粒度沿用文稿。改编与翻译见 [文稿语境](references/document-contexts.md)。
+Automatically use natural, concise Chinese labels or accurate English terminology according to the destination manuscript. Preserve its system names, acronyms, symbols and object granularity. See [document contexts](references/document-contexts.md) for adaptation and translation.
 
-## 选择表达形式与保留视觉设计
+## Choose the representation and preserve accepted design
 
-选图时，先找出读者最需要比较或理解的关系，再判断用一幅机制图、同一对象的叠加视图，还是互补的小图来表达。拿不准时，对照有区别的实际图例作选择；不因熟悉某种模板就反复使用，也不为新颖而增加面板。数据图中的叠加必须共享有意义的坐标和真实观测；机制图中的叠加必须属于同一对象、位置或状态，不能把不同抽象层混为一个场景。
+Identify the relationship readers most need to compare or understand, then choose a single mechanism figure, an overlay of the same object or complementary panels. When uncertain, compare distinct actual examples. Avoid repeatedly applying a familiar template or adding panels only for novelty. Data overlays must share meaningful coordinates and real observations. Mechanism overlays must refer to the same object, location or state; do not merge unrelated abstraction levels into one scene.
 
-选定并认可的视觉设计也是后续修改的基线。先辨明哪些比例、透明层、轮廓、色彩和局部展开在帮助阅读，修图时保留它们；不要为了减少绘图代码或统一组件而抹掉这些特点。用户已指出原结构有问题时则重新构图。配色用于维持对象身份和主次，不替代图形结构选择。具体方法见 [视觉选择与取舍](references/visual-quality.md)。
+An accepted visual design is the baseline for later revisions. Identify which proportions, transparent layers, contours, colors and local expansions aid reading and preserve them. Do not erase these features merely to reduce drawing code or standardize components. Recompose when the user has identified structural problems. Color maintains identity and emphasis; it does not replace structural choices. See [visual choices and trade-offs](references/visual-quality.md).
 
-相关外部方法的阅读范围和吸收取舍见 [Vivid Figures 方法参考](references/vivid-figures-ideas.md) 、[figures4papers 图例与方法](references/figures4papers-ideas.md) 与 [Framework Studio 方法](references/framework-studio-ideas.md)。这些方法已融入本技能，不依赖安装或调用另一技能。
+Records of external methods, what was read and what was adopted are in [Vivid Figures methods](references/vivid-figures-ideas.md), [figures4papers examples and methods](references/figures4papers-ideas.md) and [Framework Studio methods](references/framework-studio-ideas.md). These methods are integrated into this skill and do not require another skill to be installed or invoked.
 
-## 配色、Logo 与图中文字
+## Color, logos and labels
 
-选色时明确对象身份、同族变体和视觉焦点：浅填充容纳对象，较深轮廓或局部色突出重点，同族颜色连接相关变体。可从 [视觉规范中的配色方案](references/visual-system.md) 选取，再按当前文稿映射角色。多面板维持对象颜色与排列顺序；总体路径和局部展开通过位置、形体及颜色对应。具体构图与数据图规则见 [图形组织](references/figure-grammars.md)，不能只抄色号而保留呆板布局。
+Assign colors to object identities, related variants and focal points. Use light fills for bodies and darker outlines or local accents for emphasis; related hues can connect variants. Select and adapt a palette from the [visual system](references/visual-system.md) to the manuscript's roles. Preserve object colors and ordering across comparison panels. Connect overall paths and local expansions through position, form and color. See [figure organization](references/figure-grammars.md) for composition and chart rules; copying hex values while keeping a stiff layout is insufficient.
 
-**配色多元，以整图效果判断。** 综合已查看参考的颜色、形体、明暗与留白，为当前图选择协调方案；旧图配色是可比较的参考，不是默认优先或永久锁定。不同类型的图可以采用不同色系；直接比较的面板和同一对象的连续状态保持编码一致。减少杂色要减少争夺注意力的颜色角色，不能机械降为蓝灰框，也不设固定三色上限。可组合或调整 [视觉规范](references/visual-system.md) 中的多套候选，以美观、辨识度与论文整体协调为准；用户明确要求保留某一具体颜色时遵守该要求。
+**Use varied palettes and judge the whole composition.** Consider color, form, light/dark balance and whitespace in inspected references to choose a coordinated scheme for the current figure. Earlier palettes are references to compare, not permanent defaults. Different figure types may use different color families; directly compared panels and successive states of the same object must maintain consistent encoding. Reduce competing color roles instead of mechanically reverting to blue-gray boxes or imposing a three-color limit. Combine or adjust candidates from the [visual system](references/visual-system.md) for aesthetics, recognition and manuscript consistency. Honor explicit requests to preserve particular colors.
 
-Logo、角色头像、工具、芯片和文件标识可以帮助辨认对象。模型品牌、框架、平台与设备属于不同对象：按真实身份放在对应组件、边界标题或接口上，与结构和连线一起布局。Logo 无须是实验变量才允许出现；不要求每张图都有 Logo，也不将纯文字名称冒称为图形 Logo。使用准确的官方或用户素材；暂缺时使用名称或留位，不生成近似标识并声称其准确。具体方法见 [Logo 与整图组合](references/cloud-logo-composition.md) 和 [组件视觉取舍](references/visual-quality.md)。
+Logos, avatars, tool symbols, chips and file icons can help identify objects. Model brands, frameworks, platforms and devices are distinct entities: place symbols on the corresponding component, boundary title or interface and compose them with structures and connections. A logo need not be an experimental variable to appear. Not every figure needs logos, and a plain-text name is not a graphical logo. Use accurate official or user-provided assets; when unavailable, use a name or placeholder rather than claiming a generated approximation is accurate. See [logo composition](references/cloud-logo-composition.md) and [component visual choices](references/visual-quality.md).
 
-图中文字保留对象身份、技术术语和解码图形所必需的说明。研究关系可由构图表达时，不再增加“四项并列研究”等写作组织副标题；“设计”“研究内容”等词仅在它们提供必要技术含义时保留，不机械禁词。长段论述留在正文，数量、单位和必要科学条件准确保留。配方编号、制作状态和检查说明不进入成图。
+Keep object identities, technical terms and the explanations needed to decode the figure. When composition already expresses research relationships, omit editorial subtitles such as “four parallel studies.” Keep words such as “design” or “research content” only when they add necessary technical meaning; do not ban them mechanically. Put long explanations in the manuscript. Preserve counts, units and necessary scientific conditions accurately. Recipe IDs, production status and validation notes do not belong in the finished figure.
 
-统一线宽、文字层级、视角和图标细节密度。边界表达归属，箭头表达实际流向，映射和候选不画成已执行路径。保持模型层、实例、分片、rank、角色、请求和设备的区别；量化形状需有真实数据或明确的示意口径。
+Maintain consistent stroke widths, typography hierarchy, perspective and icon detail density. Boundaries express ownership; arrows express actual flow. Do not draw mappings or candidates as executed paths. Distinguish model layers, instances, shards, ranks, roles, requests and devices. Quantitative shapes require real data or an explicitly stated schematic interpretation.
 
-## 绘制前展示设计与完整 Prompt
+## Show the design and complete prompt before drawing
 
-新绘或实质重绘时，调用工具前在对话中展示：图要解释的关系、主要构图与视觉焦点，以及关键对象的“所选画法 → 图面上会看见什么”。例如不能只说“采用 GPU 词条”，要说明画的是薄板卡、封装分解还是资源占用视图，以及它如何连接模型和数据。
+For a new figure or substantial redraw, show the user the relationship to explain, main composition, visual focus and each key object's “selected construction → visible result” before invoking a tool. Instead of merely naming the GPU entry, specify whether the figure uses a thin board, exploded package or resource-occupancy view, and how it connects to models and data.
 
-随后用代码块给出**本次实际准备提交的完整 Prompt**，包含具体造型、位置关系、颜色角色与色值、连线端点、可见标签、参考图作用和科学约束。Prompt 文件可同时保存，但链接、摘要或交付后的补录不能代替绘制前展示。原生绘制展示等价的完整构图说明，不必粘贴所有低层 API 操作。局部修图只需展示本次完整修改指令和保留项；若提交前改了设计，展示更新后的版本。
+Then provide **the complete prompt actually intended for this invocation** in a code block, including concrete forms, spatial relationships, color roles and values, connection endpoints, visible labels, reference-image roles and scientific constraints. A saved prompt file is useful but a link, summary or after-the-fact record cannot replace this advance disclosure. For native drawing, show an equivalent complete composition brief without dumping every low-level API operation. For local edits, show the complete edit instruction and what to preserve. If the design changes before submission, show the updated version.
 
-展示是让用户了解并能介入设计，不自动增加确认步骤。用户要求“先给 Prompt”“确认后再画”时停在该阶段；否则继续已授权绘制。用户明确要求省略展示时遵从。
+Disclosure lets the user understand and intervene in the design; it does not automatically add an approval step. Stop at this stage when the user requests “show the prompt first” or “draw after confirmation.” Otherwise, continue authorized drawing. Honor an explicit request to omit disclosure.
 
-## 绘制、检查与交付
+## Draw, inspect and deliver
 
-使用当前可用、用户授权的工具。调用生图时按工具机制传入参考图，先查看本地原图；路径字符串不是已输入图片的证明。不要声称不可核验的模型版本。失败最多重试一次可能的瞬时问题，再说明限制；不擅自改用收费接口。原生制作则保存文字、形状、路径及连接可独立编辑的源，按实际工具能力核验。
+Use currently available, authorized tools. Supply reference images through the generation tool's actual mechanism and inspect local originals first. A path string is not proof that an image was supplied. Do not claim an unverifiable model version. Retry a plausibly transient failure at most once, then report the limitation; do not silently switch to a paid API. For native production, preserve independently editable text, shapes, paths and connections and verify against the actual tool capabilities.
 
-按上述展示要求，把论文事实、选中的构造、布局、配色及必要标签融合成可执行提示词或原生构图描述。不要只写“高级”“顶会风格”或把全部词条拼接给绘图工具。简洁记录可用 [图形说明与版本记录](references/contracts.md)。
+Following the disclosure requirements above, combine manuscript facts, selected constructions, layout, palette and necessary labels into an executable prompt or native composition brief. Avoid relying on adjectives such as “advanced” or “top-conference style,” or concatenating all recipes into the drawing input. Use [figure briefs and version records](references/contracts.md) for concise documentation.
 
-每轮查看实际图面并检查 [语义与视觉](references/validation.md)：
+Inspect the actual image after each round using the [semantic and visual checks](references/validation.md):
 
-- 关键对象是否采用了适合其角色的具体构造，形体和关系是否在帮助解释，而非仍由长文字框承担全部内容？
-- 配色是否适合当前构图并与整组协调，颜色角色与对比度是否清楚，图标／Logo 是否与整图协调？
-- 对象身份、箭头端点、数据与控制、候选与执行、状态与数量是否准确？
-- 小尺寸下能否看清部件和短标签，有无冗余副标题、错字、遮挡或空框？
+- Do key objects use concrete constructions suited to their roles? Do forms and relationships explain the content, or do long text boxes still carry everything?
+- Does the palette fit the composition and figure set? Are color roles and contrast clear, and do icons/logos fit the whole image?
+- Are object identities, arrow endpoints, data/control distinctions, candidate/execution distinctions, states and counts accurate?
+- Are parts and short labels readable at small size? Are there redundant subtitles, typos, overlaps or empty boxes?
 
-按 [迭代指南](references/iteration-playbook.md) 修正实际缺陷。代码或图元校验通过不代表图面美观；提示词写了要求也不代表图片实现了要求。需要精确出版尺寸时读 [紧凑布局](references/compact-layout.md)。
+Fix actual defects using the [iteration playbook](references/iteration-playbook.md). Passing code or primitive validation does not establish visual quality, and a prompt requirement does not prove that the generated image satisfies it. Read [compact layout](references/compact-layout.md) when exact publication dimensions matter.
 
-内联展示结果，并交付对应文件及实际提示词／构图记录。原生图源和文稿编译只在相应授权范围内要求；接入正文后检查实际页宽、图题和浮动布局。保存可用草稿与来源，不把继承的源图审阅记录、文字配方和本次成图验收混为一谈。整库的词条、来源、Agent 样板及检索指南继续保留；发布、同步远程和删除历史成果遵循单独授权。
+Display results inline and deliver the corresponding files and actual prompts/composition records. Require native sources and manuscript compilation only within the authorized scope. After manuscript integration, inspect actual page width, captions and float placement. Keep useful drafts and provenance; distinguish inherited source-image reviews, textual recipes and acceptance of the current output. Retain the knowledge-base entries, sources, Agent samples and navigation guide. Publishing, remote synchronization and deletion of historical outputs require their own authorization.

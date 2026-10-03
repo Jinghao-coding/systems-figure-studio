@@ -1,4 +1,4 @@
 interface:
   display_name: "Systems Figure Studio"
-  short_description: "面向会议、期刊和博士论文的配图与重绘，自动匹配中英文文稿及具体元素画法"
-  default_prompt: "使用 $systems-figure-studio，自动识别会议、期刊或博士论文的目标文稿及中英文标签，从内置知识库选择模型、设备、工作流或平台标识的具体画法，沿用已认可风格生成或重绘配图，检查并交付所需图片、提示词或可编辑源。"
+  short_description: "Draw academic figures for papers and dissertations"
+  default_prompt: "Use $systems-figure-studio to infer the target conference paper, journal article or doctoral dissertation and its Chinese or English figure labels. Select concrete constructions for models, devices, workflows or platform symbols from the integrated knowledge base, preserve accepted visual choices, show the design and complete prompt before drawing, then generate or redraw, inspect and deliver the requested images, prompts or editable sources."

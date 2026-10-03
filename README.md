@@ -62,4 +62,4 @@ Edit `topics/*.md` as the recipe source, then rebuild the catalog and offline gu
 
 ## License and status
 
-Version 0.1.0 is the first standalone release preparation. Original project text/code is MIT licensed; external works retain their own terms. Asset limitations are explicit in [asset terms](assets/visual-library/RIGHTS.md). Historical reference review is separate from generated-output approval. The core instructions and most recipes are currently Chinese; the entry documentation is bilingual, and figure labels can be Chinese or English.
+Version 0.1.0 is the first standalone release preparation. Original project text/code is MIT licensed; external works retain their own terms. Asset limitations are explicit in [asset terms](assets/visual-library/RIGHTS.md). Historical reference review is separate from generated-output approval. SKILL.md is the single English execution entrypoint. Most topic recipes and supporting references remain Chinese; the introductory documentation is bilingual, and figure labels follow the target manuscript's Chinese or English language.
