@@ -21,6 +21,14 @@
 
 本仓库根目录就是一个完整 skill，无需构建。取得仓库后，将目录命名为 `systems-figure-studio` 并放入宿主支持的 skill 目录。本项目本地使用 `~/.agents/skills/systems-figure-studio`；其他宿主使用其配置的发现目录。不要在多个发现目录重复安装。必要时刷新技能列表或新建聊天。
 
+首次安装可直接克隆到技能目录（目标目录需尚不存在）：
+
+```bash
+git clone https://github.com/Jinghao-coding/systems-figure-studio.git ~/.agents/skills/systems-figure-studio
+```
+
+已有安装时，在该目录先用 `git status` 检查本地修改，再用 `git pull --ff-only` 更新；不要覆盖本地改动。
+
 ```text
 使用 $systems-figure-studio，根据附件论文的设计部分绘制架构图。
 先展示构图、具体元素画法、配色和完整 Prompt，再生成并检查。

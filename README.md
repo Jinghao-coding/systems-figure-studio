@@ -20,6 +20,14 @@ Design, generate and redraw computer-systems and AI Infrastructure paper figures
 
 Use the repository root as the skill folder; no package build is required. After obtaining this repository, place it at `~/.agents/skills/systems-figure-studio` in an agent environment that discovers that directory. In an environment using a different skill root, place the same folder there. Do not install duplicate copies in multiple discovery roots.
 
+Clone directly into the local skill directory (the destination must not already exist):
+
+```bash
+git clone https://github.com/Jinghao-coding/systems-figure-studio.git ~/.agents/skills/systems-figure-studio
+```
+
+For an existing installation, review local changes with `git status` and update with `git pull --ff-only` from that directory. Do not overwrite local edits.
+
 The folder must contain `SKILL.md`, `topics/`, `references/`, `catalog/`, `assets/` and `scripts/`. Start a new chat or refresh the skill catalog if the host has not detected it. This repository does not install image APIs, editor plugins or credentials automatically.
 
 ## Use
