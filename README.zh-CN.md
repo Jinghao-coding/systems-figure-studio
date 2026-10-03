@@ -55,4 +55,4 @@ python3 scripts/check_release.py
 
 参见 [贡献说明](CONTRIBUTING.md)、[发布检查](RELEASE_CHECKLIST.md) 和 [来源与许可](THIRD_PARTY_NOTICES.md)。原创技能文本与脚本采用 MIT；外部作品保留各自许可，项目素材范围见 [素材说明](assets/visual-library/RIGHTS.md)。
 
-当前版本 0.1.0，作为独立开源项目的首版准备。旧个人名称已迁移为当前名称，后续用 Git 维护，不保留重复安装的旧版本。
+当前版本 0.1.0，作为独立开源项目的首版准备。
