@@ -6,4 +6,4 @@ Review new assets and prompts for manuscript-specific/private information, third
 
 Before publishing, choose the destination GitHub account/repository, inspect `git status`, review the final files, and obtain the owner's instruction to upload. Never infer publication from local repository preparation. Add a release tag only for the version actually being released.
 
-Local preparation does not certify every external license or the live behavior of image tools, draw.io or PowerPoint on a new host. Record those limits in the release description instead of calling them passed.
+Write release descriptions around concrete changes, usage and completed validation results. Omit generic defensive disclaimers and inventories of work not performed. Keep each validation claim tied to actual evidence. Describe any known issue that affects use through its concrete impact and available resolution.
