@@ -50,6 +50,14 @@ When identity alone matters, an icon and short label can form a complete compone
 
 See the [visual asset library](references/visual-asset-library.md) for actual images and reusable forms. Accumulate useful objects as needed, distinguishing accepted references from cleaned assets; inspect leftover text, cropped edges and arrows before reuse. Figures may use GPT Image for the whole image, mixed assets or native primitives as appropriate. Editability is not required for every figure by default.
 
+### Choose assets to fit the figure
+
+The repository's visual assets are optional starting points and examples, not prescribed appearances. Depending on the manuscript's meaning, visual style, scale and composition, reuse a suitable asset, adapt one, generate a new element with an available image tool, or use native primitives. New generation is a normal design choice even when a related asset exists; there is no requirement to search or exhaust the library first. Briefly explain the selected approach when presenting the design.
+
+For revisions or related figure sets, respect any explicit request to preserve an accepted identity or style. Prior acceptance in another figure or project does not make that asset mandatory. Keep repeated objects visually consistent within the current composition without fixing every person, Agent, model or environment to one repository image.
+
+Give each object a form suited to what it explains. A tool workspace might use a terminal, files or network endpoint where relevant, but this is one possible construction rather than a required component list. Simple shapes are appropriate when they clearly express topology, state or timing. Check reused or generated elements for semantic fit, readability and composition quality. For transparent assets, inspect the actual alpha composition on the intended background. See [asset selection](references/visual-asset-library.md#asset-selection).
+
 ## Generate new local elements when needed
 
 The knowledge base is an adaptable starting point, not a closed catalog. When no construction fits, or existing constructions look monotonous or inconsistent in the current composition, use GPT Image or the available image generator to design local elements for the figure. This applies to GPUs, CPUs, models, storage, nodes, Agents, tools, data objects and any other object requiring a custom form. Do not wait for the user to request every element or exhaust all entries first. Use capabilities actually exposed by the tool; writing a model name in a prompt does not select that model.

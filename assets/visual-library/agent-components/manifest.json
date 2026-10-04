@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-04",
+  "items": [
+    {
+      "id": "agent-runtime",
+      "file": "agent-runtime.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "viewport": [
+        138,
+        114,
+        1249,
+        826
+      ],
+      "source": "exec-cf3ce758-a2c9-4482-ad1e-8a4341989c0f.png",
+      "sha256": "4ad3be480955872a8bd32c4b56e5e15c71585688090b1c6a3876fcab9d47de80",
+      "status": "inspected-in-exported-figure-and-dissertation-page",
+      "native_vector": false,
+      "editable": "independent raster image object; labels and relations maintained separately",
+      "scientific_scope": "conceptual identity illustration, not product implementation or official imagery",
+      "review_date": "2026-10-04"
+    },
+    {
+      "id": "tool-environment",
+      "file": "tool-environment.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "viewport": [
+        321,
+        160,
+        905,
+        695
+      ],
+      "source": "exec-b04b3ce5-7f0d-4a4c-988f-853e50628123.png",
+      "sha256": "20f5d9b4224c27601dfa726891c8dd1ad7bc8539208b0af17e6ad4c7c453fb5f",
+      "status": "inspected-in-exported-figure-and-dissertation-page",
+      "native_vector": false,
+      "editable": "independent raster image object; labels and relations maintained separately",
+      "scientific_scope": "conceptual identity illustration, not product implementation or official imagery",
+      "review_date": "2026-10-04"
+    }
+  ]
+}

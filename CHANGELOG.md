@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 — 2026-10-04
+
+- Treat bundled assets as optional examples: choose reuse, adaptation, image generation or native drawing to fit each figure; generation does not require missing assets.
+- Preserve prior identities when requested or needed for the current revision, without imposing another figure or project's accepted assets.
+- Add reusable agent runtime and tool-workspace image elements with original prompts and provenance.
+- Require true-alpha composition review on the manuscript background; preserve native labels and relations in hybrid figures.
+
 ## 0.1.0 — 2026-10-03
 
 - Prepare Systems Figure Studio as a standalone skill and local Git repository.

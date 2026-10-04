@@ -171,6 +171,36 @@
         "device-identity"
       ],
       "reuse": "Editable PCB, bracket, package, memory chips and contacts. Device identifier only; does not encode resource partitions."
+    },
+    {
+      "id": "agent-runtime",
+      "title": "智能体运行控制台",
+      "file": "agent-components/agent-runtime.png",
+      "viewport": [
+        138,
+        114,
+        1249,
+        826
+      ],
+      "native_vector": false,
+      "status": "inspected-in-white-background-figure",
+      "provenance": "Built-in image generation and cleanup, 2026-10-04; see agent-components/prompts.md",
+      "reuse": "One independent transparent image. Preserve proportions; keep external labels and flow arrows separately editable. Generic identity only, not product architecture."
+    },
+    {
+      "id": "tool-environment",
+      "title": "工具与执行环境",
+      "file": "agent-components/tool-environment.png",
+      "viewport": [
+        321,
+        160,
+        905,
+        695
+      ],
+      "native_vector": false,
+      "status": "inspected-in-white-background-figure",
+      "provenance": "Built-in image generation and cleanup, 2026-10-04; see agent-components/prompts.md",
+      "reuse": "One independent transparent image. Preserve proportions; keep external labels and flow arrows separately editable. Generic identity only, not product architecture."
     }
   ]
 }
