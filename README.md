@@ -1,54 +1,122 @@
 # Systems Figure Studio
 
-[中文说明](README.zh-CN.md) · [Skill](SKILL.md) · [Recipe browser](guide.html) · [Worked examples](examples/showcase.md)
+**English** | [简体中文](README.zh-CN.md)
 
-Design, generate and redraw computer-systems and AI Infrastructure paper figures from manuscript evidence. Supports conference papers, journal articles and doctoral dissertations in Chinese or English, complete image generation, custom component generation, and editable draw.io/WPS/PPTX compositions.
+An agent skill for computer-systems and AI Infrastructure research figures. Turn manuscript evidence into architecture diagrams, mechanism figures, resource views and execution timelines for papers and dissertations.
 
-![Training, inference and Agent workflow illustration](assets/visual-library/mixed-task-scenes-unified.png)
+**Manuscript → explanatory question → concrete constructions → objects and relationships → generation and revision → requested editable delivery → validation.**
 
-*Illustrative project example, not measured data. KV retention during tool waits is one example policy. See the worked example for its input, exact revision prompt and limitations.*
+[Skill entrypoint](SKILL.md) · [Offline recipe browser](guide.html) · [Examples and inputs](examples/showcase.md) · [Changelog](CHANGELOG.md)
 
-## What it includes
+## What you can do
 
-- Topic recipes, stable variants, source records and protected Agent extensions. Current counts are generated from [catalog statistics](catalog/statistics.json).
-- Automatic document/language selection from the destination section and captions; explicit user language choices take precedence over inference. Chat language does not determine figure labels.
-- Paper-grounded composition, visible prompt disclosure before drawing, varied component shapes and coordinated palettes.
-- GPT Image/custom-element workflows and a small separate visual asset collection.
-- Hybrid editable documents: generated image elements plus editable labels, connectors and layout. Full internal vector reconstruction only when requested.
+- **Choose or review a figure:** look up constructions, compare variants and critique an existing figure without generating an image.
+- **Draw or structurally redraw:** select manuscript-grounded objects and relationships, then generate, inspect and revise.
+- **Make local changes:** edit labels, colors or connectors while preserving the rest of the accepted design.
+- **Deliver editable work:** use draw.io or WPS/PowerPoint (PPTX), including independent generated assets with native labels and connectors. Rebuild internal geometry when full-vector or internal-editability requirements call for it.
 
-## Install locally
+The library covers models, inference, hardware, storage, prediction, scheduling, training, reinforcement learning, Agents, systems software, Kubernetes and observability. Stable variants include selection metadata and source links. See [generated statistics](catalog/statistics.json) for current coverage.
 
-Use the repository root as the skill folder; no package build is required. After obtaining this repository, place it at `~/.agents/skills/systems-figure-studio` in an agent environment that discovers that directory. In an environment using a different skill root, place the same folder there. Do not install duplicate copies in multiple discovery roots.
+Color guidance includes twelve mixed palettes combining light context colors, medium object colors and stronger accents, alongside the earlier soft and vivid options. After drawing or recoloring, the agent inspects the actual figure for hierarchy, color balance, spacing, forms and target-size readability, then repairs observed problems within scope. See [palettes](references/visual-system.md) and [visual review](references/visual-quality.md#aesthetic-review).
 
-Clone directly into the local skill directory (the destination must not already exist):
+## Chinese and English support
+
+This README is available in both languages. `SKILL.md` remains the single English execution entrypoint; most detailed topic recipes remain Chinese. You may request either Chinese or English figures.
+
+Figure-label language follows **your explicit request → target chapter terminology → target prose and captions**. For example, a Chinese conversation about an English paper produces English labels unless you request otherwise. Adapting that paper to a Chinese dissertation follows the target chapter's terminology.
+
+## Install
+
+### First installation
+
+You need Git and an agent host that can load `SKILL.md`. This repository requires no package build or API key for installation. For a host that discovers `~/.agents/skills`, clone directly into that directory:
 
 ```bash
+mkdir -p ~/.agents/skills
 git clone https://github.com/Jinghao-coding/systems-figure-studio.git ~/.agents/skills/systems-figure-studio
+cd ~/.agents/skills/systems-figure-studio
 ```
 
-For an existing installation, review local changes with `git status` and update with `git pull --ff-only` from that directory. Do not overwrite local edits.
+The destination must not already exist. If you already have this checkout, use it as the single maintained installation. For another host, use its configured skill discovery directory; do not clone or copy the skill into multiple discovery roots. Refresh the host's skill list or start a new chat if needed.
 
-The folder must contain `SKILL.md`, `topics/`, `references/`, `catalog/`, `assets/` and `scripts/`. Start a new chat or refresh the skill catalog if the host has not detected it. This repository does not install image APIs, editor plugins or credentials automatically.
+The root `SKILL.md` and its sibling directories must remain together. Copying only `SKILL.md` loses the recipes, references and assets.
 
-## Use
+### Update an existing installation
+
+```bash
+cd ~/.agents/skills/systems-figure-studio
+git status --short
+```
+
+If there are local changes, review and preserve them before updating. With a clean working tree:
+
+```bash
+git pull --ff-only
+```
+
+If Git reports diverged history, resolve that history before retrying. Do not reset or overwrite local work. Normal browsing uses the root `guide.html`; a second site build or skill installation is unnecessary.
+
+### Tools needed for each route
+
+| Task | Requirements |
+| --- | --- |
+| Read recipes, select variants, review material | Agent with access to the manuscript and skill files |
+| Browse offline | A local browser; open `guide.html` directly |
+| Generate a full figure or custom asset | An available, authorized image-generation tool such as the host's image gen capability |
+| Create/edit/export draw.io | Suitable draw.io integration, editor or native-file tooling |
+| Create/edit/export WPS/PowerPoint | Suitable WPS/PowerPoint integration or PPTX-generation tooling; the target editor for editor validation |
+| Rebuild and run core checks | Python 3.10+; standard library only |
+| Run browser logic tests | Node.js 18+ in addition to Python |
+
+The skill supplies instructions and resources. It does not install image services, MCP servers, editor integrations or credentials. Available tools determine the executable route. Tool-specific setup and delivery checks are in [editable production](references/editable-production.md).
+
+## Quick start
+
+In a host supporting named skill invocation, use `$systems-figure-studio`. Otherwise ask the agent to read the installed `SKILL.md`. Attach the relevant paper section, caption, existing figure or explicit system assumptions.
+
+**Choose a construction without drawing:**
 
 ```text
-Use $systems-figure-studio to design a mechanism figure for the attached paper section.
-Show the composition, selected component constructions and complete prompt before drawing.
-Use English labels and preserve the paper's actual data flow.
+Use $systems-figure-studio to compare suitable constructions for this scheduling
+mechanism. Explain the objects and relationships. Do not generate an image.
 ```
+
+**Create a figure:**
 
 ```text
-Use $systems-figure-studio to redraw this figure for my Chinese dissertation.
-Generate custom components where useful and deliver an editable PPT with separate
-image elements, labels and connectors. Preserve the mechanism and show the prompt first.
+Use $systems-figure-studio to draw a mechanism figure from the attached paper section.
+Use English labels. Show the composition, concrete object constructions, palette and
+complete prompt first, then generate and inspect the figure at the intended paper width.
 ```
 
-Reading/planning needs only manuscript access. Generating images needs an available, authorized image tool; specifying GPT Image in text does not install or select a backend. draw.io/WPS/PPTX editing requires a suitable editor integration or file-generation tool. The skill does not ship an MCP server. Output quality and supported formats depend on the actual tools available.
+**Make a local edit:**
 
-## Validate and maintain
+```text
+Use $systems-figure-studio to change only “Request” to “Job” and “Device” to “GPU”.
+Preserve all other labels, objects, colors and layout.
+```
 
-Python 3.10+; index generation and structural validation use only the standard library:
+**Request editable delivery:**
+
+```text
+Use $systems-figure-studio to adapt this figure for a Chinese dissertation chapter.
+Follow the chapter terminology and deliver a draw.io source plus a preview.
+Keep key labels and relationships editable; preserve the supplied mechanism.
+```
+
+You can instead request WPS/PowerPoint (PPTX). State which parts need independent editing. Generated image internals remain raster unless reconstructed; for PPT, prefer a small number of useful editable objects. “Show the prompt first” means disclose and continue authorized drawing; “draw after my confirmation” means wait.
+
+## Browse and reuse locally
+
+Open `guide.html` from the checkout in a browser. It contains its own search data, scripts and styles, with no CDN or backend. On macOS, `open guide.html` opens it in the default browser. On other systems, open the file directly.
+
+Search Chinese names, English terms and aliases across entries, variants, Agent extensions, combination recipes and rules. Copy a single construction, a whole entry, or a short composition note from up to eight selections. URL hashes preserve topic, query, term and variant. External source links require network access.
+
+[Historical examples](examples/showcase.md) retain their production records. [Three cross-topic scenario inputs](examples/scenarios/README.md) are available for new work; they currently have no accepted complete diagrams. Asset eligibility and review status are tracked separately from recipe readiness.
+
+## Maintain and test
+
+Run from the repository root:
 
 ```bash
 python3 scripts/rebuild_navigation.py
@@ -61,25 +129,14 @@ python3 scripts/evaluate_behavior.py
 python3 scripts/check_generated.py
 ```
 
-Pillow is optional for `crop_white_margin.py`; PyMuPDF is optional for PDF auditing in `audit_vector_figure.py`. Install optional dependencies in a project virtual environment, not globally. Their use is not required for recipe lookup or the default image-tool workflow.
+The behavior command validates evaluation fixtures; real agent behavior requires retained execution evidence. Optional exporter/PDF checks run with `python3 -m unittest discover -s tests/optional -v`; missing dependencies are reported as skipped. Set `DRAWIO_BINARY` to opt into real draw.io export testing. Pillow is optional for image cropping, and PyMuPDF for PDF auditing; use a project virtual environment when installing them.
 
-Edit `topics/*.md` as the recipe source, then rebuild the catalog and offline guide. Structural validation does not certify image quality. See [contribution guidance](CONTRIBUTING.md), [release checks](RELEASE_CHECKLIST.md) and [source notices](THIRD_PARTY_NOTICES.md).
+Maintain recipe bodies in `topics/*.md` and independent metadata in the designated catalog source files. Rebuild the index, statistics, browser payload and guide from those sources. See [maintenance](references/knowledge-base.md), [contributing](CONTRIBUTING.md), [validation records](evaluations/maintenance-2026-10-05.md) and [release checks](RELEASE_CHECKLIST.md).
 
-## License and status
+[Static hosting preparation](references/static-hosting.md) uses a temporary bundle outside the checkout. The GitHub Pages workflow runs only when manually triggered; installation and normal pushes do not deploy a website.
 
-Version 0.1.1 makes bundled assets optional design references and adds Agent runtime/workspace examples. Choose reuse, adaptation, new image generation or native drawing according to the figure; existing assets do not prevent new generation. Original project text/code is MIT licensed; external works retain their own terms. Asset limitations are explicit in [asset terms](assets/visual-library/RIGHTS.md). Historical reference review is separate from generated-output approval. SKILL.md is the single English execution entrypoint. Most topic recipes and supporting references remain Chinese; the introductory documentation is bilingual, and figure labels follow the target manuscript's Chinese or English language.
+## Version and license
 
+[VERSION](VERSION) identifies the standalone skill release; [import metadata](catalog/import.json) records the inherited knowledge-base version separately. Changes awaiting a release are listed under Unreleased in the [changelog](CHANGELOG.md).
 
-## Offline browser and production routes
-
-Open `guide.html` directly. Search Chinese names, English terms and aliases across entries, variants, Agent extensions, composition examples and rules. Copy one construction, a whole entry, or up to eight selections with their roles/endpoints/boundaries. Hash links retain topic, query, term and variant selection. Unreviewed metadata and missing examples remain visible.
-
-Image generation, draw.io and WPS/PowerPoint are supported routes; actual invocation follows the host tools. “Show the prompt first” discloses then continues authorized drawing; “draw after confirmation” waits. Local edits preserve the rest of the design. Review requests do not generate images.
-
-Core Python tooling uses the standard library; browser logic tests require Node.js 18+. Optional exporter/PDF tests: `python3 -m unittest discover -s tests/optional -v` (missing dependencies are skipped). Set `DRAWIO_BINARY` to opt into a real local draw.io export test. It checks the exporter, not GUI editing.
-
-The new cross-topic trial images were withdrawn after user review. [Three scenario inputs](examples/scenarios/README.md) and [behavior evaluation fixtures](evaluations/README.md) remain; they are not completed visual examples. [Historical examples](examples/showcase.md) retain their original records.
-
-For static hosting preparation, see [deployment](references/static-hosting.md). No public site is claimed. Maintained metadata, generated outputs and historical migration records are separated in [maintenance](references/knowledge-base.md). New work is recorded under Unreleased; the package and inherited knowledge-base versions remain distinct.
-
-See the [local implementation and validation record](evaluations/maintenance-2026-10-05.md) for executed checks and current case status.
+Original project text and code use the [MIT license](LICENSE). External works retain their own terms; see [third-party notices](THIRD_PARTY_NOTICES.md) and [asset rights](assets/visual-library/RIGHTS.md).
