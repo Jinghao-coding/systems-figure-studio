@@ -19,12 +19,6 @@ The library covers models, inference, hardware, storage, prediction, scheduling,
 
 Color guidance includes twelve mixed palettes combining light context colors, medium object colors and stronger accents, alongside the earlier soft and vivid options. After drawing or recoloring, the agent inspects the actual figure for hierarchy, color balance, spacing, forms and target-size readability, then repairs observed problems within scope. See [palettes](references/visual-system.md) and [visual review](references/visual-quality.md#aesthetic-review).
 
-## Chinese and English support
-
-This README is available in both languages. `SKILL.md` remains the single English execution entrypoint; most detailed topic recipes remain Chinese. You may request either Chinese or English figures.
-
-Figure-label language follows **your explicit request → target chapter terminology → target prose and captions**. For example, a Chinese conversation about an English paper produces English labels unless you request otherwise. Adapting that paper to a Chinese dissertation follows the target chapter's terminology.
-
 ## Install
 
 ### First installation
