@@ -1,114 +1,138 @@
+<div align="center">
+
 # Systems Figure Studio
 
-**English** | [简体中文](README.zh-CN.md)
+**Make systems mechanisms visible. Turn paper evidence into clear figures.**
 
-An agent skill for computer-systems and AI Infrastructure research figures. Turn manuscript evidence into architecture diagrams, mechanism figures, resource views and execution timelines for papers and dissertations.
+A figure-design skill for computer systems and AI Infrastructure, with image generation, draw.io and WPS/PowerPoint workflows.
 
-**Manuscript → explanatory question → concrete constructions → objects and relationships → generation and revision → requested editable delivery → validation.**
+**English** · [简体中文](README.zh-CN.md)
 
-[Skill entrypoint](SKILL.md) · [Offline recipe browser](guide.html) · [Examples and inputs](examples/showcase.md) · [Changelog](CHANGELOG.md)
+[Quick start](#quick-start) · [Examples](#examples) · [Recipe library](#library) · [Guides](#guides) · [Changelog](CHANGELOG.md)
 
-## What you can do
+</div>
 
-- **Choose or review a figure:** look up constructions, compare variants and critique an existing figure without generating an image.
-- **Draw or structurally redraw:** select manuscript-grounded objects and relationships, then generate, inspect and revise.
-- **Make local changes:** edit labels, colors or connectors while preserving the rest of the accepted design.
-- **Deliver editable work:** use draw.io or WPS/PowerPoint (PPTX), including independent generated assets with native labels and connectors. Rebuild internal geometry when full-vector or internal-editability requirements call for it.
+## From manuscript to figure
 
-The library covers models, inference, hardware, storage, prediction, scheduling, training, reinforcement learning, Agents, systems software, Kubernetes and observability. Stable variants include selection metadata and source links. See [generated statistics](catalog/statistics.json) for current coverage.
+| Your task | What the skill helps you produce |
+| --- | --- |
+| Choose a visual explanation | Suitable constructions, object roles and connection choices |
+| Draw an architecture or mechanism | A figure grounded in the paper's components, relationships and states |
+| Explain execution or resource sharing | Timelines, occupancy views, lifecycle paths and deployment mappings |
+| Revise an existing figure | Scoped label, color or connector changes that preserve accepted design |
+| Prepare editable delivery | draw.io or WPS/PowerPoint sources with the requested editable elements |
 
-Color guidance includes twelve mixed palettes combining light context colors, medium object colors and stronger accents, alongside the earlier soft and vivid options. After drawing or recoloring, the agent inspects the actual figure for hierarchy, color balance, spacing, forms and target-size readability, then repairs observed problems within scope. See [palettes](references/visual-system.md) and [visual review](references/visual-quality.md#aesthetic-review).
+**Bring:** the relevant paper section, a caption, an existing figure or explicit system assumptions. The agent uses its available image-generation and editor tools to produce the requested output.
 
-## Install
+<a id="quick-start"></a>
+## Quick start
 
-### First installation
+### 1. Install for your agent
 
-You need Git and an agent host that can load `SKILL.md`. This repository requires no package build or API key for installation. For a host that discovers `~/.agents/skills`, clone directly into that directory:
+Send this request to your agent:
+
+```text
+Install systems-figure-studio from:
+https://github.com/Jinghao-coding/systems-figure-studio
+
+Find the skill directory used by this agent and check for an existing installation.
+Reuse that installation and preserve local edits. Otherwise install the complete
+repository once, including SKILL.md and supporting resources.
+Verify the installed path and explain how to invoke the skill here.
+```
+
+For manual installation with Node.js and npm, choose your target agent:
+
+```bash
+npx skills@latest add Jinghao-coding/systems-figure-studio --skill systems-figure-studio --agent codex --global
+```
+
+For Claude Code, replace `codex` with `claude-code`. Omit `--global` for a project installation. The [skills CLI](https://github.com/vercel-labs/skills) also supports other agents; prefer its symlink option when sharing one installation across tools. Choose one installation method for an existing setup.
+
+<details>
+<summary>Git installation and updates</summary>
+
+For a host discovering `~/.agents/skills`, clone into a directory that does not yet exist:
 
 ```bash
 mkdir -p ~/.agents/skills
 git clone https://github.com/Jinghao-coding/systems-figure-studio.git ~/.agents/skills/systems-figure-studio
-cd ~/.agents/skills/systems-figure-studio
 ```
 
-The destination must not already exist. If you already have this checkout, use it as the single maintained installation. For another host, use its configured skill discovery directory; do not clone or copy the skill into multiple discovery roots. Refresh the host's skill list or start a new chat if needed.
+Use your host's configured skill directory if it differs. Keep the full repository together. To update a Git installation, run `git status --short` in that checkout, preserve local changes, then run `git pull --ff-only` with a clean working tree. CLI installations use the CLI's update mechanism instead. Refresh skill discovery or start a new chat after installation when needed.
 
-The root `SKILL.md` and its sibling directories must remain together. Copying only `SKILL.md` loses the recipes, references and assets.
+</details>
 
-### Update an existing installation
+### 2. Start with your paper
 
-```bash
-cd ~/.agents/skills/systems-figure-studio
-git status --short
+```text
+Use systems-figure-studio to draw a mechanism figure from the attached design section.
+Use English labels. Show the composition, object constructions, palette and prompt,
+then generate the figure and inspect it at the intended paper width.
 ```
 
-If there are local changes, review and preserve them before updating. With a clean working tree:
+Codex supports `$systems-figure-studio`; Claude Code uses `/systems-figure-studio`. In other environments, use the host's skill invocation or ask it to read the installed `SKILL.md`. [Claude Code invocation](https://code.claude.com/docs/en/skills).
 
-```bash
-git pull --ff-only
+<a id="examples"></a>
+## Common tasks
+
+### Compare constructions
+
+```text
+Use systems-figure-studio to compare ways to show GPU sharing in this system.
+Explain which objects and relationships each view makes clear. Do not draw yet.
 ```
 
-If Git reports diverged history, resolve that history before retrying. Do not reset or overwrite local work. Normal browsing uses the root `guide.html`; a second site build or skill installation is unnecessary.
+### Recolor an existing figure
 
-### Tools needed for each route
+```text
+Use systems-figure-studio to improve this figure's colors while preserving its layout.
+Mix soft region fills with clearer object colors and stronger focal accents.
+Inspect the rendered result for balance, readability and overall visual appeal.
+```
 
-| Task | Requirements |
+### Change two labels
+
+```text
+Use systems-figure-studio to change only “Request” to “Job” and “Device” to “GPU”.
+Keep every other object, label, color and position unchanged.
+```
+
+### Deliver an editable figure
+
+```text
+Use systems-figure-studio to adapt this figure for my Chinese dissertation chapter.
+Use the chapter's terminology and deliver a draw.io source plus a preview.
+Keep key labels and relationships editable, following the supplied mechanism.
+```
+
+You may request WPS/PowerPoint (PPTX) instead and specify which parts need editing. Independent generated images can be combined with native labels and connectors; request full-vector output when image internals also need reconstruction. “Show the prompt first” continues authorized drawing after disclosure; “wait for my confirmation” pauses before drawing.
+
+<a id="library"></a>
+## Explore the recipe library
+
+Open the root `guide.html` locally; on macOS, run `open guide.html`. The browser works offline and searches Chinese names, English terms and aliases. Copy a variant, a full entry or combination notes for selected objects. No separate site build is needed.
+
+Topics cover models, inference, CPUs/GPUs, storage, performance prediction, scheduling, training, Agents and Kubernetes. The [palette guide](references/visual-system.md) includes soft, vivid and mixed-strength combinations. The [visual review](references/visual-quality.md#aesthetic-review) checks the actual composition after drawing and recoloring.
+
+Browse [recorded examples](examples/showcase.md), [combination recipes](examples/combined-recipes.md) and [scenario inputs](examples/scenarios/README.md). Each resource records its own state; current library coverage is in [catalog statistics](catalog/statistics.json).
+
+<a id="guides"></a>
+## Guides
+
+| Need | Read |
 | --- | --- |
-| Read recipes, select variants, review material | Agent with access to the manuscript and skill files |
-| Browse offline | A local browser; open `guide.html` directly |
-| Generate a full figure or custom asset | An available, authorized image-generation tool such as the host's image gen capability |
-| Create/edit/export draw.io | Suitable draw.io integration, editor or native-file tooling |
-| Create/edit/export WPS/PowerPoint | Suitable WPS/PowerPoint integration or PPTX-generation tooling; the target editor for editor validation |
-| Rebuild and run core checks | Python 3.10+; standard library only |
-| Run browser logic tests | Node.js 18+ in addition to Python |
+| Invoke the workflow | [Skill entrypoint](SKILL.md) |
+| Find objects and constructions | [Topic index](references/topic-index.md) |
+| Organize layouts and relationships | [Figure grammars](references/figure-grammars.md) |
+| Select colors and review appearance | [Visual system](references/visual-system.md) · [Visual quality](references/visual-quality.md) |
+| Use image gen or record prompts | [Generation prompts](references/generation-prompts.md) |
+| Deliver draw.io or WPS/PPTX | [Editable production](references/editable-production.md) |
+| Fit a paper or dissertation | [Document contexts](references/document-contexts.md) · [Validation](references/validation.md) |
+| Contribute recipes and tooling | [Contributing](CONTRIBUTING.md) · [Maintenance](references/knowledge-base.md) |
 
-The skill supplies instructions and resources. It does not install image services, MCP servers, editor integrations or credentials. Available tools determine the executable route. Tool-specific setup and delivery checks are in [editable production](references/editable-production.md).
-
-## Quick start
-
-In a host supporting named skill invocation, use `$systems-figure-studio`. Otherwise ask the agent to read the installed `SKILL.md`. Attach the relevant paper section, caption, existing figure or explicit system assumptions.
-
-**Choose a construction without drawing:**
-
-```text
-Use $systems-figure-studio to compare suitable constructions for this scheduling
-mechanism. Explain the objects and relationships. Do not generate an image.
-```
-
-**Create a figure:**
-
-```text
-Use $systems-figure-studio to draw a mechanism figure from the attached paper section.
-Use English labels. Show the composition, concrete object constructions, palette and
-complete prompt first, then generate and inspect the figure at the intended paper width.
-```
-
-**Make a local edit:**
-
-```text
-Use $systems-figure-studio to change only “Request” to “Job” and “Device” to “GPU”.
-Preserve all other labels, objects, colors and layout.
-```
-
-**Request editable delivery:**
-
-```text
-Use $systems-figure-studio to adapt this figure for a Chinese dissertation chapter.
-Follow the chapter terminology and deliver a draw.io source plus a preview.
-Keep key labels and relationships editable; preserve the supplied mechanism.
-```
-
-You can instead request WPS/PowerPoint (PPTX). State which parts need independent editing. Generated image internals remain raster unless reconstructed; for PPT, prefer a small number of useful editable objects. “Show the prompt first” means disclose and continue authorized drawing; “draw after my confirmation” means wait.
-
-## Browse and reuse locally
-
-Open `guide.html` from the checkout in a browser. It contains its own search data, scripts and styles, with no CDN or backend. On macOS, `open guide.html` opens it in the default browser. On other systems, open the file directly.
-
-Search Chinese names, English terms and aliases across entries, variants, Agent extensions, combination recipes and rules. Copy a single construction, a whole entry, or a short composition note from up to eight selections. URL hashes preserve topic, query, term and variant. External source links require network access.
-
-[Historical examples](examples/showcase.md) retain their production records. [Three cross-topic scenario inputs](examples/scenarios/README.md) are available for new work; they currently have no accepted complete diagrams. Asset eligibility and review status are tracked separately from recipe readiness.
-
-## Maintain and test
+<details>
+<summary>Maintainer commands and optional checks</summary>
 
 Run from the repository root:
 
@@ -128,6 +152,8 @@ The behavior command validates evaluation fixtures; real agent behavior requires
 Maintain recipe bodies in `topics/*.md` and independent metadata in the designated catalog source files. Rebuild the index, statistics, browser payload and guide from those sources. See [maintenance](references/knowledge-base.md), [contributing](CONTRIBUTING.md), [validation records](evaluations/maintenance-2026-10-05.md) and [release checks](RELEASE_CHECKLIST.md).
 
 [Static hosting preparation](references/static-hosting.md) uses a temporary bundle outside the checkout. The GitHub Pages workflow runs only when manually triggered; installation and normal pushes do not deploy a website.
+
+</details>
 
 ## Version and license
 
