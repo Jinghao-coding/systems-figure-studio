@@ -15,6 +15,8 @@
 | Logo feels pasted on | Attach an accurate mark to its actual platform, model, framework or interface; coordinate its size and connectors with the component |
 | Good composition but wrong detail | Target related repairs, preserve layout, then recheck the full image |
 
+For new drawings and recoloring, complete the [rendered aesthetic review](visual-quality.md#aesthetic-review) before delivery. Use visible findings to choose repairs; preserve accepted design outside the requested scope.
+
 ## Stop propagation of errors
 
 Inspect edits for changed labels, extra arrows, duplicated selected marks, altered identities, arithmetic and state changes. Two panels comparing a placement need the same candidate. A delayed non-critical branch must not be mislabeled originally critical. Completion frees a slot. A symbolic table must retain its paper-defined index and meaning.

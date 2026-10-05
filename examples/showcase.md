@@ -2,6 +2,10 @@
 
 These are existing project artifacts, not freshly generated outputs or published-paper claims. Only the recorded revision prompt below is available; image generation is nondeterministic, so it supports workflow reproduction rather than pixel-identical results.
 
+## Complete cross-topic case status
+
+The new A/B/C trial figures were withdrawn following user review and are not included as completed cases. Their [synthetic inputs](scenarios/README.md) remain available for future redesign. The historical examples below are preserved with their original scope.
+
 ## 1. Correct a training / inference / Agent comparison
 
 **Brief:** Compare task objects, execution phases and retained state in three rows. Use recognizable sample pages, network/model structures and an Agent/tool scene. This is an illustrative explanation, not measured performance or a universal memory policy.

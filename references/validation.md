@@ -25,6 +25,8 @@ Show the actual complete prompt (or native composition brief) before tool execut
 - Dissertation-wide figures preserve recurring concepts and symbols without inventing dependencies among chapters.
 - Inherited source-review records, textual candidates and newly inspected images have separate statuses.
 - Data/control/feedback are distinguishable; local guides and state borders are clear.
+- Perform the [rendered aesthetic review](visual-quality.md#aesthetic-review) after new drawings or color revisions; record concrete visual findings and reinspect actual corrections.
+- Check color hierarchy in the actual composition: contextual fills, object identities and focal relationships have the intended relative weight; small paths and labels remain readable. Uniformly pale or uniformly vivid treatment should be a deliberate choice, not a palette-grouping artifact.
 - Neighboring figures maintain coherent identity and typography. Different figure roles may use different coordinated palettes; direct comparisons preserve color mapping. Judge reduced clutter by the actual composition rather than automatic retention of earlier colors.
 - Remove editorial subtitles that repeat what the composition shows; preserve labels/conditions that materially affect interpretation.
 

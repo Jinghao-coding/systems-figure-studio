@@ -1,65 +1,106 @@
 #!/usr/bin/env python3
-"""Validate package structure and current content; this is not a visual QA test."""
-from pathlib import Path
-import json,re,hashlib,sys
+"""Current catalog, links, artifacts and deterministic generated-content checks."""
+import json
+import re
+import sys
+import xml.etree.ElementTree as ET
 from urllib.parse import unquote
-P=Path(__file__).resolve().parents[1]
-def load(name):return json.loads((P/name).read_text(encoding='utf-8'))
-errors=[];checks=[]
-def check(ok,msg):
-    checks.append({'check':msg,'passed':bool(ok)})
-    if not ok:errors.append(msg)
-idx=load('catalog/index.json');stats=load('catalog/statistics.json');topics=load('catalog/topics.json');sources=load('catalog/sources.json');migration=load('catalog/migration.json')
-ids=[t['id'] for t in idx];source_ids={s['id'] for s in sources}
-check(len(ids)==len(set(ids)),'unique current term IDs')
-check(len(topics)==stats['theme_count'],'theme count matches')
-check(len(idx)==stats['term_count'],'term count matches')
-check(sum(x['variant_count'] for x in idx)==stats['variant_count'],'variant count matches')
-check(len(migration)==52 and all(x in ids for x in migration),'all 52 legacy IDs mapped into current topics')
-check(sum(x['origin'] in ['original_or_adapted_candidate','added_v0.4.1'] for x in idx)==stats['new_non_agent_terms'],'cumulative added non-Agent term count matches')
-check(sum(x['variant_count'] for x in idx if x['origin'] in ['original_or_adapted_candidate','added_v0.4.1'])==stats['new_non_agent_variants'],'cumulative added non-Agent variants match')
-check(all(x['image_status']=='not_generated' for x in idx),'no text recipe falsely marked as generated')
-check(len([s for s in sources if s['record_origin']=='new_v0.4' and s['review_status']=='visually_reviewed'])==7,'7 inherited v0.4 visual sources kept separate')
-for meta in topics:
-    check(all(i in ids for i in meta.get('related_ids',[])),f'cross-topic IDs exist: {meta["id"]}')
-check(sum(x['origin']=='added_v0.4.1' for x in idx)==stats['added_in_this_revision']['terms'],'latest term delta matches')
-check(sum(x['variant_count'] for x in idx if x['origin']=='added_v0.4.1')==stats['added_in_this_revision']['variants'],'latest variant delta matches')
-for t in idx:
-    fp=P/t['path']; check(fp.exists(),f"term file exists: {t['id']}")
-    if fp.exists():check(f'id="{t["anchor"]}"' in fp.read_text(),f"term anchor exists: {t['id']}")
-    check(all(s in source_ids for s in t['refs']),f"source IDs exist: {t['id']}")
-# Local Markdown links and explicit anchors. Ignore remote URLs and pure illustrative placeholders.
-for p in P.rglob('*.md'):
-    txt=p.read_text(encoding='utf-8')
-    for dest in re.findall(r'\[[^\]\n]*\]\(([^)\n]+)\)',txt):
-        if re.match(r'(?:https?://|mailto:)',dest):continue
-        path,_,anchor=dest.partition('#'); fp=(p.parent/unquote(path)).resolve() if path else p
-        check(fp.exists(),f'local link: {p.relative_to(P)} → {dest}')
-        if anchor and fp.exists() and fp.suffix=='.md':
-            body=fp.read_text();explicit=f'id="{anchor}"' in body
-            check(explicit,f'explicit local anchor: {p.relative_to(P)} → {dest}')
-# No obsolete secondary entrypoint or duplicated legacy prompt library.
-for obsolete in ['catalog/elements.json','prompts/element-prompts.md','visual-reference-atlas.html','UPDATE-0.3-DRAFT.md']:
-    check(not (P/obsolete).exists(),f'obsolete runtime file absent: {obsolete}')
-for p in (P/'topics').glob('*.md'):
-    txt=p.read_text()
-    for bad in ['一律禁止使用icon','一律禁用机器人','不用机器人头像','不使用速度仪表盘图标','采用局部结构而非服务器图标']:
-        check(bad not in txt,f'no obsolete icon ban: {p.name} / {bad}')
-    check('---BEGIN PROMPT---' not in txt and '{VISIBLE_TEXT_RULE}' not in txt,f'no unfinished prompt scaffolding: {p.name}')
-# The two approved Agent recipe bodies must match the versions saved during migration.
-for fn,rec in load('catalog/agent-preservation.json').items():
-    txt=(P/'topics'/fn).read_text();body=txt[txt.index('## '):]
-    check(hashlib.sha256(body.encode()).hexdigest()==rec['written_body_hash'],f'approved Agent body preserved: {fn}')
-html=(P/'guide.html').read_text()
-match=re.search(r'<script type="application/json" id="payload">(.*?)</script>',html,re.S)
-check(match is not None,'offline guide has embedded payload')
-if match:
-    d=json.loads(match.group(1));check(len(d['terms'])==len(idx),'offline guide matches term count')
-    check(sum(len(t['variants']) for t in d['terms'])==stats['variant_count'],'offline guide matches variants')
-    check(all(v['description'].strip() for t in d['terms'] for v in t['variants']),'no empty descriptions')
-    check(all(len(t['variants'])>=1 for t in d['terms']),'every term has a concrete drawing construction')
-check((P/'SKILL.md').exists() and (P/'references/knowledge-base.md').exists() and load('catalog/import.json')['source_version']=='0.4.1', 'single skill entry and source provenance present')
-report={'passed':not errors,'checks':len(checks),'failed':errors,'scope':'structure, local links, source IDs, counts, Agent preservation, latest-rule consistency; not visual approval','details':checks}
-(P/'catalog/validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
-print(json.dumps({k:v for k,v in report.items() if k!='details'},ensure_ascii=False,indent=2))
-sys.exit(0 if not errors else 1)
+from catalog_model import ROOT, CatalogError, read_json, parse_topics
+from rebuild_navigation import build
+
+
+def link_errors(root):
+    errors=[]
+    for p in root.rglob('*.md'):
+        if any(x in {'.git','.venv','node_modules','dist','__pycache__'} for x in p.relative_to(root).parts):continue
+        text=p.read_text(encoding='utf-8')
+        # Fenced examples contain syntax templates, not actual links.
+        text=re.sub(r'```[^\n]*\n[\s\S]*?```','',text)
+        for dest in re.findall(r'\[[^\]\n]*\]\(([^)\n]+)\)',text):
+            if re.match(r'(?:https?://|mailto:)',dest):continue
+            path,_,anchor=dest.partition('#');fp=(p.parent/unquote(path)).resolve() if path else p
+            if not fp.exists():errors.append(f'{p.relative_to(root)}: missing local link {dest}');continue
+            if anchor and fp.suffix=='.md':
+                body=fp.read_text(encoding='utf-8')
+                headings=[re.sub(r'[^\w\- ]','',h.lower()).replace(' ','-') for h in re.findall(r'^#+ (.+)$',body,re.M)]
+                if f'id="{unquote(anchor)}"' not in body and unquote(anchor) not in headings:
+                    errors.append(f'{p.relative_to(root)}: missing anchor {dest}')
+    return errors
+
+
+def source_errors(terms,sources):
+    ids=[s['id'] for s in sources];errors=[]
+    if len(ids)!=len(set(ids)):errors.append('duplicate source ID')
+    for t in terms:
+        for id in t['refs']:
+            if id not in ids:errors.append(f'{t["path"]}: term {t["id"]}: missing source {id}')
+    return errors
+
+
+def artifact_errors(root):
+    errors=[]
+    items=read_json(root/'assets/visual-library/catalog.json')['items'];ids=[]
+    for a in items:
+        ids.append(a['id'])
+        if a.get('final_use') not in {'reference_only','review_required','eligible','superseded','truncated'}:
+            errors.append('invalid final_use: '+a['id'])
+        for field in ['generation_record','source_review','visual_review','user_acceptance']:
+            if not a.get(field):errors.append('missing '+field+': '+a['id'])
+        for field in ['file','source']:
+            if a.get(field) and not (root/'assets/visual-library'/a[field]).is_file():errors.append('missing asset '+a[field])
+    if len(ids)!=len(set(ids)):errors.append('duplicate asset ID')
+    for p in (root/'assets').rglob('*.svg'):
+        try:
+            doc=ET.parse(p)
+            for e in doc.iter():
+                for k,v in e.attrib.items():
+                    if k.rsplit('}',1)[-1] in {'href','src'} and not v.startswith(('data:','#','http://','https://')):
+                        if not (p.parent/unquote(v)).exists():errors.append('missing SVG dependency: '+str(p.relative_to(root)))
+        except ET.ParseError as exc:errors.append(f'{p.relative_to(root)}: {exc}')
+    return errors
+
+
+def validate(root=ROOT):
+    errors=[]
+    try:
+        topics,terms=parse_topics(root)
+        sources=read_json(root/'catalog/sources.json');cases=read_json(root/'examples/cases.json')
+        errors.extend(source_errors(terms,sources));errors.extend(link_errors(root));errors.extend(artifact_errors(root))
+        ids={t['id'] for t in terms}
+        for asset in read_json(root/'assets/visual-library/catalog.json')['items']:
+            if not set(asset.get('term_ids',[])) <= ids:errors.append('invalid asset term links: '+asset['id'])
+        case_ids=[c['id'] for c in cases]
+        if len(case_ids)!=len(set(case_ids)):errors.append('duplicate case ID')
+        variants={v['id']:v for t in terms for v in t['variants']}
+        for topic in topics:
+            if not set(topic.get('related_ids',[])) <= ids:errors.append('invalid related terms: '+topic['id'])
+        for v in variants.values():
+            for key in ['id','term_id','heading','selection_status','cases']:
+                if key not in v:errors.append('variant missing '+key+': '+v['id'])
+            if v.get('selection_status','').startswith('reviewed'):
+                for key in ['suitable','unsuitable','level','connect','boundary_source']:
+                    if not v.get(key):errors.append('reviewed variant missing '+key+': '+v['id'])
+            for path in v.get('scenario_inputs',[]):
+                if not (root/path).exists():errors.append('missing scenario: '+path)
+            for cid in v['cases']:
+                c=next((c for c in cases if c['id']==cid),None)
+                if not c or v['id'] not in c['variants']:errors.append('invalid reciprocal case: '+v['id']+' / '+cid)
+        for c in cases:
+            for key in ['path','preview','source','checks']:
+                if not c.get(key) or not (root/c[key]).is_file():errors.append('missing case '+key+': '+c['id'])
+            for vid in c['variants']:
+                if vid not in variants or c['id'] not in variants[vid]['cases']:errors.append('invalid reciprocal variant: '+c['id'])
+        for name,text in build(root).items():
+            if not (root/name).exists() or (root/name).read_text(encoding='utf-8')!=text:errors.append('generated file missing or stale: '+name)
+        for folder in ['topics','examples','assets']:
+            for p in (root/folder).rglob('*'):
+                if p.suffix not in {'.md','.txt'}:continue
+                if re.search(r'---BEGIN PROMPT---|\{VISIBLE_TEXT_RULE\}',p.read_text(encoding='utf-8')):
+                    errors.append('unfinished prompt placeholder: '+str(p.relative_to(root)))
+    except (OSError,ValueError,KeyError,CatalogError) as exc:errors.append(str(exc))
+    return errors
+
+if __name__=='__main__':
+    errors=validate();report={'passed':not errors,'failed':errors,'scope':'current structure, IDs, links, sources, metadata, asset dependencies and generated-content consistency'}
+    (ROOT/'catalog/validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    print(json.dumps(report,ensure_ascii=False,indent=2));sys.exit(bool(errors))

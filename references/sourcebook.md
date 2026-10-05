@@ -797,3 +797,75 @@ R 开头为已迁移的原图模式，AG 为保留的 Agent 记录，S 为本轮
 - [Framework Studio](framework-studio-ideas.md)：已看两幅实际图；真实关系与画面分组分开核对、操作位置和连线语义。
 
 来源审阅范围和版本见各记录；新增配色组合是候选，需要在实际成图中判断，未标为用户验收。
+
+
+## 混合配色的方法来源（2026-10-05）
+
+<a id="pa01"></a>
+
+### PA01 · Scientific illustration for commissioned content: Our guiding principles for conceptual figures
+
+[Nature editorial art teams](https://www.nature.com/documents/Nature_scientific_illustration_author_guide.pdf) · PDF pp. 1–3: hierarchy, accessibility and common mistakes。
+
+期刊概念图指南把上下文、主体与强调组织为视觉层次。 借鉴同图混合强弱色及复杂图的扩展类别色。 适用范围是该刊约稿概念图；不把刊物样式或少色倾向设为所有系统论文的硬规则。
+
+<a id="pa02"></a>
+
+### PA02 · How to pick more beautiful colors for your data visualizations
+
+[Lisa Charlotte Muth / Datawrapper](https://www.datawrapper.de/blog/beautifulcolors) · 2020-09-04; sections on saturation/lightness and background contrast。
+
+示例通过不同明度与饱和度协调色相，提醒浅色细线在白底上可能不清楚。 同时调整色相、明度和饱和度；检查色彩在实际面积和背景上的表现。 类别图的同等权重与概念图的主次层次需区别处理。
+
+<a id="pa03"></a>
+
+### PA03 · Emphasize what you want readers to see with color
+
+[Lisa Charlotte Muth / Datawrapper](https://www.datawrapper.de/blog/emphasize-with-color-in-data-visualizations) · 2023-07-24; sections 04–07 on category identity and emphasis。
+
+文章列出较浅类别色与更饱和类别色共存的实例，讨论面积和颜色强度共同影响注意力。 保留多个类别色，在同色族内调节强调程度。 不要把同一对象换成无关色相来表示变重要，也不固定只允许一个强调色。
+
+<a id="pa04"></a>
+
+### PA04 · Ten simple rules for designing graphical abstracts
+
+[PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011789) · Rule 8: Colors; Figure 7 caption and related prose。
+
+颜色可用于强调、数量编码和物体外观；语义一致和非颜色线索也参与可读性。 区分概念图色彩层次、类别身份与定量色标。 不将装饰性混合色板直接用作连续热力图或数据量值尺度。
+
+本轮依据取得的正文和图注记录方法，来源状态为 text_reviewed。新增混合组合为项目自主选色，并非从来源图面取样。
+
+
+## 整图审美与开源方法（2026-10-05）
+
+<a id="pa05"></a>
+
+### PA05 · Data visualization: A view of every Points of View column
+
+[Daniel Evanko / Nature Methods](https://blogs.nature.com/methagora/2013/07/data-visualization-points-of-view.html) · Composition and layout; Improving figure clarity。
+
+编辑部概述将层次、留白、知觉分组与相关信息的显著性联系起来。 将上述因素转化为整图观察问题。 本轮读到编辑部汇总正文；单篇 Layout、Negative space、Salience to relevance 正文获取受限，不标为全文已读。
+
+<a id="pa06"></a>
+
+### PA06 · Viz Palette — redesign notes
+
+[Susie Lu](https://susielu.com/data-viz/viz-palette) · Redesign section。
+
+作者记录了突出交互、减少字号和字重变化、增加空间、减弱分隔线及澄清分组的改动。 借鉴从实际画面发现问题、再调整视觉重量和分组的复核方式。 这是交互工具界面设计记录；只迁移可用的视觉原则，不把界面布局套入论文系统图。
+
+<a id="pa07"></a>
+
+### PA07 · SciencePlots
+
+[SciencePlots contributors](https://github.com/garrettj403/SciencePlots) · README: Using the Styles; Other color cycles; MIT license。
+
+项目提供可叠加的 Matplotlib 样式和多组颜色循环。 统计图可参考字体、线条、尺寸和颜色协调设置；核对实际目标版面。 本轮阅读 README，未安装或运行；样式选择不能验证系统机制图美感，不新增强制依赖。
+
+<a id="pa08"></a>
+
+### PA08 · Penrose
+
+[Penrose contributors](https://github.com/penrose/penrose) · README: Domain, Substance, Style example; MIT license。
+
+开源示例分别声明对象关系与外观，并用包含、分离和层叠约束安排图面。 借鉴语义关系与视觉布局分别表达，以及基于对象约束调整间距。 本轮阅读 README 示例，未安装或运行；不引入 DSL，也不把布局约束满足视为审美验收。

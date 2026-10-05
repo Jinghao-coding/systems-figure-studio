@@ -1,25 +1,38 @@
 ---
 name: systems-figure-studio
-description: Create and redraw figures for computer-systems conference papers, journal articles and doctoral dissertations. Infer Chinese or English figure labels from the target manuscript, using an integrated drawing knowledge base for models, GPUs, clusters, scheduling, inference, Agents and platform logos. Select concrete component constructions, compose and inspect figures, and deliver images or requested editable sources and manuscript integration.
+description: Select, draw, review and revise computer-systems and AI Infrastructure research figures. Use manuscript-grounded constructions and deliver requested editable sources or paper integration.
 ---
 
 # Systems Figure Studio
 
-Draw the objects and relationships described in the manuscript. This skill maintains drawing methods for models, hardware, software, scheduling and workflows: 12 topics, 122 terms and 273 constructions, plus Agent samples and nine reference adaptations. All topics, recipes, tools and production rules belong to this one skill and support image generation, native editable drawing and revision of existing figures. Recipe provenance and versions are recorded in `catalog/import.json`.
+Turn manuscript objects, relations, states and evidence into an explanatory figure. This is the single execution entrypoint; `topics/*.md` are the sole maintained recipe bodies. Use the [offline browser](guide.html), [topic index](references/topic-index.md), and [worked examples](examples/showcase.md) for selection. Package version and inherited knowledge-base version are separate; see [provenance](catalog/import.json).
 
-**Default workflow: understand the manuscript → define the figure's explanatory role → select concrete object constructions → compose relationships and visual style → show the user the design and complete prompt → draw → inspect the actual image against the design.** Use an available image generation tool by default for new previews. When native sources are requested or a native project already exists, use the corresponding editing workflow. For text-only or color-only changes, preserve the accepted structure without redesigning it merely to follow the workflow.
+## Global constraints
 
-## Infer manuscript type and figure language
+- Read the target material and original figure before judging or editing. Establish the question the figure answers and trace mechanism facts to that material. References supply only explicitly borrowed visual expression, never target-system facts.
+- Label language follows explicit user requirements → target chapter terminology → target prose and caption language. Chat language does not decide labels. Preserve names, symbols and object granularity.
+- Select concrete constructions for each role: identity, structure, deployment, state or execution. Icons, role avatars, accurate logos and modest depth are allowed when useful. Preserve Cloud/Kubernetes, CPU/GPU, storage, cluster and connection semantics; do not turn every object into a box.
+- Allow rich coordinated color within a single figure, including multiple vivid object families. Mix light context colors, medium-strength object colors and stronger accents according to role and area; preserve soft palettes as options. Choose hue count and saturation for the composition rather than applying one intensity to every object. See [visual system](references/visual-system.md).
+- Preserve accepted design outside a requested local change. Distinguish candidates from execution, roles from requests/instances/devices, and waiting from resource residency. Unsupported quantities remain explicitly illustrative.
+- Use only exposed, authorized tool capabilities. Do not invent model selectors or image-reference parameters, incur unapproved costs, publish, push or delete historical assets.
+- Keep actual inputs, prompts/native briefs, revisions and checks. Source review, recipe readiness, artifact quality and user acceptance are independent. Never transfer historical acceptance to a new output.
 
-Support conference papers, journal articles and doctoral dissertations in either Chinese or English. Read the destination manuscript's title, section, surrounding prose, caption and template to determine purpose, language and layout. Do not equate conferences or journals with English, or dissertations with Chinese.
+## Task routing
 
-Choose figure labels in this order: explicit user requirements for this figure → destination chapter and project terminology → dominant language of the destination prose and caption. The conversation language, reference image language and generation prompt language do not determine the output language. When adapting an English paper figure for a Chinese dissertation, follow the destination Chinese chapter. Preserve established system names, acronyms, mathematical symbols and code identifiers. Terms such as GPU and KV Cache in Chinese prose do not imply a request for bilingual labels.
+| Request | Execute |
+| --- | --- |
+| Lookup, critique or choose a construction | Read the material and relevant entries/variants; provide grounded recommendations. Do not generate images. |
+| New figure or structural redraw | Read → define explanatory question → choose variants → inventory objects and endpoints → disclose design/brief → generate → inspect → revise. |
+| Labels, colors or local connectors | Inspect the original; name the changed objects and preserved design; apply only that scope and compare the result. Do not force a whole-figure redraw. |
+| Editable delivery or paper integration | Add [editable production](references/editable-production.md) and the applicable export/integration checks to the relevant route above. |
 
-Infer these choices automatically when the materials suffice, and briefly state the target manuscript type and label language before drawing. Ask only when the destination is missing or the task contains unresolved language conflicts. Fit the actual single-column, double-column or dissertation page width. For dissertations, maintain chapter relationships and terminology; for conference and journal papers, scope each figure to its argument. See [document contexts](references/document-contexts.md).
+### Disclosure and confirmation
 
-## Select object constructions before composing the figure
+Show the actual complete prompt or equivalent native composition brief before drawing, unless the user asks to omit it. **“Show the prompt first” means disclose and continue already authorized drawing. “Draw after confirmation” means disclose and wait.** An explicit request for approval is a wait condition; disclosure alone is not. For local edits, disclose the edit and preserved scope. Follow the host/tool protocol for the actual invocation. Details and recording conventions: [generation prompts](references/generation-prompts.md).
 
-For a new figure or substantial redraw, open the relevant topics below and read the actual entries and concrete constructions. Reading only an index or remembering entry names is insufficient. Select topics by the objects in the figure, usually combining several topics; do not load the entire library for every figure. Inspect all topics when maintaining the whole knowledge base.
+## Read on demand
+
+For new or structural work, read the selected topic bodies and specific variants, not merely their titles. Use stable variant IDs from `catalog/variants.json`; selection metadata supplements the Markdown without duplicating descriptions. [Combination recipes](examples/combined-recipes.md) are starting points; resolve connections using the target material.
 
 | Objects or relationships to explain | Read directly | Example constructions |
 | --- | --- | --- |
@@ -36,105 +49,23 @@ For a new figure or substantial redraw, open the relevant topics below and read 
 | Frameworks, runtimes, containers, controllers, compilers and services | [Systems software](topics/systems-runtime.md) | Desired/observed state records and control paths; container ownership; model–runtime–service mappings; local graph rewrites |
 | SLOs, performance observation, execution traces, faults and recovery | [Observability and reliability](topics/observability-reliability.md) | Time brackets; state snapshots; metric strips; task/kernel alignment; fault domains and takeover paths |
 
-When an entry name is unclear, consult the [full index](references/topic-index.md) or `catalog/index.json`. Use [cross-topic recipes](examples/combined-recipes.md) for compositions. The [offline guide](guide.html) supports browsing, searching and copying all textual constructions. [Knowledge-base maintenance](references/knowledge-base.md) records sources, extension methods and validation commands. Topic bodies are the single source of truth for recipes; retain all variants without copying them into a second body of instructions.
 
-### Make selected recipes visible
+| Need | Reference |
+| --- | --- |
+| Figure question, object roles, endpoints and version record | [Contracts](references/contracts.md) |
+| Layout, paths, lanes, comparisons and lifecycle | [Figure grammars](references/figure-grammars.md) |
+| Component choice, local elements, accepted design, visual trade-offs | [Visual quality](references/visual-quality.md) |
+| Palette and accurate platform/logo attachment | [Visual system](references/visual-system.md), [Cloud/logo composition](references/cloud-logo-composition.md) |
+| Asset reuse, status and independent image elements | [Visual assets](references/visual-asset-library.md) |
+| Manuscript language, target width and adaptation | [Document contexts](references/document-contexts.md), [compact layout](references/compact-layout.md) |
+| Native editing, minimal PPT object count and export | [Editable production](references/editable-production.md) |
+| Structural, semantic, visual, editor and integration checks | [Validation](references/validation.md), [iteration](references/iteration-playbook.md) |
+| Sources, maintenance, variants and regeneration | [Knowledge-base maintenance](references/knowledge-base.md) |
 
-For each object needing concrete representation, determine: **object and role → entry and variant → silhouette, parts and spatial organization → labels and connection endpoints**. Before drawing, briefly show the user the key choices and resulting visible forms. Code comments or private notes do not replace this disclosure. The actual figure must show the selected parts and relationships; a delivery statement claiming that the library was used is insufficient.
+Supported production routes are **image generation**, **draw.io**, and **WPS/PowerPoint (PPTX)**. Choose the tool from the user request and available host capabilities: image generation for whole figures or independent elements, draw.io for native system diagrams, WPS/PPTX for slide editing and delivery. A worked example using one route does not remove the others.
 
-For example, a training overview can combine the network skeleton in `network-model` with the forward/backward paths in `training`. An inference model can use the layered body in `model-instance`, a `token` sequence and `kv-cache` state strips. For a GPU, choose board identity, an exploded package or compute structure from `accelerator` according to its role, rather than always using the same board construction. Use `kubernetes-platform-logo` for platform-title ownership. The manuscript determines the actual structure; the existence of a recipe does not justify adding a model, platform or deployment.
+Native editable documents may combine independent generated images with native labels, semantic objects and connectors. Reconstruct image internals only for an explicit full-vector/internal-editability requirement. For PPT/WPS, preserve the user's small-object workflow described in editable production; grouping dozens of fragments does not reduce complexity.
 
-When identity alone matters, an icon and short label can form a complete component. When explaining a mechanism, expose the relevant local network, state, data or resources. Allow structural drawings, icons and combinations, including coordinated avatars, modest decoration, subtle depth and approachable details where useful. Balance identity, structural explanation and the whole composition. Avoid reducing every object to a named box or requiring complex internals in every small icon.
+## Completion
 
-**Fix structural problems through structural changes.** If the user finds objects abstract, shapes repetitive or the library unused, reselect and develop the relevant components. Recoloring, retitling or adding icons to otherwise identical boxes does not complete that redraw.
-
-See the [visual asset library](references/visual-asset-library.md) for actual images and reusable forms. Accumulate useful objects as needed, distinguishing accepted references from cleaned assets; inspect leftover text, cropped edges and arrows before reuse. Figures may use GPT Image for the whole image, mixed assets or native primitives as appropriate. Editability is not required for every figure by default.
-
-### Choose assets to fit the figure
-
-The repository's visual assets are optional starting points and examples, not prescribed appearances. Depending on the manuscript's meaning, visual style, scale and composition, reuse a suitable asset, adapt one, generate a new element with an available image tool, or use native primitives. New generation is a normal design choice even when a related asset exists; there is no requirement to search or exhaust the library first. Briefly explain the selected approach when presenting the design.
-
-For revisions or related figure sets, respect any explicit request to preserve an accepted identity or style. Prior acceptance in another figure or project does not make that asset mandatory. Keep repeated objects visually consistent within the current composition without fixing every person, Agent, model or environment to one repository image.
-
-Give each object a form suited to what it explains. A tool workspace might use a terminal, files or network endpoint where relevant, but this is one possible construction rather than a required component list. Simple shapes are appropriate when they clearly express topology, state or timing. Check reused or generated elements for semantic fit, readability and composition quality. For transparent assets, inspect the actual alpha composition on the intended background. See [asset selection](references/visual-asset-library.md#asset-selection).
-
-## Generate new local elements when needed
-
-The knowledge base is an adaptable starting point, not a closed catalog. When no construction fits, or existing constructions look monotonous or inconsistent in the current composition, use GPT Image or the available image generator to design local elements for the figure. This applies to GPUs, CPUs, models, storage, nodes, Agents, tools, data objects and any other object requiring a custom form. Do not wait for the user to request every element or exhaust all entries first. Use capabilities actually exposed by the tool; writing a model name in a prompt does not select that model.
-
-Choose whole-image generation, separately generated elements followed by composition, or a representative component extended to the figure set according to the task. Before generating an element, show its purpose, design and complete prompt. Then display and inspect the result inline, and supply selected elements as actual image inputs or assets when composing the figure. Mentioning a filename in a prompt does not reuse its image. Coordinate color, perspective, silhouette, lighting and detail density at the final figure scale; reuse an element to preserve object identity.
-
-Standalone elements for composition usually need transparent backgrounds, complete contours and clear space for connections. Set the actual transparency parameter when supported. Keep variable labels, counts, states and arrows in the composition layer where possible instead of baking them into pixels. Generated constructions do not constitute real product photographs, official logos, precise microarchitectures or experimental results. See [element generation](references/generation-prompts.md) for prompts and checks.
-
-Generated elements may be imported directly into draw.io or PowerPoint as separate image objects alongside native text, shapes, connectors and groups. This is a normal production path and requires no additional permission to mix assets. Each element can be moved, resized, replaced and grouped independently; text, arrows, state markers and layout remain separately editable. Rebuild internal geometry from the generated reference only when the user explicitly requires full vector output or editing of individual internal parts. Explain that image interiors remain pixels without treating every editable draw.io/PPT request as a requirement to reconstruct all elements as vectors. Do not flatten the entire figure into one image. Retain useful project assets and actual prompts without turning every candidate into a global entry or creating duplicate backups.
-
-## Develop recipes into visual designs
-
-Recipes provide alternative constructions, not fixed icon templates. For new figures, substantial redraws or feedback that a figure looks stiff or unattractive, first read [visual choices and trade-offs](references/visual-quality.md), then choose key objects' **silhouettes, proportions, part relationships and detail scale**. Draw on user references or library examples that have actually been inspected. Design missing forms yourself without claiming unseen sources as visual evidence.
-
-When the user requests inspiration from research figures, search for and inspect actual figures from leading AI or systems conferences relevant to the current objects, preferring official publications or author manuscripts. Extract silhouettes, parts, grouping, connections and color roles. Update existing entries and source records using “source and figure number → retained elements → omitted content → applicable objects.” Do not merely add paper links or assume that a conference's reputation makes an entire figure worth copying.
-
-Produce an actual preview of a key object and one representative relationship, inspect it at reduced size, then extend the design to the figure set. Show the representative preview to the user and state the adopted form. Continue authorized drawing without turning this disclosure into another approval gate. GPUs, models and storage should have recognizable features at their intended size. Adding an icon or including recipe parts does not by itself establish visual quality. Small objects may be simple; large objects should avoid empty placeholders. Precision comes from object relationships, not accumulated pins, screws or shadows.
-
-Choose paths, lanes, local expansions or state comparisons according to the reading relationships. Reuse shapes for objects of the same kind and frames for real ownership. Do not force every object into an identical card for symmetry. Revisions addressing stiffness must examine both component forms and the whole figure's emphasis, density and spacing, beyond colors, rounded corners or thickness. Assess technical correctness and visual quality separately; more detail is not automatically more attractive.
-
-## Understand the content and scope
-
-- **Review, planning or recipe lookup:** read the materials and provide concrete recommendations or recipes; tool availability alone does not authorize image generation.
-- **New figures or composition previews:** read the manuscript, select components and generate the figure; save actual prompts and reference roles following the [prompt guidance](references/generation-prompts.md).
-- **Revision or redrawing:** inspect the original figure and surrounding prose; distinguish faithful reconstruction, translation, local repair and redesign. Preserve accepted choices.
-- **Native editing or manuscript integration:** when draw.io, PPT or another native source is requested, or a native project exists, read [editable production](references/editable-production.md) and use the corresponding workflow. Acceptance of a raster draft does not automatically request vectorization or manuscript integration.
-- **Figure sets:** give each figure a distinct explanatory role while sharing object identities and visual language. Do not impose a fixed count, layout or chapter coverage.
-
-Before composing, distinguish real manuscript objects and connections from visual grouping and local expansions. Organize the main visual around the mechanism being explained. Variables and result labels do not automatically become modules; do not route connections through unrelated components for layout convenience. For complex new figures, use a [compact composition record](references/contracts.md) to check objects, operations, actual recipients and visible labels before drawing, without imposing fixed stages or approval procedures.
-
-Read the supplied TeX entrypoint, referenced figure sources, captions and nearby paragraphs, or the specified PDF's prose and actual pages, to establish objects, inputs/outputs, dependencies, states, resource ownership and counts. Report the actual scope when only part of the material was read. Trace key visual facts to prose, equations or evidence; do not add unimplemented mechanisms or fabricated results. Style references supply only the explicitly borrowed composition, forms or colors, not facts about the target manuscript.
-
-First identify the question the figure answers, then choose an [overview, mechanism comparison or lifecycle composition](references/figure-grammars.md). Determine parallelism, dependencies and hierarchy among research contributions from facts, not visual templates. Show the design and complete prompt as specified below, then continue authorized drawing. If the user explicitly requests prompt review first, wait for feedback before invoking drawing tools.
-
-Automatically use natural, concise Chinese labels or accurate English terminology according to the destination manuscript. Preserve its system names, acronyms, symbols and object granularity. See [document contexts](references/document-contexts.md) for adaptation and translation.
-
-## Choose the representation and preserve accepted design
-
-Identify the relationship readers most need to compare or understand, then choose a single mechanism figure, an overlay of the same object or complementary panels. When uncertain, compare distinct actual examples. Avoid repeatedly applying a familiar template or adding panels only for novelty. Data overlays must share meaningful coordinates and real observations. Mechanism overlays must refer to the same object, location or state; do not merge unrelated abstraction levels into one scene.
-
-An accepted visual design is the baseline for later revisions. Identify which proportions, transparent layers, contours, colors and local expansions aid reading and preserve them. Do not erase these features merely to reduce drawing code or standardize components. Recompose when the user has identified structural problems. Color maintains identity and emphasis; it does not replace structural choices. See [visual choices and trade-offs](references/visual-quality.md).
-
-Records of external methods, what was read and what was adopted are in [Vivid Figures methods](references/vivid-figures-ideas.md), [figures4papers examples and methods](references/figures4papers-ideas.md) and [Framework Studio methods](references/framework-studio-ideas.md). These methods are integrated into this skill and do not require another skill to be installed or invoked.
-
-## Color, logos and labels
-
-Assign colors to object identities, related variants and focal points. Use light fills for bodies and darker outlines or local accents for emphasis; related hues can connect variants. Select and adapt a palette from the [visual system](references/visual-system.md) to the manuscript's roles. Preserve object colors and ordering across comparison panels. Connect overall paths and local expansions through position, form and color. See [figure organization](references/figure-grammars.md) for composition and chart rules; copying hex values while keeping a stiff layout is insufficient.
-
-**Use varied palettes and judge the whole composition.** Consider color, form, light/dark balance and whitespace in inspected references to choose a coordinated scheme for the current figure. Earlier palettes are references to compare, not permanent defaults. Different figure types may use different color families; directly compared panels and successive states of the same object must maintain consistent encoding. Reduce competing color roles instead of mechanically reverting to blue-gray boxes or imposing a three-color limit. Combine or adjust candidates from the [visual system](references/visual-system.md) for aesthetics, recognition and manuscript consistency. Honor explicit requests to preserve particular colors.
-
-Logos, avatars, tool symbols, chips and file icons can help identify objects. Model brands, frameworks, platforms and devices are distinct entities: place symbols on the corresponding component, boundary title or interface and compose them with structures and connections. A logo need not be an experimental variable to appear. Not every figure needs logos, and a plain-text name is not a graphical logo. Use accurate official or user-provided assets; when unavailable, use a name or placeholder rather than claiming a generated approximation is accurate. See [logo composition](references/cloud-logo-composition.md) and [component visual choices](references/visual-quality.md).
-
-Keep object identities, technical terms and the explanations needed to decode the figure. When composition already expresses research relationships, omit editorial subtitles such as “four parallel studies.” Keep words such as “design” or “research content” only when they add necessary technical meaning; do not ban them mechanically. Put long explanations in the manuscript. Preserve counts, units and necessary scientific conditions accurately. Recipe IDs, production status and validation notes do not belong in the finished figure.
-
-Maintain consistent stroke widths, typography hierarchy, perspective and icon detail density. Boundaries express ownership; arrows express actual flow. Do not draw mappings or candidates as executed paths. Distinguish model layers, instances, shards, ranks, roles, requests and devices. Quantitative shapes require real data or an explicitly stated schematic interpretation.
-
-## Show the design and complete prompt before drawing
-
-For a new figure or substantial redraw, show the user the relationship to explain, main composition, visual focus and each key object's “selected construction → visible result” before invoking a tool. Instead of merely naming the GPU entry, specify whether the figure uses a thin board, exploded package or resource-occupancy view, and how it connects to models and data.
-
-Then provide **the complete prompt actually intended for this invocation** in a code block, including concrete forms, spatial relationships, color roles and values, connection endpoints, visible labels, reference-image roles and scientific constraints. A saved prompt file is useful but a link, summary or after-the-fact record cannot replace this advance disclosure. For native drawing, show an equivalent complete composition brief without dumping every low-level API operation. For local edits, show the complete edit instruction and what to preserve. If the design changes before submission, show the updated version.
-
-Disclosure lets the user understand and intervene in the design; it does not automatically add an approval step. Stop at this stage when the user requests “show the prompt first” or “draw after confirmation.” Otherwise, continue authorized drawing. Honor an explicit request to omit disclosure.
-
-## Draw, inspect and deliver
-
-Use currently available, authorized tools. Supply reference images through the generation tool's actual mechanism and inspect local originals first. A path string is not proof that an image was supplied. Do not claim an unverifiable model version. Retry a plausibly transient failure at most once, then report the limitation; do not silently switch to a paid API. For native production, preserve independently editable text, shapes, paths and connections and verify against the actual tool capabilities.
-
-Following the disclosure requirements above, combine manuscript facts, selected constructions, layout, palette and necessary labels into an executable prompt or native composition brief. Avoid relying on adjectives such as “advanced” or “top-conference style,” or concatenating all recipes into the drawing input. Use [figure briefs and version records](references/contracts.md) for concise documentation.
-
-Inspect the actual image after each round using the [semantic and visual checks](references/validation.md):
-
-- Do key objects use concrete constructions suited to their roles? Do forms and relationships explain the content, or do long text boxes still carry everything?
-- Does the palette fit the composition and figure set? Are color roles and contrast clear, and do icons/logos fit the whole image?
-- Are object identities, arrow endpoints, data/control distinctions, candidate/execution distinctions, states and counts accurate?
-- Are parts and short labels readable at small size? Are there redundant subtitles, typos, overlaps or empty boxes?
-
-Fix actual defects using the [iteration playbook](references/iteration-playbook.md). Passing code or primitive validation does not establish visual quality, and a prompt requirement does not prove that the generated image satisfies it. Read [compact layout](references/compact-layout.md) when exact publication dimensions matter.
-
-Display results inline and deliver the corresponding files and actual prompts/composition records. Require native sources and manuscript compilation only within the authorized scope. After manuscript integration, inspect actual page width, captions and float placement. Keep useful drafts and provenance; distinguish inherited source-image reviews, textual recipes and acceptance of the current output. Retain the knowledge-base entries, sources, Agent samples and navigation guide. Publishing, remote synchronization and deletion of historical outputs require their own authorization.
+Deliver the requested recommendation or actual output with input/design records and usable paths. For new drawings and color revisions, perform the [rendered aesthetic review](references/visual-quality.md#aesthetic-review): inspect overall appeal, hierarchy, color balance, spacing and target-size readability; revise observed defects within scope and inspect again, and record structural, semantic, visual, editor and paper-integration checks separately. Report tool limitations precisely. Keep one authoritative editable source and explain whether regeneration overwrites direct edits. Do not claim generation, visual acceptance or editor round-trip from static checks alone.

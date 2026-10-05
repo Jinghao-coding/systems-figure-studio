@@ -10,6 +10,14 @@ portable default. Native draw.io XML offers convenient GUI editing; TikZ
 suits a TeX-centered workflow. Use PPTX only when that is the intended editor.
 Do not generate every format by default.
 
+## Prefer a small number of editable slide objects
+
+For PowerPoint/WPS figures and decks, keep the editable object count as small as practical. Two or three main objects are a useful starting point, not a hard limit. Keep titles, body text and the few parts likely to change editable; insert complex illustrations as one complete image or a few coherent image regions. Preserve meaningful detail and readable labels inside those images. Do not split artwork, arrows, borders, icons or individual words into dozens of native objects just to maximize editability. Grouping dozens of child shapes does not reduce the underlying object count. Use a native table or chart as a single object when its data needs editing. Full internal reconstruction applies only when the user explicitly requests it. Preserve unrelated content during local edits.
+
+Before drawing, choose which few objects need independent editing. At delivery, inspect both top-level objects and nested group members, and consolidate unnecessary fragmentation. Do not add objects to reach a minimum count or remove necessary information to meet an arbitrary cap. This preference takes precedence over default fine-grained reconstruction in the references for PPT output.
+
+For PPTX, the small-object workflow above governs the granularity of the following guidance. Whole diagrams may remain images with a few editable overlays; the per-component and native-label requirements below apply to other formats or explicitly requested fine-grained PPT reconstruction.
+
 ## Choose the required level of editability
 
 A request for editable draw.io or PPT normally permits independent generated image elements alongside native labels, shapes and connectors. Importing these elements is a supported production route, not an exception requiring another approval. Only an explicit full-vector or internal-part-editability requirement calls for rebuilding each element as native geometry.
@@ -25,7 +33,7 @@ The source must expose individual semantic objects and labels at the requested l
   edges, plus independent image cells for generated components. A pasted SVG/PNG is an editable image object, not a reconstruction of its internal geometry.
 - **TikZ:** named nodes/coordinates and editable labels/paths; include the
   compilable source and its dependencies or build command.
-- **PPTX:** native text/shapes/connectors plus independent picture objects; no slide-sized image replacement.
+- **PPTX:** a small number of native text/table/chart objects and coherent picture objects, at the selected editing granularity. Whole-figure images are supported; expose internal parts only when explicitly requested.
 
 Use a shared layout specification or one source exporter for PDF and any
 optional raster rendering when practical. Avoid hand-maintaining independent

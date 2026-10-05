@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Systems Figure Studio · 离线画法浏览器</title><style>__CSS__</style></head><body>
+<header><div class="eyebrow">SYSTEMS FIGURE STUDIO</div><h1>画法、组合与实际案例</h1><p>从目标论文选择对象与关系；参考图只提供视觉表达。支持 image generation、draw.io、WPS/PPTX。</p><p id="stats"></p></header>
+<main style="max-width:1200px;margin:auto;padding:24px">
+<div class="controls"><label for="q">统一搜索词条、变体、Agent 扩展、案例和规则</label><input id="q" type="search" placeholder="GPU / 生命周期 / GNN"><label for="topic">主题</label><select id="topic"></select><button id="clear" class="plain">清除检索</button></div>
+<p id="count" aria-live="polite"></p><section class="selection"><h2>小范围组合</h2><p id="selected"></p><button id="combine" class="plain">导出组合说明</button> <button id="clear-selection" class="plain">清空选择</button><p>组合只记录角色、画法、端点与边界；互斥方案需按目标材料判断。</p><p id="notice" role="status"></p></section>
+<section id="export" hidden><label for="copytext">复制结果</label><textarea id="copytext" readonly></textarea></section>
+<div id="list"></div><div id="docs"></div>
+<details class="card"><summary>素材状态清单</summary><p id="asset-count"></p><ul id="asset-list"></ul></details>
+</main><dialog id="source-dialog"><button id="close-source" class="plain">关闭</button><div id="source-body"></div></dialog>
+<footer>离线可用。正文维护于 topics/*.md；选择元数据与制作记录独立维护。外部来源链接需联网。</footer>
+<script type="application/json" id="payload">__PAYLOAD__</script><script>__JS__</script></body></html>

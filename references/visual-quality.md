@@ -56,6 +56,29 @@
 
 具体成图才可被标为已验收。本库新增描述尚未生成图片；检索可用、链接完整、语义检查和审美验收分别记录。
 
+<a id="aesthetic-review"></a>
+
+## 配色后的整图审美复核
+
+新图和配色修订完成后，模型必须打开实际导出图，判断整图是否协调、清楚、有吸引力，再决定是否需要修订。先看完整画面和目标版面宽度下的预览，再放大检查细节。只能读取源代码、颜色值或提示词时，将图面审美检查记为未验证。
+
+先描述第一眼的视觉印象，并指出图面依据：视线首先落在哪里、画面偏拥挤还是松散、主体是否突出、颜色是否舒服而有对比。随后检查以下相互关联的因素：
+
+| 观察维度 | 判断依据与可选修订 |
+| --- | --- |
+| 焦点与阅读顺序 | 最强对比是否落在要解释的对象或关系；边界、标题和 Logo 是否抢走注意力。调整局部面积、明暗或线宽。 |
+| 色彩协调与视觉重量 | 浅、中、强色是否在实际面积和相邻背景上形成层次；同等重要对象是否意外失衡。可调明度、饱和度或色相，不必把整图一律调淡。 |
+| 留白与构图平衡 | 组内和组间距离是否说明归属；两侧视觉重量、疏密节奏、留白是否自然。允许不对称，不以填满画布为目标。 |
+| 形体与风格 | 轮廓、视角、图标、适度立体感是否协调，关键对象是否可辨；避免为了统一而抹掉对象差异。 |
+| 文字与连接 | 字体层次、标签位置和线宽是否协调；折线绕行、交叉、贴边或穿字是否打断阅读。 |
+| 缩小后的整体观感 | 目标宽度下是否仍有清楚的主体、流向和标签；细节是否挤成噪声，浅色小对象是否消失。 |
+
+将主要发现简短记为“可见位置／现象 → 对阅读或观感的影响 → 实际修改 → 复看结果”，并保存对应预览路径。例：“右侧大面积深紫边界比调度器更醒目 → 焦点偏移 → 减弱边界填充，保留调度器颜色 → 重新导出查看”；这是记录示例，不是已执行历史。允许“整体协调，无需修改”，但应指出真实图面上的理由，不能只写“高级、专业、美观”。
+
+修订优先解决最影响整体的已观察问题；改完重新导出并查看整图。局部任务仅修改授权范围，范围外问题记录为建议。拿不准两种配色时，可在同一布局、同一尺寸比较候选；不默认额外调用收费生图。没有新的具体问题时结束，不设固定审美分数、色数、面积比例或反复打磨轮数。灰度、色觉模拟和对比度检查可提供辨识证据，不能单独代表整图美感或机制正确。
+
+方法依据：[Nature Methods 的层次、留白与显著性概述](sourcebook.md#pa05)、[Datawrapper 的明度和饱和度调整](sourcebook.md#pa02)、[Viz Palette 作者的分组与视觉重量修订](sourcebook.md#pa06)。开源方法参考：[SciencePlots](sourcebook.md#pa07) 提供字体、尺寸、线条和颜色循环的协调实践；[Penrose](sourcebook.md#pa08) 将关系与布局约束分别表达。按任务借鉴，不把工具默认样式当作审美验收。
+
 ## Cloud、平台 Logo 与连接
 
 云轮廓、平台标识、资源类型图标与 CPU/GPU/存储形体可共存；统一视觉尺度、视角、留白与颜色角色，保留各自辨识度。标签、边界、数据流、物理链路和部署映射要一起布局。详见 [Cloud 与 Logo 组合](cloud-logo-composition.md)。
@@ -86,3 +109,50 @@ GPU 的选择可以是：以薄板卡侧面、安装端和封装比例辨认设�
 整图的变化来自主次比例、形体差异、疏密节奏、适当的展开视角和协调色族。颜色可以丰富，层次也可以鲜明；不把“论文风格”解释为所有对象低饱和、相同浅填充和同粗黑框。先给主对象与辅助对象不同的视觉重量，再在目标尺寸检查是否形成焦点。
 
 对照绘制前展示的设计检查实际结果：承诺的轮廓和局部展开在哪里，颜色角色是否实现，关键关系是否一眼可读？如果输出仍退化成一排同形文字框，记录为本轮视觉设计未实现，并针对构造或布局重绘。不要用“语义正确”替代视觉通过，也不因单次失败增加无关的细节规则。
+
+
+## Component selection and production detail
+
+### Make selected recipes visible
+
+For each object needing concrete representation, determine: **object and role → entry and variant → silhouette, parts and spatial organization → labels and connection endpoints**. Before drawing, briefly show the user the key choices and resulting visible forms. Code comments or private notes do not replace this disclosure. The actual figure must show the selected parts and relationships; a delivery statement claiming that the library was used is insufficient.
+
+For example, a training overview can combine the network skeleton in `network-model` with the forward/backward paths in `training`. An inference model can use the layered body in `model-instance`, a `token` sequence and `kv-cache` state strips. For a GPU, choose board identity, an exploded package or compute structure from `accelerator` according to its role, rather than always using the same board construction. Use `kubernetes-platform-logo` for platform-title ownership. The manuscript determines the actual structure; the existence of a recipe does not justify adding a model, platform or deployment.
+
+When identity alone matters, an icon and short label can form a complete component. When explaining a mechanism, expose the relevant local network, state, data or resources. Allow structural drawings, icons and combinations, including coordinated avatars, modest decoration, subtle depth and approachable details where useful. Balance identity, structural explanation and the whole composition. Avoid reducing every object to a named box or requiring complex internals in every small icon.
+
+**Fix structural problems through structural changes.** If the user finds objects abstract, shapes repetitive or the library unused, reselect and develop the relevant components. Recoloring, retitling or adding icons to otherwise identical boxes does not complete that redraw.
+
+See the [visual asset library](visual-asset-library.md) for actual images and reusable forms. Accumulate useful objects as needed, distinguishing accepted references from cleaned assets; inspect leftover text, cropped edges and arrows before reuse. Figures may use GPT Image for the whole image, mixed assets or native primitives as appropriate. Editability is not required for every figure by default.
+
+### Choose assets to fit the figure
+
+The repository's visual assets are optional starting points and examples, not prescribed appearances. Depending on the manuscript's meaning, visual style, scale and composition, reuse a suitable asset, adapt one, generate a new element with an available image tool, or use native primitives. New generation is a normal design choice even when a related asset exists; there is no requirement to search or exhaust the library first. Briefly explain the selected approach when presenting the design.
+
+For revisions or related figure sets, respect any explicit request to preserve an accepted identity or style. Prior acceptance in another figure or project does not make that asset mandatory. Keep repeated objects visually consistent within the current composition without fixing every person, Agent, model or environment to one repository image.
+
+Give each object a form suited to what it explains. A tool workspace might use a terminal, files or network endpoint where relevant, but this is one possible construction rather than a required component list. Simple shapes are appropriate when they clearly express topology, state or timing. Check reused or generated elements for semantic fit, readability and composition quality. For transparent assets, inspect the actual alpha composition on the intended background. See [asset selection](visual-asset-library.md#asset-selection).
+
+## Keep PowerPoint output easy to edit
+
+Follow the small-object workflow in [editable production](editable-production.md): retain the few parts that need independent editing and use coherent images for complex artwork. That file maintains the full PPT/WPS granularity rule.
+
+## Generate new local elements when needed
+
+The knowledge base is an adaptable starting point, not a closed catalog. When no construction fits, or existing constructions look monotonous or inconsistent in the current composition, use GPT Image or the available image generator to design local elements for the figure. This applies to GPUs, CPUs, models, storage, nodes, Agents, tools, data objects and any other object requiring a custom form. Do not wait for the user to request every element or exhaust all entries first. Use capabilities actually exposed by the tool; writing a model name in a prompt does not select that model.
+
+Choose whole-image generation, separately generated elements followed by composition, or a representative component extended to the figure set according to the task. Before generating an element, show its purpose, design and complete prompt. Then display and inspect the result inline, and supply selected elements as actual image inputs or assets when composing the figure. Mentioning a filename in a prompt does not reuse its image. Coordinate color, perspective, silhouette, lighting and detail density at the final figure scale; reuse an element to preserve object identity.
+
+Standalone elements for composition usually need transparent backgrounds, complete contours and clear space for connections. Set the actual transparency parameter when supported. Keep variable labels, counts, states and arrows in the composition layer where possible instead of baking them into pixels. Generated constructions do not constitute real product photographs, official logos, precise microarchitectures or experimental results. See [element generation](generation-prompts.md) for prompts and checks.
+
+Generated elements may be imported directly into draw.io or PowerPoint as separate image objects alongside native text, shapes, connectors and groups. This is a normal production path and requires no additional permission to mix assets. Each element can be moved, resized, replaced and grouped independently; text, arrows, state markers and layout remain separately editable. Rebuild internal geometry from the generated reference only when the user explicitly requires full vector output or editing of individual internal parts. Explain that image interiors remain pixels without treating every editable draw.io/PPT request as a requirement to reconstruct all elements as vectors. Do not flatten the entire figure into one image. Retain useful project assets and actual prompts without turning every candidate into a global entry or creating duplicate backups.
+
+## Develop recipes into visual designs
+
+Recipes provide alternative constructions, not fixed icon templates. For new figures, substantial redraws or feedback that a figure looks stiff or unattractive, first read [visual choices and trade-offs](visual-quality.md), then choose key objects' **silhouettes, proportions, part relationships and detail scale**. Draw on user references or library examples that have actually been inspected. Design missing forms yourself without claiming unseen sources as visual evidence.
+
+When the user requests inspiration from research figures, search for and inspect actual figures from leading AI or systems conferences relevant to the current objects, preferring official publications or author manuscripts. Extract silhouettes, parts, grouping, connections and color roles. Update existing entries and source records using “source and figure number → retained elements → omitted content → applicable objects.” Do not merely add paper links or assume that a conference's reputation makes an entire figure worth copying.
+
+Produce an actual preview of a key object and one representative relationship, inspect it at reduced size, then extend the design to the figure set. Show the representative preview to the user and state the adopted form. Continue authorized drawing without turning this disclosure into another approval gate. GPUs, models and storage should have recognizable features at their intended size. Adding an icon or including recipe parts does not by itself establish visual quality. Small objects may be simple; large objects should avoid empty placeholders. Precision comes from object relationships, not accumulated pins, screws or shadows.
+
+Choose paths, lanes, local expansions or state comparisons according to the reading relationships. Reuse shapes for objects of the same kind and frames for real ownership. Do not force every object into an identical card for symmetry. Revisions addressing stiffness must examine both component forms and the whole figure's emphasis, density and spacing, beyond colors, rounded corners or thickness. Assess technical correctness and visual quality separately; more detail is not automatically more attractive.

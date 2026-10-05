@@ -1,0 +1,156 @@
+[
+  {
+    "id": "english-paper",
+    "request": "请为英文论文画图，用中文解释方案。",
+    "material": "Target caption: GPU resource scheduling. Labels: Request, Scheduler, GPU.",
+    "expected": {
+      "label_language": "en"
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Inspect actual visible labels against English caption; Chinese chat must not cause Chinese labels.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "chinese-chapter",
+    "request": "把英文论文机制图改为中文博士论文章节。",
+    "material": "Target chapter terms: 请求、调度器、资源驻留。Keep GPU and KV.",
+    "expected": {
+      "label_language": "zh"
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Compare visible labels with target chapter, retaining GPU / KV.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "two-labels",
+    "request": "只把 Request 改为 Job、Device 改为 GPU；其他不动。",
+    "material": "Native source object IDs: label-request, label-device, body, edge-main. Baseline layout must be retained.",
+    "expected": {
+      "modified_ids": [
+        "label-request",
+        "label-device"
+      ],
+      "route": "local_edit"
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Diff original and saved native source. Require identical geometry, object IDs and unrelated styles/labels; inspect pixels for unintended changes.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "review-only",
+    "request": "只评价这张图的逻辑，不要画。",
+    "material": "Candidate C1 and C2 both point to an executed GPU although the text selects only C2.",
+    "expected": {
+      "route": "review",
+      "drawing_calls": 0
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Inspect real tool trace: no drawing or editing calls. Recommendation identifies ambiguous candidate execution.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "full-vector",
+    "request": "交付完整矢量图，内部也能编辑。",
+    "material": "Input contains a PNG device icon.",
+    "expected": {
+      "full_vector": true,
+      "image_elements": 0
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Audit actual SVG/PDF/source: raster/image nodes must not be claimed fully vector. Inspect source internal geometry and editor behavior.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "candidate-paths",
+    "request": "绘制候选配置比较与执行。",
+    "material": "Only C2 is selected; C1 is considered but not executed.",
+    "expected": {
+      "executed_candidates": [
+        "C2"
+      ]
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Check edge inventory, then visually inspect line types and execution endpoints.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "tool-wait",
+    "request": "显示工具等待和模型资源状态。",
+    "material": "M1 weights remain resident. R1 KV is explicitly retained through tool wait, grows on resume, released at completion.",
+    "expected": {
+      "wait_kv_policy": "retain"
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Inspect separate wait and KV rows; continuous KV residency must not encode elapsed time as missing pages.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "kubernetes-title",
+    "request": "标出 Kubernetes 平台并画控制流。",
+    "material": "Kubernetes cluster contains API and controller; official logo if supplied belongs to platform title, not execution pipeline.",
+    "expected": {
+      "logo_role": "platform_title"
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Inspect actual logo placement and edge endpoints. No logo-only processing stage or invented provider.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "prompt-show",
+    "request": "先展示提示词，再画图。",
+    "material": "Drawing is already authorized; no approval requirement.",
+    "expected": {
+      "prompt_policy": "show_then_continue"
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Tool trace must show prompt disclosure followed by drawing without asking for another approval.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "prompt-wait",
+    "request": "展示提示词，等我确认后再画。",
+    "material": "No confirmation arrives in this test.",
+    "expected": {
+      "prompt_policy": "wait",
+      "drawing_calls": 0
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Trace must contain disclosure and stop before drawing.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  },
+  {
+    "id": "reference-asset",
+    "request": "用库中适合最终图的素材。",
+    "material": "Asset X: reference-only; Y: truncated; Z: eligible + reviewed for current use.",
+    "expected": {
+      "selected_assets": [
+        "Z"
+      ]
+    },
+    "deterministic_method": "Compare normalized execution evidence fields to expected constraints; never infer them from SKILL text.",
+    "agent_method": "Check default selection records and actual embedded asset IDs; exclude X/Y.",
+    "visual_method": "Inspect rendered image at target manuscript width where this case produces or edits a figure.",
+    "agent_status": "not_run",
+    "visual_status": "not_run"
+  }
+]

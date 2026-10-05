@@ -32,13 +32,18 @@ def audit_svg(path, required, allow_raster):
         issues.append("SVG has no nonempty live text labels.")
     if not native:
         issues.append("SVG has no native shapes or paths.")
+    for element in images:
+        href = element.get('href') or element.get('{http://www.w3.org/1999/xlink}href')
+        if not href:
+            issues.append("SVG image element has no href dependency.")
+        elif not href.startswith(('data:', '#', 'http://', 'https://')) and not (path.parent / href).is_file():
+            issues.append("SVG image dependency missing: " + href)
     if images and not allow_raster:
-        issues.append("SVG contains raster/image elements; inspect or declare intentional insets.")
+        issues.append("SVG contains image elements (possibly raster or embedded SVG); inspect or declare intentional insets.")
     if foreign:
         issues.append("SVG uses foreignObject; use portable native labels/shapes or review separately.")
     if duplicates:
         issues.append("SVG has duplicate object IDs.")
-    corpus = normalized(" ".join(labels))
     for label in required:
         if normalized(label) not in labels:
             issues.append(f"Required editable SVG label missing: {label}")

@@ -18,7 +18,14 @@
       ],
       "reuse": "Inspect original pixels. Extract or regenerate isolated elements without labels/arrow remnants; do not treat entire scientific diagram as verified.",
       "scientific_correction": "Original Agent KV gaps incorrectly conflate waiting time with missing cache; retained KV should be continuous.",
-      "publication_rights": "No third-party license asserted; not official product imagery."
+      "publication_rights": "No third-party license asserted; not official product imagery.",
+      "legacy_status": "historical-visual-reference-with-known-semantic-error",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "reference_only",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": []
     },
     {
       "id": "mixed-task-scenes-unified",
@@ -31,7 +38,14 @@
         "continuous-retained-kv",
         "training-inference-agent-scenes"
       ],
-      "reuse": "Whole-figure reference. Labels are embedded; extract/regenerate clean isolated objects before mixing with new labels. No claim of separate vector editability."
+      "reuse": "Whole-figure reference. Labels are embedded; extract/regenerate clean isolated objects before mixing with new labels. No claim of separate vector editability.",
+      "legacy_status": "inspected-whole-figure-reference",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "reference_only",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": []
     },
     {
       "id": "mixed-task-element-sample-pages",
@@ -47,7 +61,14 @@
       "native_vector": false,
       "status": "isolated-label-free-object",
       "source": "mixed-task-elements/source-sheet.png",
-      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+      "reuse": "Independent label-free image object; add editable labels and relations outside it.",
+      "legacy_status": "isolated-label-free-object",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": []
     },
     {
       "id": "mixed-task-element-neural-network",
@@ -63,7 +84,16 @@
       "native_vector": false,
       "status": "isolated-label-free-object",
       "source": "mixed-task-elements/source-sheet.png",
-      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+      "reuse": "Independent label-free image object; add editable labels and relations outside it.",
+      "legacy_status": "isolated-label-free-object",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": [
+        "network-model"
+      ]
     },
     {
       "id": "mixed-task-element-token-strip",
@@ -79,7 +109,16 @@
       "native_vector": false,
       "status": "isolated-label-free-object",
       "source": "mixed-task-elements/source-sheet.png",
-      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+      "reuse": "Independent label-free image object; add editable labels and relations outside it.",
+      "legacy_status": "isolated-label-free-object",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": [
+        "token"
+      ]
     },
     {
       "id": "mixed-task-element-layered-model",
@@ -95,7 +134,16 @@
       "native_vector": false,
       "status": "isolated-label-free-object",
       "source": "mixed-task-elements/source-sheet.png",
-      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+      "reuse": "Independent label-free image object; add editable labels and relations outside it.",
+      "legacy_status": "isolated-label-free-object",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": [
+        "model-instance"
+      ]
     },
     {
       "id": "mixed-task-element-agent-role",
@@ -111,7 +159,16 @@
       "native_vector": false,
       "status": "isolated-label-free-object",
       "source": "mixed-task-elements/source-sheet.png",
-      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+      "reuse": "Independent label-free image object; add editable labels and relations outside it.",
+      "legacy_status": "isolated-label-free-object",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": [
+        "agent"
+      ]
     },
     {
       "id": "mixed-task-element-agent-model",
@@ -127,7 +184,17 @@
       "native_vector": false,
       "status": "source-truncated-reference-only",
       "source": "mixed-task-elements/source-sheet.png",
-      "reuse": "Do not use cropped-bottom variant in final figure; use layered-model.svg instead."
+      "reuse": "Do not use cropped-bottom variant in final figure; use layered-model.svg instead.",
+      "legacy_status": "source-truncated-reference-only",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "reference_only",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": [
+        "agent",
+        "model-instance"
+      ]
     },
     {
       "id": "mixed-task-element-terminal-web-tool",
@@ -143,7 +210,14 @@
       "native_vector": false,
       "status": "isolated-label-free-object",
       "source": "mixed-task-elements/source-sheet.png",
-      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+      "reuse": "Independent label-free image object; add editable labels and relations outside it.",
+      "legacy_status": "isolated-label-free-object",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": []
     },
     {
       "id": "mixed-task-element-result-document",
@@ -159,7 +233,14 @@
       "native_vector": false,
       "status": "isolated-label-free-object",
       "source": "mixed-task-elements/source-sheet.png",
-      "reuse": "Independent label-free image object; add editable labels and relations outside it."
+      "reuse": "Independent label-free image object; add editable labels and relations outside it.",
+      "legacy_status": "isolated-label-free-object",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": []
     },
     {
       "id": "gpu-flat-native",
@@ -170,7 +251,16 @@
         "gpu-card",
         "device-identity"
       ],
-      "reuse": "Editable PCB, bracket, package, memory chips and contacts. Device identifier only; does not encode resource partitions."
+      "reuse": "Editable PCB, bracket, package, memory chips and contacts. Device identifier only; does not encode resource partitions.",
+      "legacy_status": "native-editable-vector",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": [
+        "accelerator"
+      ]
     },
     {
       "id": "agent-runtime",
@@ -185,7 +275,16 @@
       "native_vector": false,
       "status": "inspected-in-white-background-figure",
       "provenance": "Built-in image generation and cleanup, 2026-10-04; see agent-components/prompts.md",
-      "reuse": "One independent transparent image. Preserve proportions; keep external labels and flow arrows separately editable. Generic identity only, not product architecture."
+      "reuse": "One independent transparent image. Preserve proportions; keep external labels and flow arrows separately editable. Generic identity only, not product architecture.",
+      "legacy_status": "inspected-in-white-background-figure",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": [
+        "agent"
+      ]
     },
     {
       "id": "tool-environment",
@@ -200,7 +299,16 @@
       "native_vector": false,
       "status": "inspected-in-white-background-figure",
       "provenance": "Built-in image generation and cleanup, 2026-10-04; see agent-components/prompts.md",
-      "reuse": "One independent transparent image. Preserve proportions; keep external labels and flow arrows separately editable. Generic identity only, not product architecture."
+      "reuse": "One independent transparent image. Preserve proportions; keep external labels and flow arrows separately editable. Generic identity only, not product architecture.",
+      "legacy_status": "inspected-in-white-background-figure",
+      "source_review": "inherited_record",
+      "visual_review": "not_reviewed_for_current_use",
+      "final_use": "review_required",
+      "user_acceptance": "not_recorded_for_current_use",
+      "generation_record": "historical_asset; original transcript only where linked",
+      "term_ids": [
+        "tool"
+      ]
     }
   ]
 }

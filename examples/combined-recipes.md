@@ -43,3 +43,8 @@
 ## 7. 云原生集群与平台标识
 
 复用集群、节点、CPU/GPU、内存和存储词条，按实际范围放置云轮廓及 Kubernetes Logo；节点仅展开焦点，存储区分本地与共享，物理互连与数据访问分别说明。Logo 不变成独立计算步骤，研究模块不因强调而改变真实部署归属。两种完整文字组合见 [Cloud 与 Logo 指南](../references/cloud-logo-composition.md)。
+
+
+## 可执行场景输入
+
+[GNN 预测与调度](scenarios/gnn-scheduling.md)、[Agent 生命周期](scenarios/agent-lifecycle.md)、[Kubernetes 异构集群](scenarios/kubernetes-cluster.md)提供具体对象和机制假设。当前是输入材料，不是已验收案例；[案例状态](scenarios/README.md)单独记录。

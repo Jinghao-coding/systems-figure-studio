@@ -4,7 +4,7 @@ Use the available authorized image tool. Do not specify an unverifiable backend 
 
 ## Build and show the actual prompt
 
-Before calling the drawing tool, show the user the chosen composition, key object constructions and complete executable prompt in a code block. A saved file or a summary is not a substitute. For a local revision, show the complete edit instruction and preserved properties. If the user requests prompt approval first, wait; otherwise continue authorized drawing after disclosure. Honor explicit requests to omit this display.
+Before calling the drawing tool, show the user the chosen composition, key object constructions and complete executable prompt in a code block. A saved file or a summary is not a substitute. For a local revision, show the complete edit instruction and preserved properties. “Show the prompt first” means disclose and continue authorized drawing; “draw after confirmation” or an explicit approval request means disclose and wait. Honor explicit requests to omit this display.
 
 Choose constructions before writing prose. For a visually important object whose representation is unsettled, compare materially different silhouettes or views, then select one for its explanatory and visual effect. A color change is not a different construction. Explain the selected result briefly; do not make the user select every detail.
 
@@ -19,7 +19,7 @@ Purpose: [what this figure lets the reader understand].
 Source of mechanism: [verified paper section and facts].
 Reference roles: [image A supplies layout; image B supplies mini-DAG style; facts come from the manuscript].
 Composition: [main visual anchor, reading order, relative scale, open areas and local expansions; explain where the eye enters and what relationship stands out].
-Palette and rendering: [actual colors and object roles; light/dark balance, outline treatment, perspective and permitted depth].
+Palette and rendering: [actual colors assigned to context regions, object identities and focal relationships; mix light, medium and strong colors with deliberate area and adjacency; light/dark balance, label contrast, outline treatment, perspective and permitted depth].
 Selected component constructions: [for each key object, name the selected term/variant and describe its silhouette, visible parts, spatial organization and attachment points; IDs belong in the record, not the image].
 Meaningful small objects: [what each region contains and why; icon-only identity or local structural expansion].
 Logo/icon attachment: [actual object, title/boundary/interface, asset or text placeholder, connector endpoints].

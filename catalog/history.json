@@ -1,0 +1,52 @@
+{
+  "inherited_statistics": {
+    "version": "0.4.1",
+    "date": "2026-10-01",
+    "term_count": 122,
+    "variant_count": 273,
+    "new_non_agent_terms": 70,
+    "new_non_agent_variants": 147,
+    "migrated_base_terms": 52,
+    "preserved_agent_reference_patterns": 9,
+    "theme_count": 12,
+    "new_sources": 17,
+    "new_figure_reviewed_sources": 7,
+    "new_text_only_sources": 10,
+    "rendered_examples_added": 0,
+    "counts_by_topic": {
+      "cloud": 3,
+      "hardware": 9,
+      "data": 9,
+      "models": 15,
+      "prediction": 9,
+      "scheduling": 12,
+      "training": 17,
+      "rl": 6,
+      "inference": 14,
+      "systems": 13,
+      "observability": 10,
+      "agent": 5
+    },
+    "new_by_topic": {
+      "hardware": 4,
+      "data": 6,
+      "models": 5,
+      "prediction": 8,
+      "scheduling": 8,
+      "training": 11,
+      "rl": 4,
+      "inference": 7,
+      "systems": 10,
+      "observability": 4,
+      "cloud": 3
+    },
+    "added_in_this_revision": {
+      "terms": 5,
+      "variants": 16,
+      "sources_text_only": 5,
+      "images_generated": 0
+    },
+    "count_basis": "new_* means cumulative since the 52-term base; added_in_this_revision is the latest delta"
+  },
+  "migration_note": "Frozen inherited 0.4.1 statistics; current counts are recomputed. Legacy image_status=not_generated described text recipes only, not all associated artifacts."
+}

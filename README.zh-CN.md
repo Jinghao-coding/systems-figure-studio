@@ -10,12 +10,12 @@
 
 ## 能做什么
 
-- 查阅 12 个主题、122 个词条、273 种文字构造，组合模型、硬件、调度、推理、Agent 等对象。
+- 查阅主题、词条与稳定变体，组合模型、硬件、调度、推理、Agent 等对象。当前数量由[统计文件](catalog/statistics.json)生成。
 - 绘图前展示构图、元素选择和实际完整 Prompt；成图后检查语义、造型、颜色与论文尺度可读性。
 - 现有画法不合适时，使用可用图像工具定制局部元素或生成整图。
-- 将生成素材导入 draw.io/PPT，与独立文字、箭头、状态和布局组成可编辑文档；仅明确要求时重建全部内部矢量形状。
+- 将生成素材导入 draw.io/WPS/PPTX，与独立文字、箭头、状态和布局组成可编辑文档；仅明确要求时重建全部内部矢量形状。
 
-273 种指文字画法，不代表已有 273 张素材图。实际视觉素材单独登记，SVG 内嵌像素与原生矢量明确区分。SKILL.md 是唯一的英文执行入口，多数主题词条与辅助参考保留中文；入门说明提供中英文版本，图中标签根据目标文稿自动采用中文或英文。
+文字画法与实际素材分别登记。实际视觉素材单独登记，SVG 内嵌像素与原生矢量明确区分。SKILL.md 是唯一的英文执行入口，多数主题词条与辅助参考保留中文；入门说明提供中英文版本，图中标签根据目标文稿自动采用中文或英文。
 
 ## 安装与调用
 
@@ -39,7 +39,7 @@ git clone https://github.com/Jinghao-coding/systems-figure-studio.git ~/.agents/
 保留技术含义，按需生成局部元素，交付可编辑 draw.io 文件和预览图。
 ```
 
-规划与查词条只需读取材料；生图需要可用且授权的图像工具；draw.io/PPT 制作需要相应工具或文件生成能力。本仓库不包含 MCP 服务，也不自动安装插件或配置密钥。工具缺失时应报告实际限制。
+规划与查词条只需读取材料；生图需要可用且授权的图像工具；draw.io/WPS/PPTX 制作需要相应工具或文件生成能力。本仓库不包含 MCP 服务，也不自动安装插件或配置密钥。工具缺失时应报告实际限制。
 
 ## 维护与验证
 
@@ -48,7 +48,12 @@ git clone https://github.com/Jinghao-coding/systems-figure-studio.git ~/.agents/
 ```bash
 python3 scripts/rebuild_navigation.py
 python3 scripts/validate.py
+python3 scripts/check_history.py
 python3 scripts/check_release.py
+python3 -m unittest discover -s tests -v
+node --test tests/test_browser.cjs
+python3 scripts/evaluate_behavior.py
+python3 scripts/check_generated.py
 ```
 
 主题正文为画法维护源，catalog 与 guide.html 为派生检索资料。裁白边脚本可选依赖 Pillow，PDF 检查可选依赖 PyMuPDF；需要时在项目虚拟环境中安装。结构检查通过不代表图面美观或科学内容已验收。
@@ -56,3 +61,18 @@ python3 scripts/check_release.py
 参见 [贡献说明](CONTRIBUTING.md)、[发布检查](RELEASE_CHECKLIST.md) 和 [来源与许可](THIRD_PARTY_NOTICES.md)。原创技能文本与脚本采用 MIT；外部作品保留各自许可，项目素材范围见 [素材说明](assets/visual-library/RIGHTS.md)。
 
 当前版本 0.1.1。仓库素材作为可选参考，按当前图的语义、风格和构图选择复用、改编、生图或原生绘制；已有同类素材也可生成新造型。新增Agent运行控制台和工具环境示例。
+
+
+## 离线检索和工具路径
+
+直接打开 `guide.html`，统一检索主词条、变体、Agent 扩展、组合与规则。可复制单变体、整个词条，或导出最多 8 个选择的角色、连接与边界。链接保留主题、搜索词、词条和变体定位。未审元数据和无示例状态明确显示。
+
+同时支持 image gen、draw.io、WPS/PowerPoint；根据任务和宿主工具选择路径。“先展示提示词”展示后继续已授权绘图；“确认后再画”才等待。局部修改保持其他设计，只评价不自动生图。
+
+基础 Python 功能只用标准库；浏览器逻辑测试需 Node.js 18+。可选导出/PDF 测试运行 `python3 -m unittest discover -s tests/optional -v`，依赖缺失时明确 skipped。设置 `DRAWIO_BINARY` 后可测试真实 draw.io 导出器，该测试不等同 GUI 编辑验证。
+
+本轮三个跨主题试制图已按用户意见撤出。[场景输入](examples/scenarios/README.md)与[行为评估用例](evaluations/README.md)保留，不计为已完成图例；原有历史素材继续保留。静态托管准备见[部署说明](references/static-hosting.md)，没有声称网站已上线。
+
+维护元数据与生成文件的职责见[维护规范](references/knowledge-base.md)。本次修改记为 Unreleased；独立技能版本和继承知识库版本保持独立。
+
+本轮实施范围与逐项检查结果见[本地验证记录](evaluations/maintenance-2026-10-05.md)。

@@ -1,0 +1,368 @@
+{
+  "cloud-environment": {
+    "origin": "added_v0.4.1"
+  },
+  "kubernetes-platform-logo": {
+    "origin": "added_v0.4.1"
+  },
+  "architecture-connections": {
+    "origin": "added_v0.4.1"
+  },
+  "cluster": {
+    "origin": "migrated_normalized"
+  },
+  "node": {
+    "origin": "migrated_normalized"
+  },
+  "accelerator": {
+    "origin": "migrated_normalized"
+  },
+  "compute": {
+    "origin": "migrated_normalized"
+  },
+  "network": {
+    "origin": "migrated_normalized"
+  },
+  "device-profile": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "numa-locality": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "device-sharing-modes": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "cpu-processor": {
+    "origin": "added_v0.4.1"
+  },
+  "memory": {
+    "origin": "migrated_normalized"
+  },
+  "storage": {
+    "origin": "migrated_normalized"
+  },
+  "data-pipeline": {
+    "origin": "migrated_normalized"
+  },
+  "host-device-buffer": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "prefetch-double-buffer": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "dataset-locality": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "embedding-cache": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "virtual-physical-memory": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "storage-services": {
+    "origin": "added_v0.4.1"
+  },
+  "tensor": {
+    "origin": "migrated_normalized"
+  },
+  "operator": {
+    "origin": "migrated_normalized"
+  },
+  "network-model": {
+    "origin": "migrated_normalized"
+  },
+  "attention": {
+    "origin": "migrated_normalized"
+  },
+  "vision": {
+    "origin": "migrated_normalized"
+  },
+  "gnn": {
+    "origin": "migrated_normalized"
+  },
+  "moe": {
+    "origin": "migrated_normalized"
+  },
+  "multimodal": {
+    "origin": "migrated_normalized"
+  },
+  "diffusion": {
+    "origin": "migrated_normalized"
+  },
+  "recommendation": {
+    "origin": "migrated_normalized"
+  },
+  "quantization": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "sparsity": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "distillation": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "attention-head-sharing": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "feature-interaction": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "predictor": {
+    "origin": "migrated_normalized"
+  },
+  "graph-hardware-prediction": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "static-dynamic-features": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "predictor-train-serve": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "multi-target-prediction": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "interference-prediction": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "prediction-uncertainty": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "trace-critical-path": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "cost-model-search": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "scheduler": {
+    "origin": "migrated_normalized"
+  },
+  "quota": {
+    "origin": "migrated_normalized"
+  },
+  "placement": {
+    "origin": "migrated_normalized"
+  },
+  "sharing": {
+    "origin": "migrated_normalized"
+  },
+  "admission-ranking": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "multi-resource-demand": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "gang-reservation": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "backfill-window": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "preempt-resume": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "elastic-allocation": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "training-inference-reclaim": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "topology-placement": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "collective": {
+    "origin": "migrated_normalized"
+  },
+  "training": {
+    "origin": "migrated_normalized"
+  },
+  "parallelism": {
+    "origin": "migrated_normalized"
+  },
+  "training-state": {
+    "origin": "migrated_normalized"
+  },
+  "peft": {
+    "origin": "migrated_normalized"
+  },
+  "checkpoint": {
+    "origin": "migrated_normalized"
+  },
+  "data-parallel": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "tensor-parallel": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "pipeline-microbatch": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "expert-parallel": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "sequence-context-parallel": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "fsdp-reshard": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "gradient-overlap": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "optimizer-offload": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "mixed-precision": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "activation-recompute": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "async-checkpoint": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "model-roles": {
+    "origin": "migrated_normalized"
+  },
+  "rl": {
+    "origin": "migrated_normalized"
+  },
+  "rl-rollout-train": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "policy-version": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "reward-advantage-mask": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "sft-dpo": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "model-instance": {
+    "origin": "migrated_normalized"
+  },
+  "request": {
+    "origin": "migrated_normalized"
+  },
+  "batch": {
+    "origin": "migrated_normalized"
+  },
+  "token": {
+    "origin": "migrated_normalized"
+  },
+  "prefill-decode": {
+    "origin": "migrated_normalized"
+  },
+  "kv-cache": {
+    "origin": "migrated_normalized"
+  },
+  "model-loading": {
+    "origin": "migrated_normalized"
+  },
+  "pd-handoff": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "chunked-prefill": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "speculative-verification": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "prefix-cache-lifecycle": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "multi-model-lora-serving": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "expert-residency": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "inference-budget": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "deployment": {
+    "origin": "migrated_normalized"
+  },
+  "compiler": {
+    "origin": "migrated_normalized"
+  },
+  "api-framework": {
+    "origin": "migrated_normalized"
+  },
+  "controller-reconcile": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "watch-workqueue": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "pod-execution-chain": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "device-runtime-driver": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "process-isolation": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "rpc-event-runtime": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "backpressure": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "compiler-lowering": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "cuda-graph": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "microservice-dependency": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "lifecycle": {
+    "origin": "migrated_normalized"
+  },
+  "slo": {
+    "origin": "migrated_normalized"
+  },
+  "trace": {
+    "origin": "migrated_normalized"
+  },
+  "metrics": {
+    "origin": "migrated_normalized"
+  },
+  "fault": {
+    "origin": "migrated_normalized"
+  },
+  "validation": {
+    "origin": "migrated_normalized"
+  },
+  "profiling-window": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "trace-correlation": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "bottleneck-roofline": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "reliability-retry": {
+    "origin": "original_or_adapted_candidate"
+  },
+  "workflow": {
+    "origin": "migrated_normalized"
+  },
+  "agent": {
+    "origin": "migrated_normalized"
+  },
+  "tool": {
+    "origin": "migrated_normalized"
+  },
+  "context-memory": {
+    "origin": "migrated_normalized"
+  },
+  "routing": {
+    "origin": "migrated_normalized"
+  }
+}

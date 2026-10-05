@@ -1,0 +1,2001 @@
+[
+  {
+    "id": "v-0d4ba4cdbaab",
+    "term_id": "cloud-environment",
+    "heading": "云轮廓作为环境标题",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-be07a7d578c1",
+    "term_id": "cloud-environment",
+    "heading": "云环境与集群的局部展开",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-16aa8f3a0cc4",
+    "term_id": "cloud-environment",
+    "heading": "多云／本地并列与跨域路径",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5f80f239ae08",
+    "term_id": "kubernetes-platform-logo",
+    "heading": "集群边界标题",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "平台归属",
+    "suitable": "集群范围与平台身份",
+    "unsuitable": "独立推理步骤或未经证实的平台部署",
+    "connect": "Logo 或文字附真实平台标题，边连明确接口",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/kubernetes-cluster.md"
+    ]
+  },
+  {
+    "id": "v-00069b049ad8",
+    "term_id": "kubernetes-platform-logo",
+    "heading": "软件平台层标题",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-76c8112b47ec",
+    "term_id": "kubernetes-platform-logo",
+    "heading": "接口或折叠平台端点",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1272d360634a",
+    "term_id": "kubernetes-platform-logo",
+    "heading": "资源图标与局部结构配合",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-681ad4002757",
+    "term_id": "architecture-connections",
+    "heading": "分层布线与明确端口",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "关系类型",
+    "suitable": "控制、数据、映射与物理互连的区别",
+    "unsuitable": "混用所有连接含义而不设图例",
+    "connect": "真实端口与对象为端点，交叉处不自动连接",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/kubernetes-cluster.md"
+    ]
+  },
+  {
+    "id": "v-b177c66eecb5",
+    "term_id": "architecture-connections",
+    "heading": "共享网络骨架与局部路径高亮",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-dd61f3fc8c82",
+    "term_id": "architecture-connections",
+    "heading": "主流程与外围反馈",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f5db9706868c",
+    "term_id": "cluster",
+    "heading": "节点阵列＋局部展开",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "部署与资源层次",
+    "suitable": "节点和设备的两级归属",
+    "unsuitable": "没有分布式部署的单机系统",
+    "connect": "节点互连与局部展开分别标记",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/kubernetes-cluster.md"
+    ]
+  },
+  {
+    "id": "v-7e486dcd45a8",
+    "term_id": "cluster",
+    "heading": "拓扑骨架＋节点截面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-649fb166a24f",
+    "term_id": "cluster",
+    "heading": "资源底板＋任务覆盖层",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-fd203ddbffda",
+    "term_id": "node",
+    "heading": "模块化剖面",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "物理结构",
+    "suitable": "CPU/GPU/本地存储组成",
+    "unsuitable": "声称真实型号的精确板级布局",
+    "connect": "设备位于节点边界内，外部连网络或服务端口",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/kubernetes-cluster.md"
+    ]
+  },
+  {
+    "id": "v-f774aa8a2a85",
+    "term_id": "node",
+    "heading": "展开式节点",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-de3eeb7056ed",
+    "term_id": "accelerator",
+    "heading": "阵列与局部单元（芯片结构示意）",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3a3b73295474",
+    "term_id": "accelerator",
+    "heading": "专用加速器的分配网与归约树",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-d4405ae0e2f9",
+    "term_id": "accelerator",
+    "heading": "计算面与存储面的分解视图",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-46a4e748d589",
+    "term_id": "accelerator",
+    "heading": "简化板卡或芯片身份",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-17f8b0458470",
+    "term_id": "accelerator",
+    "heading": "薄板卡与局部封装",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-cb8e90d4ba75",
+    "term_id": "compute",
+    "heading": "执行阵列中的活动前沿",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-7a7bb227cba7",
+    "term_id": "compute",
+    "heading": "算子内部的数据收敛",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5ab97ce1c1c6",
+    "term_id": "network",
+    "heading": "多级交叉交换网",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-bd2d956dfa04",
+    "term_id": "network",
+    "heading": "数据重排的二部连线",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-340d28d98619",
+    "term_id": "device-profile",
+    "heading": "设备轮廓与侧置属性条",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e927dd1b08dc",
+    "term_id": "device-profile",
+    "heading": "共享任务与设备条件扇出",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c3fe94554764",
+    "term_id": "numa-locality",
+    "heading": "局部岛与跨域桥",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-94a4b7efce79",
+    "term_id": "numa-locality",
+    "heading": "拓扑主图与路径抽条",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-518dacdda40d",
+    "term_id": "device-sharing-modes",
+    "heading": "分区剖面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-741875aa6e5a",
+    "term_id": "device-sharing-modes",
+    "heading": "同卡多流与时间片对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f3883276ceaa",
+    "term_id": "cpu-processor",
+    "heading": "处理器封装与短标签",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-33878e078f76",
+    "term_id": "cpu-processor",
+    "heading": "核心组与共享缓存的局部展开",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-97d9398280ec",
+    "term_id": "cpu-processor",
+    "heading": "主机准备与设备计算双区",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a3b12394c568",
+    "term_id": "memory",
+    "heading": "层次金字塔＋实际数据块",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-770eecfcb7ac",
+    "term_id": "memory",
+    "heading": "切开的内存条带",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-eda4d53ea7fa",
+    "term_id": "memory",
+    "heading": "逻辑/物理双视图",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-51df16a9fca8",
+    "term_id": "storage",
+    "heading": "数据页束与局部索引",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-2848886f34e1",
+    "term_id": "storage",
+    "heading": "分层存储与对象搬移",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-769ce5cf27e0",
+    "term_id": "data-pipeline",
+    "heading": "样本缩略片到 batch",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a9b17dc33141",
+    "term_id": "data-pipeline",
+    "heading": "字段稀疏点到稠密向量",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-900d444478af",
+    "term_id": "host-device-buffer",
+    "heading": "主机页束与设备薄片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-71e5b6d9bd3f",
+    "term_id": "host-device-buffer",
+    "heading": "计算与拷贝双泳道",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-d52a3604c790",
+    "term_id": "prefetch-double-buffer",
+    "heading": "两个固定缓冲槽交替",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-8f405681e1fd",
+    "term_id": "prefetch-double-buffer",
+    "heading": "队列水位与前瞻窗口",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-612c8df66b8b",
+    "term_id": "dataset-locality",
+    "heading": "分片页束与就近引用",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-b4d5866ed3fd",
+    "term_id": "dataset-locality",
+    "heading": "目录与实体两层",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-12fc33410d19",
+    "term_id": "embedding-cache",
+    "heading": "ID 梳齿与表行抽取",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-7d3dfb859fe4",
+    "term_id": "embedding-cache",
+    "heading": "近端小表与远端长表",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-0db71b56de44",
+    "term_id": "virtual-physical-memory",
+    "heading": "连续地址带与离散页",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-457a0e83f6d9",
+    "term_id": "virtual-physical-memory",
+    "heading": "固定布局的连续快照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a08454178c84",
+    "term_id": "storage-services",
+    "heading": "本地盘与共享存储池",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-6df8cfda0049",
+    "term_id": "storage-services",
+    "heading": "存储服务身份与内容剖面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c6313b3b851d",
+    "term_id": "storage-services",
+    "heading": "声明绑定与实际读写分层",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-44ec993d45f5",
+    "term_id": "tensor",
+    "heading": "斜置的特征片组",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-262b2ac30106",
+    "term_id": "tensor",
+    "heading": "窄向量带与分量",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-6d204828a839",
+    "term_id": "tensor",
+    "heading": "有剖面的张量体",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a57e67fdc5b2",
+    "term_id": "tensor",
+    "heading": "矩阵 tile 与遍历路径",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f91f6825d339",
+    "term_id": "operator",
+    "heading": "向量输入＋运算节点",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-4f8f40b295ff",
+    "term_id": "operator",
+    "heading": "融合范围的透明包络",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-2a4c1eaab0b4",
+    "term_id": "network-model",
+    "heading": "一层展开的重复模型体",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f25758dead21",
+    "term_id": "network-model",
+    "heading": "圆节点网络骨架",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-61e3ce5b7137",
+    "term_id": "network-model",
+    "heading": "压缩—展开的编码解码体",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-0d76d6f82e4d",
+    "term_id": "attention",
+    "heading": "多路 value 的加权汇聚",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c10fa859bc77",
+    "term_id": "attention",
+    "heading": "Q/K/V 切片与得分平面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e9d44d6de7b6",
+    "term_id": "attention",
+    "heading": "多头的平行小通道",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3de39cff9b51",
+    "term_id": "vision",
+    "heading": "多尺度特征平面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-366922c93261",
+    "term_id": "vision",
+    "heading": "图像网格展开为 patch 队列",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-28f119102404",
+    "term_id": "vision",
+    "heading": "卷积局部窗口",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-40d2f123e815",
+    "term_id": "gnn",
+    "heading": "图通过层叠平面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-87d93105c856",
+    "term_id": "gnn",
+    "heading": "焦点邻域的消息扇入",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f59cde9e6260",
+    "term_id": "gnn",
+    "heading": "重复时刻的同一图",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1c6a486876a0",
+    "term_id": "moe",
+    "heading": "概率小柱＋专家阵列",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f7ba577e74d4",
+    "term_id": "moe",
+    "heading": "专家槽位与 token 重排",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a3b70fa91178",
+    "term_id": "moe",
+    "heading": "按设备分布的专家切片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-21e523113991",
+    "term_id": "multimodal",
+    "heading": "不同模态形体汇成向量",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-0b2f7f5a9e49",
+    "term_id": "multimodal",
+    "heading": "具象输入—分支编码—融合表示",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-342d266212ce",
+    "term_id": "multimodal",
+    "heading": "条件支路进入生成主体",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1688234f005b",
+    "term_id": "diffusion",
+    "heading": "沙漏去噪器与潜变量轨迹",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c05aa8719c12",
+    "term_id": "diffusion",
+    "heading": "迭代薄片与单步局部展开",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-87f1441cc63d",
+    "term_id": "recommendation",
+    "heading": "稀疏字段到共享嵌入",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-7c46e7fecaaf",
+    "term_id": "recommendation",
+    "heading": "交互矩阵与候选评分",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a22045f8d7e9",
+    "term_id": "quantization",
+    "heading": "值轴到离散台阶",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-2a44921badd3",
+    "term_id": "quantization",
+    "heading": "张量平面与尺度边条",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-bd1ae23eed47",
+    "term_id": "quantization",
+    "heading": "异常通道的前后对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-602ead1f8849",
+    "term_id": "sparsity",
+    "heading": "稀疏点阵与掩码",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ae70615180c6",
+    "term_id": "sparsity",
+    "heading": "整组通道抽离",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-fbb9ba318c94",
+    "term_id": "distillation",
+    "heading": "双模型与分布对齐",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-374cee0b0f56",
+    "term_id": "distillation",
+    "heading": "中间特征的层间配对",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-8fc18b722deb",
+    "term_id": "attention-head-sharing",
+    "heading": "扇出连接与共享 KV 对",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a7312e081b78",
+    "term_id": "attention-head-sharing",
+    "heading": "头维度切片与缓存剖面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e4794fd8d69c",
+    "term_id": "feature-interaction",
+    "heading": "双路输入与交互汇合",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-dc9d29f0a9e1",
+    "term_id": "feature-interaction",
+    "heading": "交互网格与重点配对",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3237f412ff96",
+    "term_id": "predictor",
+    "heading": "特征条＋微型网络＋输出记录",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5933de45f78f",
+    "term_id": "predictor",
+    "heading": "图结构预测与资源条件",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e31d97877259",
+    "term_id": "predictor",
+    "heading": "多候选评分截面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-9ea5ea065839",
+    "term_id": "graph-hardware-prediction",
+    "heading": "小图穿过结构编码层",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "结构与输入",
+    "suitable": "任务图如何与设备条件结合",
+    "unsuitable": "只解释设备身份或无图输入的模型",
+    "connect": "图节点/编码输出与预测器条件输入分别连接",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/gnn-scheduling.md"
+    ]
+  },
+  {
+    "id": "v-4f171b947f8b",
+    "term_id": "graph-hardware-prediction",
+    "heading": "局部邻域展开与全图汇总",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5059293529f7",
+    "term_id": "static-dynamic-features",
+    "heading": "任务骨架与观测窗口双路",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-2745eb3f1b50",
+    "term_id": "static-dynamic-features",
+    "heading": "固定画像与可替换条件片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-42492d40423e",
+    "term_id": "predictor-train-serve",
+    "heading": "双层训练—服务布局",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c2bf86d08658",
+    "term_id": "predictor-train-serve",
+    "heading": "版本轨道与并行服务",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-9d7dc35ef5e8",
+    "term_id": "multi-target-prediction",
+    "heading": "共享向量与小型输出分支",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1d9f7521f9fb",
+    "term_id": "multi-target-prediction",
+    "heading": "配置行与指标列",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-4f6568e24680",
+    "term_id": "interference-prediction",
+    "heading": "同设备的成对场景",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-fcb5597e9b0f",
+    "term_id": "interference-prediction",
+    "heading": "配对矩阵与单格展开",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3fb222653b08",
+    "term_id": "prediction-uncertainty",
+    "heading": "点预测与范围须",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-dd0e613d0b1c",
+    "term_id": "prediction-uncertainty",
+    "heading": "源域到目标域与校准支路",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-9ad73c7db195",
+    "term_id": "trace-critical-path",
+    "heading": "轨迹到依赖图",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-da521e6dac4a",
+    "term_id": "trace-critical-path",
+    "heading": "原图与反事实图对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-864f33220650",
+    "term_id": "cost-model-search",
+    "heading": "配置扇面与唯一出口",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "决策与执行",
+    "suitable": "多个预测候选如何产生单一选择",
+    "unsuitable": "候选都已并行执行的场景",
+    "connect": "候选记录连接决策者；只有选中方案连接执行",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/gnn-scheduling.md"
+    ]
+  },
+  {
+    "id": "v-d3eca2cfe195",
+    "term_id": "cost-model-search",
+    "heading": "搜索树与局部反馈",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-b1b93cf29574",
+    "term_id": "scheduler",
+    "heading": "请求内容＋选择扇出＋资源截面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-8b3ce7450d8c",
+    "term_id": "scheduler",
+    "heading": "DAG汇总进入决策",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-6ab63fd0e3f3",
+    "term_id": "quota",
+    "heading": "资源带的租户分界与借用片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c1a5f6891729",
+    "term_id": "quota",
+    "heading": "双时刻资源环带",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c558dab9fdb7",
+    "term_id": "placement",
+    "heading": "同候选的多资源截面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-dcca0f05f2c8",
+    "term_id": "placement",
+    "heading": "数据局部性牵引放置",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5abae27d1938",
+    "term_id": "sharing",
+    "heading": "同底板上的租户分区",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "资源状态",
+    "suitable": "同一设备上已占用与可用资源的归属",
+    "unsuitable": "只有设备身份，或未定义容量与隔离时",
+    "connect": "任务覆盖连接资源区域；不连接装饰芯片引脚",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/gnn-scheduling.md"
+    ]
+  },
+  {
+    "id": "v-400324b219ab",
+    "term_id": "sharing",
+    "heading": "时间共享与空间共享并列",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-265ecc925410",
+    "term_id": "admission-ranking",
+    "heading": "入口门与排序带及落点",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-34ff015fe586",
+    "term_id": "admission-ranking",
+    "heading": "候选集逐层筛选",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5ac6913929ae",
+    "term_id": "multi-resource-demand",
+    "heading": "资源指纹与对应容量",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-0f122c5e98f3",
+    "term_id": "multi-resource-demand",
+    "heading": "资源剖面上的候选覆盖",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-32d82f5d233e",
+    "term_id": "gang-reservation",
+    "heading": "共同括号与启动闸",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-413a312e6e65",
+    "term_id": "gang-reservation",
+    "heading": "预留窗口与组内泳道",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-dc1e5d44f0c4",
+    "term_id": "backfill-window",
+    "heading": "固定预留线与短作业插入",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-406afaa6e22c",
+    "term_id": "backfill-window",
+    "heading": "队列与可回填候选对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5a455a100c19",
+    "term_id": "preempt-resume",
+    "heading": "执行带切口与状态页",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e00d0552d5c9",
+    "term_id": "preempt-resume",
+    "heading": "源与目标的固定快照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-943ceb3c5ea2",
+    "term_id": "elastic-allocation",
+    "heading": "伸缩阶梯与重配置缝",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-2cc79a28b302",
+    "term_id": "elastic-allocation",
+    "heading": "设备组的前后成员对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-996d19fa9ba7",
+    "term_id": "training-inference-reclaim",
+    "heading": "底线、余量与借用层",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-63b2eafbef0a",
+    "term_id": "training-inference-reclaim",
+    "heading": "资源轨道与回收时间链",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-339c625ab95e",
+    "term_id": "topology-placement",
+    "heading": "同候选与多个资源底板",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ec15e5403276",
+    "term_id": "topology-placement",
+    "heading": "设备子图匹配",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-bd2c465951bd",
+    "term_id": "collective",
+    "heading": "归约树与局部累积",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c31853e9ea88",
+    "term_id": "collective",
+    "heading": "环上的移动分片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-8323c8acac8a",
+    "term_id": "collective",
+    "heading": "分发再聚合",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5553551cbf43",
+    "term_id": "training",
+    "heading": "前向/反向双路径",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-9e8f35fe9eb4",
+    "term_id": "training",
+    "heading": "迭代中的稳定参数体",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1d3b1671a8e7",
+    "term_id": "parallelism",
+    "heading": "rank 内参数切片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-6d963dd7e038",
+    "term_id": "parallelism",
+    "heading": "模型阶段与 microbatch 斜向推进",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-2d12bcbaeb3d",
+    "term_id": "parallelism",
+    "heading": "专家分布与 token 跨界",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f4f78b905ab4",
+    "term_id": "training-state",
+    "heading": "三层状态条跨 rank 对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c893b4c97fce",
+    "term_id": "training-state",
+    "heading": "局部更新面附着于主参数",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3a644d83bc58",
+    "term_id": "peft",
+    "heading": "梯形低秩旁路",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c893d8d4f1e7",
+    "term_id": "peft",
+    "heading": "矩阵切片的低秩分解",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ed735e0a6a49",
+    "term_id": "peft",
+    "heading": "层内的可替换适配片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e4f0c6ef05b4",
+    "term_id": "checkpoint",
+    "heading": "参数切片冻结成快照束",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c8ab2ff14726",
+    "term_id": "checkpoint",
+    "heading": "激活保留点与重计算弧线",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-da3d63f480ee",
+    "term_id": "data-parallel",
+    "heading": "完整副本与分流样本",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5852a516dc17",
+    "term_id": "data-parallel",
+    "heading": "分片状态与副本边界双层",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ecc2b4857b71",
+    "term_id": "tensor-parallel",
+    "heading": "矩阵切块与分支运算",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-8b308761fd59",
+    "term_id": "tensor-parallel",
+    "heading": "一层模型局部剖面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1dabfe62b871",
+    "term_id": "pipeline-microbatch",
+    "heading": "层组与阶梯流水",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f47926b55123",
+    "term_id": "pipeline-microbatch",
+    "heading": "一次批次的贯穿路径",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c85f62bdd2ee",
+    "term_id": "expert-parallel",
+    "heading": "路由梳齿与专家岛",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f03546c785d1",
+    "term_id": "expert-parallel",
+    "heading": "分派矩阵与通信束",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-44ce9f9d76f7",
+    "term_id": "sequence-context-parallel",
+    "heading": "序列长带与归属括号",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-90d38ebee36b",
+    "term_id": "sequence-context-parallel",
+    "heading": "上下文段与环形交换",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f4e08c191c72",
+    "term_id": "fsdp-reshard",
+    "heading": "分片—展开—回收连续视图",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-499c80882020",
+    "term_id": "fsdp-reshard",
+    "heading": "计算泳道与通信预取",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-52ee37706f07",
+    "term_id": "gradient-overlap",
+    "heading": "反向阶梯与就绪桶",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ed87196e07e5",
+    "term_id": "gradient-overlap",
+    "heading": "串行与重叠对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-290d7a1f53ca",
+    "term_id": "optimizer-offload",
+    "heading": "三层存储与状态标签",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e0ee990f2520",
+    "term_id": "optimizer-offload",
+    "heading": "更新窗口的往返路径",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-34473353848c",
+    "term_id": "mixed-precision",
+    "heading": "双轨权重与转换节点",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-983e966e0758",
+    "term_id": "mixed-precision",
+    "heading": "梯度缩放与异常分支",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-511ece2c9bed",
+    "term_id": "activation-recompute",
+    "heading": "保存锚点与回溯弧线",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-49f5c056e165",
+    "term_id": "activation-recompute",
+    "heading": "内存驻留与计算代价双轨",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-09956ac46099",
+    "term_id": "async-checkpoint",
+    "heading": "训练主线与保存支线",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-cab9a2fd4740",
+    "term_id": "async-checkpoint",
+    "heading": "状态切片与提交记录",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ba9cd96fdf36",
+    "term_id": "model-roles",
+    "heading": "两套独立模型体＋候选树",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ef07fe5cc826",
+    "term_id": "model-roles",
+    "heading": "按功能排列的模型局部",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1844c4bcbf1c",
+    "term_id": "rl",
+    "heading": "轨迹带与反馈环",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-cfd9594c4a16",
+    "term_id": "rl",
+    "heading": "分离的模型角色与数据流",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-217fe3b1bd08",
+    "term_id": "rl-rollout-train",
+    "heading": "角色节点与三段数据流",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ff7e35e7eaab",
+    "term_id": "rl-rollout-train",
+    "heading": "逻辑角色到设备执行",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e5261984bf65",
+    "term_id": "policy-version",
+    "heading": "版本接力与轨迹包",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-2cb1f2474dbf",
+    "term_id": "policy-version",
+    "heading": "并发采样器与接收窗口",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-905b1c6b2b37",
+    "term_id": "reward-advantage-mask",
+    "heading": "对齐的 token 与信号轨道",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f6bdbbf728d1",
+    "term_id": "reward-advantage-mask",
+    "heading": "轨迹分组与组内比较",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ed9088675387",
+    "term_id": "sft-dpo",
+    "heading": "示例对与标签区间",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e5f46f4b0bc8",
+    "term_id": "sft-dpo",
+    "heading": "共享 prompt 与偏好双路",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3490ac6f8927",
+    "term_id": "model-instance",
+    "heading": "有层次的独立模型体",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "模型身份与驻留",
+    "suitable": "独立模型实例与权重驻留",
+    "unsuitable": "需要解释分片但没有完整副本",
+    "connect": "调用连实例接口，部署映射连物理资源",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/agent-lifecycle.md"
+    ]
+  },
+  {
+    "id": "v-06ab6cc7f9de",
+    "term_id": "model-instance",
+    "heading": "参数平面和实例外壳",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-25f8d898f31e",
+    "term_id": "model-instance",
+    "heading": "有归属的分片集合",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1028443ba72a",
+    "term_id": "request",
+    "heading": "带实际 token 内容的请求行",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-bba8cd7a7321",
+    "term_id": "request",
+    "heading": "有长度轮廓的请求条",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-306dfd6f05fe",
+    "term_id": "request",
+    "heading": "字段页与 token 带并置",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5b89b42889c9",
+    "term_id": "batch",
+    "heading": "请求序列的成组切片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-511a05749fa7",
+    "term_id": "batch",
+    "heading": "一次迭代的token截面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-6e06969cfa00",
+    "term_id": "batch",
+    "heading": "随迭代变化的集合",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ade66fd63dcc",
+    "term_id": "token",
+    "heading": "序列片与向量对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-8910d92155db",
+    "term_id": "token",
+    "heading": "候选分支树",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-51b5b28d3df0",
+    "term_id": "prefill-decode",
+    "heading": "长阶段与短迭代节奏",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-94138f0c423c",
+    "term_id": "prefill-decode",
+    "heading": "token处理截面对比",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f824819d754f",
+    "term_id": "kv-cache",
+    "heading": "页块映射",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-4cf5373f8836",
+    "term_id": "kv-cache",
+    "heading": "公共前缀树",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-af1089efaf9f",
+    "term_id": "kv-cache",
+    "heading": "长缓存条与新增切片",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "请求状态",
+    "suitable": "KV 保留、增长与释放",
+    "unsuitable": "等待时长或无明确缓存策略的流程",
+    "connect": "缓存状态附请求 ID；不要用缺口表示工具等待",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/agent-lifecycle.md"
+    ]
+  },
+  {
+    "id": "v-93395f982e47",
+    "term_id": "model-loading",
+    "heading": "权重切片穿越存储层",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-95217b0a6e8e",
+    "term_id": "model-loading",
+    "heading": "加载与执行的交叠视图",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-bf65496ba392",
+    "term_id": "pd-handoff",
+    "heading": "双实例群与可追踪交接",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5f88363687a6",
+    "term_id": "pd-handoff",
+    "heading": "请求主线与数据传输双轨",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-560e85274195",
+    "term_id": "chunked-prefill",
+    "heading": "长输入带切段并穿插",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-82d66df8d6eb",
+    "term_id": "chunked-prefill",
+    "heading": "容量框与迭代列",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-9a83d1b9c4a1",
+    "term_id": "speculative-verification",
+    "heading": "独立双模型与候选树",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-206f4b66dee1",
+    "term_id": "speculative-verification",
+    "heading": "候选序列与提交边界",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-9515e2ce8d21",
+    "term_id": "prefix-cache-lifecycle",
+    "heading": "共享树干与引用端点",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-d7b696d88200",
+    "term_id": "prefix-cache-lifecycle",
+    "heading": "访问—释放引用—回收快照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-720d60c99dd1",
+    "term_id": "multi-model-lora-serving",
+    "heading": "共享主干与适配片",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-958a97609dc9",
+    "term_id": "multi-model-lora-serving",
+    "heading": "驻留架与加载窗口",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-63ad83b1b065",
+    "term_id": "expert-residency",
+    "heading": "专家目录与驻留槽",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c510d33c8b75",
+    "term_id": "expert-residency",
+    "heading": "路由热区与局部迁移",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-f838c7da4011",
+    "term_id": "inference-budget",
+    "heading": "双预算尺与请求小格",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-4e0f7efd78a6",
+    "term_id": "inference-budget",
+    "heading": "增长轨道与提前回收点",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-fdb2e2bbb279",
+    "term_id": "deployment",
+    "heading": "逻辑层悬置在资源层之上",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-16dc82e1f4a2",
+    "term_id": "deployment",
+    "heading": "模型实例装入执行容器",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-230e387a8cd3",
+    "term_id": "compiler",
+    "heading": "计算图的局部重写",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-39e5f9bd8b2c",
+    "term_id": "compiler",
+    "heading": "矩阵切块到执行阵列",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a185578484c2",
+    "term_id": "api-framework",
+    "heading": "接口边界与两侧真实对象",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1fa27276d1b8",
+    "term_id": "api-framework",
+    "heading": "模型—运行时—服务三层映射",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-aa977924a7aa",
+    "term_id": "controller-reconcile",
+    "heading": "双状态页与修正回路",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-b063500d6798",
+    "term_id": "controller-reconcile",
+    "heading": "事件触发与幂等动作",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-cd34dd1e7158",
+    "term_id": "watch-workqueue",
+    "heading": "事件条与去重队列",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-81a3daf53ae4",
+    "term_id": "watch-workqueue",
+    "heading": "共享状态与独立消费者",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e2881e455938",
+    "term_id": "pod-execution-chain",
+    "heading": "对象状态与职责接力",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-fbe9cd8c0d29",
+    "term_id": "pod-execution-chain",
+    "heading": "控制面与节点面双区",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c933bc1c8657",
+    "term_id": "device-runtime-driver",
+    "heading": "软件层与明确端口",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-04eb6743fa76",
+    "term_id": "device-runtime-driver",
+    "heading": "分配链与执行链分开",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a8fc0b81fdf6",
+    "term_id": "process-isolation",
+    "heading": "进程边界与线程路径",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e76072e7463f",
+    "term_id": "process-isolation",
+    "heading": "同资源的不同视图与限额",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-7cc263a34d0e",
+    "term_id": "rpc-event-runtime",
+    "heading": "请求回包与关联 ID",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-bc61521c4cd4",
+    "term_id": "rpc-event-runtime",
+    "heading": "就绪环与挂起任务",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-56083eaa36a0",
+    "term_id": "backpressure",
+    "heading": "有界缓冲与反向信号",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3efea16db37f",
+    "term_id": "backpressure",
+    "heading": "信用票与受控发送",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e9295ec5c7c9",
+    "term_id": "compiler-lowering",
+    "heading": "三种表示逐级展开",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3ac80f7fbbdb",
+    "term_id": "compiler-lowering",
+    "heading": "局部重写与外部边界保持",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-82f6199f1833",
+    "term_id": "cuda-graph",
+    "heading": "捕获窗口与图句柄",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3adf248678b4",
+    "term_id": "cuda-graph",
+    "heading": "多次 launch 与整图提交对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-7cac6048e61c",
+    "term_id": "microservice-dependency",
+    "heading": "调用图与焦点服务剖面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-d5fe835fd898",
+    "term_id": "microservice-dependency",
+    "heading": "逻辑服务到实例的双层映射",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-ec4c7c80be79",
+    "term_id": "lifecycle",
+    "heading": "稳定对象的三帧快照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c8499bd04a33",
+    "term_id": "lifecycle",
+    "heading": "时间线上附着状态形体",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-37e05d88a6e5",
+    "term_id": "slo",
+    "heading": "token事件与延迟括号",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-c73ac0db6f77",
+    "term_id": "slo",
+    "heading": "候选延迟分布＋阈值",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-6ea6a906908e",
+    "term_id": "trace",
+    "heading": "带因果连接的嵌套泳道",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-679054afe006",
+    "term_id": "trace",
+    "heading": "状态图与事件轨迹对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a879eea15bec",
+    "term_id": "metrics",
+    "heading": "附在对象旁的微型趋势",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-6f1479c85e42",
+    "term_id": "metrics",
+    "heading": "计算—带宽双约束截面",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-b3c31116cbcb",
+    "term_id": "fault",
+    "heading": "故障点与可恢复快照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-60d94f2a8205",
+    "term_id": "fault",
+    "heading": "版本轨迹分支与验证汇合",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5561351e1c58",
+    "term_id": "validation",
+    "heading": "候选集合与验证对应",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-21ade1e41c0f",
+    "term_id": "validation",
+    "heading": "规则检查与输出记录",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-7c3bd90cf1a3",
+    "term_id": "profiling-window",
+    "heading": "时间窗口与观测抽条",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-8f4c15dd872e",
+    "term_id": "profiling-window",
+    "heading": "设备剖面与观测端口",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-a558cb1004d6",
+    "term_id": "trace-correlation",
+    "heading": "任务层与内核层对齐",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-6a20869c5f94",
+    "term_id": "trace-correlation",
+    "heading": "调用树与关键片段放大",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-84e63d5a0db0",
+    "term_id": "bottleneck-roofline",
+    "heading": "计算面与数据供给对照",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5ab0452dde14",
+    "term_id": "bottleneck-roofline",
+    "heading": "简化上限图与点位",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3dfa153216f6",
+    "term_id": "reliability-retry",
+    "heading": "同请求的多次尝试",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-e735cd2873f2",
+    "term_id": "reliability-retry",
+    "heading": "故障域与接管路径",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-0cb62a316e49",
+    "term_id": "workflow",
+    "heading": "紧凑fork/join骨架",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-858db691977d",
+    "term_id": "workflow",
+    "heading": "逻辑图悬置于执行泳道",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-1198779019ce",
+    "term_id": "workflow",
+    "heading": "同一工作流的连续状态",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-3b97995284a6",
+    "term_id": "agent",
+    "heading": "有输入产物的行动回路",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "逻辑角色与调用",
+    "suitable": "角色如何产生行动与接收结果",
+    "unsuitable": "把角色当作物理设备或模型副本",
+    "connect": "调用片从角色行动接口发出，结果回到请求恢复点",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/agent-lifecycle.md"
+    ]
+  },
+  {
+    "id": "v-c5d6cc2921f0",
+    "term_id": "agent",
+    "heading": "多角色的任务交接",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-5f8ad680171f",
+    "term_id": "tool",
+    "heading": "调用片—执行接口—结果页",
+    "selection_status": "reviewed_against_synthetic_input",
+    "cases": [],
+    "level": "执行过程",
+    "suitable": "工具调用、执行与返回的区别",
+    "unsuitable": "仅需标识可用工具集",
+    "connect": "调用片接工具接口；结果接真实请求接收者",
+    "boundary_source": "term Markdown guard and case input",
+    "scenario_inputs": [
+      "examples/scenarios/agent-lifecycle.md"
+    ]
+  },
+  {
+    "id": "v-cad584b7852c",
+    "term_id": "tool",
+    "heading": "工具槽与已插入能力",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-188688660229",
+    "term_id": "context-memory",
+    "heading": "共享上下文主干与后缀",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-becee123b975",
+    "term_id": "context-memory",
+    "heading": "检索页束进入上下文窗口",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-d57b2067edfc",
+    "term_id": "routing",
+    "heading": "候选路径与唯一选择",
+    "selection_status": "unreviewed",
+    "cases": []
+  },
+  {
+    "id": "v-db8267baf400",
+    "term_id": "routing",
+    "heading": "带回传数据的循环",
+    "selection_status": "unreviewed",
+    "cases": []
+  }
+]

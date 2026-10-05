@@ -2,7 +2,7 @@
 
 ## 1. 当前约定与入口
 
-本技能统一维护全部主题画法、整图构造、工具和检索信息，唯一技能入口为 [SKILL.md](../SKILL.md)。12 类主题直接参与绘图流程，主题正文是画法维护源，catalog 与离线指南由其派生。
+本技能统一维护全部主题画法、整图构造、工具和检索信息，唯一技能入口为 [SKILL.md](../SKILL.md)。各主题直接参与绘图流程，主题正文是画法维护源；catalog 中的维护元数据与生成结果分别如下。
 
 画法源自用户提供的 research-diagram-components v0.4.1，其来源记录、许可信息及历史校验保留在 catalog。该名称只用于追溯来源，不是需要另行调用的技能或独立工作流。
 
@@ -98,7 +98,28 @@ Agent 的细化内容在 [已保留样板](../topics/agents-approved-samples.md)
 ## 9. 检索、离线浏览与维护
 
 - 从 [主题索引](topic-index.md) 或 `catalog/index.json` 按词条 ID／别名定位，只读相关词条及必要边界；不用一次加载全部主题。
-- [离线指南](../guide.html) 用于浏览、搜索和复制文字画法，页面不含已生成的组件图。修改主题后再重建快照。
+- [离线指南](../guide.html) 用于浏览、搜索和复制文字画法，页面统一检索词条、变体、Agent 扩展、案例与规则，并显示素材状态。修改主题后再重建快照。
 - 组合样板仅提供可改编构图；目标论文决定真实对象、数量、部署和机制。将选定构造融合进最终提示词，记录词条 ID 与所选变体。
 - 修改主题正文或来源后，在技能根目录运行 `python3 scripts/rebuild_navigation.py`，再运行 `python3 scripts/validate.py`。脚本仅做本地索引／指南生成及结构检查，不下载素材、不生成图片。
-- 维护时区分新增和继承的来源状态，更新相应统计与版本记录。验证器中的 v0.4.1 迁移数量和 Agent 正文哈希只用于核对本次导入基线；将来有意扩充或修改时同步更新相关记录，不据此冻结词条。
+- 维护时区分新增和继承的来源状态，更新相应统计与版本记录。历史保护独立由 `check_history.py` 检查；未经明确授权不得修改受保护 Agent 正文或通过更新哈希绕过保护。新增关联元数据放在正文之外。
+
+
+## 10. 数据职责与变体维护
+
+| 责任 | 文件 | 维护方式 |
+| --- | --- | --- |
+| 画法正文与词条锚点 | `topics/*.md` | 唯一正文来源；保留旧词条 ID |
+| 主题、别名来源、稳定变体身份 | `catalog/topics.json`、`catalog/term-provenance.json`、`catalog/variants.json` | 独立维护，不从旧生成结果继承 |
+| 来源与历史保护 | `catalog/sources.json`、`catalog/history.json`、`catalog/migration.json`、`catalog/import.json`、`catalog/agent-preservation.json` | 保留继承版本、旧链接及授权依据 |
+| 当前索引、统计、浏览器载荷 | `catalog/index.json`、`catalog/statistics.json`、`catalog/browser.json`、`guide.html` | 可移除后重建；不包含时间戳 |
+| 制作及检查记录 | `examples/cases.json`、案例目录、`assets/visual-library/catalog.json` | 真实输入、产物、提示词与检查，独立于文字画法状态 |
+
+变体的 `id` 是持久身份，首次迁移已登记，后续不得重算。`term_id` 和 `heading` 只定位现有 Markdown 段落；改标题时保留 `id` 并更新 selector。排序不改变 ID。新增变体用 `v-` 加唯一标识登记，不复制正文到 JSON。浏览器使用 `#topic=…&q=…&term=…&variant=…`，并兼容旧 `#term-<id>` / `#<id>`；现有 Markdown 词条锚点不变。
+
+已有变体先标 `unreviewed`。有依据时补充 `suitable`、`unsuitable`、`level`、`connect`、`boundary_source` 和 `cases`；没有可靠信息就保留未审状态，不自动补全科学事实。三个场景涉及的变体已按场景输入补充选择条件，但场景不是完成案例。`scenario_inputs` 指向这些输入。
+
+文字画法保持 `recipe_status=description_ready`。旧 `image_status=not_generated` 已从生成索引移除，其历史含义保存在 `catalog/history.json`。素材保留原始 `status` / `legacy_status`，另设 `generation_record`、`source_review`、`visual_review`、`final_use`、`user_acceptance`。只有 `final_use=eligible` 且没有 reference/truncated/superseded/error 历史限制的素材进入默认最终素材选择；其他资产继续可查阅。当前使用场景必须重新确认质量和接受状态。
+
+浏览器通过 `scripts/web/guide.html`、`guide.css`、`guide.js` 生成，全部代码和数据嵌入页面。不要手改根目录 guide.html。Markdown 渲染是安全的小型子集：标题、列表、代码、表格与有效链接；原始 HTML 不执行。外部 URL 仅允许 HTTP(S)，本地相对路径保留。筛选和定位用 hash，不需要服务器路由。
+
+`VERSION` 是独立技能发布版本；`catalog/source-version.txt` / import 是继承知识库版本。本次工作按 Unreleased 记录，不修改已有发布版本号。

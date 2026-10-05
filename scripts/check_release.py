@@ -30,7 +30,7 @@ check(skill.startswith('---\nname: systems-figure-studio\n'), 'skill identity')
 check('$systems-figure-studio' in (ROOT / 'agents/openai.yaml').read_text(), 'invocation')
 check(bool(re.fullmatch(r'\d+\.\d+\.\d+\n?', (ROOT / 'VERSION').read_text())), 'release version')
 
-suffixes = {'.md', '.json', '.yaml', '.yml', '.py', '.html', '.txt', '.svg', '.drawio'}
+suffixes = {'.md', '.json', '.yaml', '.yml', '.py', '.html', '.txt', '.svg', '.drawio', '.js', '.cjs', '.css'}
 for path in ROOT.rglob('*'):
     rel = path.relative_to(ROOT)
     if any(part in {'.git', '.venv', '__pycache__', 'dist'} for part in rel.parts):
